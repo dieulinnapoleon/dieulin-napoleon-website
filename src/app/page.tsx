@@ -4,6 +4,7 @@ import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, 
 import { Button } from '@/components/ui/button';
 import { getBlogPosts, getProjects, getServices, getSiteSettings } from '@/lib/data';
 import { formatDate } from '@/lib/utils';
+import { NewsletterForm } from '@/components/ui/newsletter-form';
 
 export const revalidate = 60; // ISR: revalidate every hour
 
@@ -180,6 +181,30 @@ export default async function HomePage() {
         </div>
       </section>
 
+
+      {/* ===== CURRENTLY ===== */}
+      <section className="py-12 bg-gray-50/50 border-y border-gray-100">
+        <div className="section-container">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <h2 className="font-display text-lg font-semibold text-navy">Currently</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: 'Completing', value: 'Master of Finance & Impact MBA at Colorado State University (May 2026)' },
+              { label: 'Building', value: 'Creasti — a gamified savings and financial wellness app' },
+              { label: 'Seeking', value: 'Summer 2026 opportunities in finance, impact investing, and strategy' },
+              { label: 'Writing', value: 'Thought leadership on finance, entrepreneurship, and Haiti-focused innovation' },
+            ].map((item, i) => (
+              <div key={i} className="p-5 rounded-xl bg-white border border-gray-100">
+                <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-gold mb-1.5">{item.label}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== FEATURED PROJECTS ===== */}
       <section className="py-section bg-gray-50/50">
         <div className="section-container">
@@ -291,6 +316,17 @@ export default async function HomePage() {
               <Button>View Services <ArrowRight size={16} /></Button>
             </Link>
           </div>
+        </div>
+      </section>
+
+
+      {/* ===== NEWSLETTER ===== */}
+      <section className="py-16 bg-white">
+        <div className="section-container max-w-xl text-center">
+          <p className="page-header-label">Stay Connected</p>
+          <h2 className="font-display text-2xl font-bold text-navy mb-3">Get Notified of New Insights</h2>
+          <p className="text-gray-500 text-sm mb-6">Join my mailing list to receive new articles on finance, entrepreneurship, and impact.</p>
+          <NewsletterForm />
         </div>
       </section>
 
