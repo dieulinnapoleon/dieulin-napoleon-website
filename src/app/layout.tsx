@@ -68,6 +68,7 @@ const personSchema = {
 };
 
 import { TranslationProvider } from '@/lib/translation';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="flex-1">{children}</main>
           <Footer />
         </TranslationProvider>
+              <Analytics />
       </body>
     </html>
   );

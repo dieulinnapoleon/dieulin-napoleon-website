@@ -16,6 +16,7 @@ const NAV_KEYS = [
   { key: 'insights', href: '/insights' },
   { key: 'services', href: '/services' },
   { key: 'contact', href: '/contact' },
+  { key: 'books', href: '/books' },
   { key: 'media', href: '/media' },
 ];
 
