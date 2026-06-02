@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Ventures and initiatives spanning fintech, civic innovation, sustainability, and economic development by Dieulin Napoleon.',
 };
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export default async function ProjectsPage() {
   const projects = await getProjects();

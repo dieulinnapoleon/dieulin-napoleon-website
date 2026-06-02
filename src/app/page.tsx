@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { getBlogPosts, getProjects, getServices, getSiteSettings } from '@/lib/data';
 import { formatDate } from '@/lib/utils';
 
-export const revalidate = 3600; // ISR: revalidate every hour
+export const revalidate = 60; // ISR: revalidate every hour
 
 export default async function HomePage() {
   const [posts, projects, services, siteSettings] = await Promise.all([

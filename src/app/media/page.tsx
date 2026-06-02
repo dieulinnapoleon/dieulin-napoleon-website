@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Awards, press, speaking engagements, platforms, and media appearances by Dieulin Napoleon.',
 };
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const TYPE_ICONS: Record<string, any> = {
   award: Award,

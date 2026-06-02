@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { getAdminAuth, getAdminDb } from '@/lib/firebase-admin';
 
 /**
@@ -28,6 +29,23 @@ async function verifyAdmin(request: NextRequest): Promise<string | null> {
   } catch {
     return null;
   }
+}
+
+
+// Map collections to public paths that need revalidation
+function revalidateForCollection(collection: string) {
+  const pathMap: Record<string, string[]> = {
+    blogPosts: ['/', '/insights'],
+    projects: ['/', '/projects'],
+    services: ['/', '/services'],
+    cvSections: ['/cv'],
+    mediaItems: ['/media'],
+    siteSettings: ['/', '/about', '/cv', '/projects', '/insights', '/services', '/media', '/contact'],
+    socialLinks: ['/'],
+    contactMessages: [],
+  };
+  const paths = pathMap[collection] || ['/'];
+  paths.forEach((p) => { try { revalidatePath(p); } catch {} });
 }
 
 export async function POST(request: NextRequest) {
@@ -83,6 +101,7 @@ export async function POST(request: NextRequest) {
           created_at: data.created_at || now,
           updated_at: now,
         });
+        revalidateForCollection(collection);
         return NextResponse.json({ id: docRef.id });
       }
 
@@ -92,12 +111,14 @@ export async function POST(request: NextRequest) {
           ...data,
           updated_at: new Date().toISOString(),
         });
+        revalidateForCollection(collection);
         return NextResponse.json({ success: true });
       }
 
       case 'delete': {
         if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 });
         await collRef.doc(id).delete();
+        revalidateForCollection(collection);
         return NextResponse.json({ success: true });
       }
 
@@ -105,6 +126,7 @@ export async function POST(request: NextRequest) {
         // For documents with specific IDs (like CV meta, site settings)
         if (!id || !data) return NextResponse.json({ error: 'id and data required' }, { status: 400 });
         await collRef.doc(id).set(data, { merge: true });
+        revalidateForCollection(collection);
         return NextResponse.json({ success: true });
       }
 

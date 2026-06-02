@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Professional services offered by Dieulin Napoleon — financial analysis, business planning, startup strategy, project management, ESG consulting, and Haiti market advisory.',
 };
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const ICON_MAP: Record<string, any> = {
   'bar-chart': BarChart3,
