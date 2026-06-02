@@ -20,7 +20,7 @@ export default async function CVPage() {
           <p className="page-header-label">Resume</p>
           <h1 className="page-header-title">Curriculum Vitae</h1>
           <p className="page-header-subtitle">
-            Education, experience, and qualifications.
+            Education, experience, and qualifications.</p><a href="/Dieulin_Napoleon_Resume.pdf" download className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-gold text-white text-sm font-semibold rounded-xl hover:bg-gold-300 transition-colors">Download PDF Resume</a><p className="hidden"
           </p>
         </div>
       </section>
