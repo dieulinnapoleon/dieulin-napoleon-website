@@ -194,7 +194,7 @@ export default async function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project) => (
-              <Link key={project.id} href="/projects" className="card group">
+              <Link key={project.id} href={'/projects/' + project.slug} className="card group">
                 <div className="card-gold-bar" />
                 <div className="p-7">
                   <div className="flex items-center gap-3 mb-4">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Project } from '@/types';
@@ -77,7 +78,10 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
                       <DetailField label="Solution" value={project.solution} />
                       <DetailField label="Role" value={project.role} />
                       <DetailField label="Impact" value={project.impact} />
-                      {project.url && (
+                      <Link href={'/projects/' + project.slug} className="inline-flex items-center gap-1 text-gold text-sm font-semibold hover:text-navy transition-colors">
+                  View Details <span className="text-xs">→</span>
+                </Link>
+                {project.url && (
                         <div className="md:col-span-2">
                           <a
                             href={project.url}
