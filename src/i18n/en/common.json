@@ -12,13 +12,25 @@
   "hero": {
     "tagline": "Finance · Impact · Strategy",
     "title": "Building at the Intersection of Capital, Technology, and Social Impact",
-    "subtitle": "Finance professional with dual graduate degrees from Colorado State University, CFA Level I Candidate, and serial entrepreneur dedicated to creating measurable impact in emerging markets.",
-    "cta_primary": "View My Work",
-    "cta_secondary": "Get in Touch"
+    "subtitle": "With 4 graduate degrees including two from Colorado State University, United States of America, I work at the intersection of finance, entrepreneurship, sustainability, and technology to build ventures, analyze opportunities, and support projects that create measurable economic and social impact.",
+    "headline": "Finance Professional · Entrepreneur · Project Strategist · Impact-Driven Builder",
+    "cta_cv": "View CV",
+    "cta_projects": "Explore Projects",
+    "cta_insights": "Read Insights",
+    "cta_contact": "Contact Me"
   },
   "sections": {
-    "featured_projects": "Featured Projects",
-    "latest_insights": "Latest Insights",
+    "credentials": "Credentials",
+    "credentials_title": "Education & Professional Background",
+    "featured_projects": "Ventures & Projects",
+    "featured_projects_title": "What I'm Building",
+    "featured_projects_subtitle": "Technology-enabled platforms and strategic initiatives at the intersection of finance, sustainability, and social impact.",
+    "latest_insights": "Insights",
+    "latest_insights_title": "Thought Leadership",
+    "latest_insights_subtitle": "Writing on finance, entrepreneurship, project management, sustainability, and Haiti's economic future.",
+    "services": "Services",
+    "services_title": "How I Can Help",
+    "services_subtitle": "Strategic support across finance, entrepreneurship, project management, and sustainability.",
     "portfolio": "Portfolio",
     "blog": "Blog",
     "expertise": "Expertise",
@@ -27,9 +39,9 @@
   },
   "cta": {
     "title": "Let's Build Something Meaningful",
-    "subtitle": "Looking for a finance professional, project strategist, or impact-driven collaborator? I'm always open to conversations about purposeful work.",
-    "primary": "Start a Conversation",
-    "secondary": "View Services"
+    "subtitle": "Whether you're exploring investment opportunities, building a startup, planning a project, or working on Haiti-focused initiatives — I'd love to connect.",
+    "primary": "Get in Touch",
+    "secondary": "Learn About Me"
   },
   "contact": {
     "title": "Get in Touch",
@@ -41,11 +53,77 @@
     "message": "Message",
     "send": "Send Message",
     "success_title": "Message Sent",
-    "success_message": "Thank you for reaching out. I will respond within 48 hours."
+    "success_message": "Thank you for reaching out. I will respond within 48 hours.",
+    "reasons": {
+      "career": "Career Opportunities",
+      "consulting": "Consulting Projects",
+      "startup": "Startup Partnerships",
+      "speaking": "Speaking / Teaching",
+      "investment": "Investment & Venture Conversations",
+      "haiti": "Haiti-Focused Initiatives",
+      "general": "General Inquiry"
+    }
+  },
+  "about": {
+    "title": "The Story Behind the Work",
+    "subtitle": "Finance, entrepreneurship, and impact — a journey rooted in Haiti with global reach."
+  },
+  "cv_page": {
+    "title": "Professional Resume",
+    "download": "Download PDF",
+    "summary": "Professional Summary",
+    "education": "Education",
+    "experience": "Professional Experience",
+    "skills": "Technical Skills",
+    "languages": "Languages",
+    "awards": "Awards & Recognition",
+    "certifications": "Certifications & Professional Development"
+  },
+  "projects_page": {
+    "title": "Projects & Ventures",
+    "subtitle": "Technology-enabled platforms and strategic initiatives driving measurable impact.",
+    "problem": "Problem",
+    "solution": "Solution",
+    "role": "My Role",
+    "status": "Status",
+    "technologies": "Technologies",
+    "impact": "Impact",
+    "visit": "Visit Project",
+    "all": "All",
+    "learn_more": "Learn More"
+  },
+  "insights_page": {
+    "title": "Insights",
+    "subtitle": "Perspectives on finance, entrepreneurship, project management, sustainability, and development.",
+    "search": "Search articles...",
+    "read_article": "Read Article",
+    "back": "Back to Insights",
+    "by": "By",
+    "read_time": "read",
+    "full_coming": "Full article coming soon. Check back for the complete piece."
+  },
+  "services_page": {
+    "title": "How I Can Help",
+    "subtitle": "Strategic support across finance, entrepreneurship, project management, and sustainability.",
+    "for_whom": "Who It's For",
+    "deliverables": "Deliverables",
+    "outcomes": "Example Outcomes",
+    "consult": "Request Consultation",
+    "disclaimer": "Services are subject to availability. All engagements begin with an initial consultation."
+  },
+  "media_page": {
+    "title": "Connect & Explore",
+    "awards": "Awards & Recognition",
+    "speaking": "Teaching & Speaking",
+    "platforms": "Platforms & Links",
+    "press": "Press & Publications"
   },
   "common": {
     "read_article": "Read Article",
     "view_all": "View All",
+    "view_all_projects": "View All Projects",
+    "view_all_insights": "Read All Insights",
+    "view_services": "View Services",
     "back": "Back",
     "loading": "Loading...",
     "no_results": "No results found.",
@@ -54,6 +132,9 @@
   },
   "footer": {
     "copyright": "All rights reserved.",
-    "tagline": "Built with purpose. Driven by impact."
+    "tagline": "Built with purpose. Driven by impact.",
+    "navigate": "Navigate",
+    "ventures": "Ventures",
+    "translate": "Translate"
   }
 }

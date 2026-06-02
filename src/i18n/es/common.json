@@ -1,0 +1,140 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "cv": "CV",
+    "projects": "Proyectos",
+    "insights": "Artículos",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "media": "Medios"
+  },
+  "hero": {
+    "tagline": "Finanzas · Impacto · Estrategia",
+    "title": "Construyendo en la Intersección del Capital, la Tecnología y el Impacto Social",
+    "subtitle": "Profesional de finanzas con cuatro títulos de posgrado, incluyendo dos de Colorado State University, Estados Unidos de América. Trabajo en la intersección de las finanzas, el emprendimiento, la sostenibilidad y la tecnología para construir empresas, analizar oportunidades y apoyar proyectos que generan impacto económico y social medible.",
+    "headline": "Profesional de Finanzas · Emprendedor · Estratega de Proyectos · Constructor de Impacto",
+    "cta_cv": "Ver CV",
+    "cta_projects": "Explorar Proyectos",
+    "cta_insights": "Leer Artículos",
+    "cta_contact": "Contactarme"
+  },
+  "sections": {
+    "credentials": "Credenciales",
+    "credentials_title": "Educación y Trayectoria Profesional",
+    "featured_projects": "Empresas y Proyectos",
+    "featured_projects_title": "Lo Que Estoy Construyendo",
+    "featured_projects_subtitle": "Plataformas tecnológicas e iniciativas estratégicas en la intersección de las finanzas, la sostenibilidad y el impacto social.",
+    "latest_insights": "Artículos",
+    "latest_insights_title": "Liderazgo de Pensamiento",
+    "latest_insights_subtitle": "Escritos sobre finanzas, emprendimiento, gestión de proyectos, sostenibilidad y el futuro económico de Haití.",
+    "services": "Servicios",
+    "services_title": "Cómo Puedo Ayudar",
+    "services_subtitle": "Apoyo estratégico en finanzas, emprendimiento, gestión de proyectos y sostenibilidad.",
+    "portfolio": "Portafolio",
+    "blog": "Blog",
+    "expertise": "Experiencia",
+    "connect": "Conectar",
+    "resume": "Currículum"
+  },
+  "cta": {
+    "title": "Construyamos Algo Significativo",
+    "subtitle": "Ya sea que esté explorando oportunidades de inversión, construyendo una startup, planificando un proyecto o trabajando en iniciativas enfocadas en Haití — me encantaría conectar.",
+    "primary": "Ponerse en Contacto",
+    "secondary": "Conocer Más Sobre Mí"
+  },
+  "contact": {
+    "title": "Ponerse en Contacto",
+    "subtitle": "Siempre estoy abierto a conversaciones sobre trabajo con propósito, colaboración y oportunidades de impacto.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "organization": "Organización",
+    "reason": "Motivo de contacto",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success_title": "Mensaje Enviado",
+    "success_message": "Gracias por comunicarse. Responderé dentro de 48 horas.",
+    "reasons": {
+      "career": "Oportunidades Profesionales",
+      "consulting": "Proyectos de Consultoría",
+      "startup": "Asociaciones de Startups",
+      "speaking": "Conferencias / Enseñanza",
+      "investment": "Inversión y Conversaciones de Riesgo",
+      "haiti": "Iniciativas Enfocadas en Haití",
+      "general": "Consulta General"
+    }
+  },
+  "about": {
+    "title": "La Historia Detrás del Trabajo",
+    "subtitle": "Finanzas, emprendimiento e impacto — un viaje con raíces en Haití y alcance global."
+  },
+  "cv_page": {
+    "title": "Currículum Profesional",
+    "download": "Descargar PDF",
+    "summary": "Resumen Profesional",
+    "education": "Educación",
+    "experience": "Experiencia Profesional",
+    "skills": "Habilidades Técnicas",
+    "languages": "Idiomas",
+    "awards": "Premios y Reconocimientos",
+    "certifications": "Certificaciones y Desarrollo Profesional"
+  },
+  "projects_page": {
+    "title": "Proyectos y Empresas",
+    "subtitle": "Plataformas tecnológicas e iniciativas estratégicas que impulsan un impacto medible.",
+    "problem": "Problema",
+    "solution": "Solución",
+    "role": "Mi Rol",
+    "status": "Estado",
+    "technologies": "Tecnologías",
+    "impact": "Impacto",
+    "visit": "Visitar Proyecto",
+    "all": "Todos",
+    "learn_more": "Más Información"
+  },
+  "insights_page": {
+    "title": "Artículos",
+    "subtitle": "Perspectivas sobre finanzas, emprendimiento, gestión de proyectos, sostenibilidad y desarrollo.",
+    "search": "Buscar artículos...",
+    "read_article": "Leer Artículo",
+    "back": "Volver a Artículos",
+    "by": "Por",
+    "read_time": "de lectura",
+    "full_coming": "Artículo completo próximamente. Vuelva para leer la pieza completa."
+  },
+  "services_page": {
+    "title": "Cómo Puedo Ayudar",
+    "subtitle": "Apoyo estratégico en finanzas, emprendimiento, gestión de proyectos y sostenibilidad.",
+    "for_whom": "Para Quién",
+    "deliverables": "Entregables",
+    "outcomes": "Resultados",
+    "consult": "Solicitar Consulta",
+    "disclaimer": "Los servicios están sujetos a disponibilidad. Todos los compromisos comienzan con una consulta inicial."
+  },
+  "media_page": {
+    "title": "Conectar y Explorar",
+    "awards": "Premios y Reconocimientos",
+    "speaking": "Enseñanza y Conferencias",
+    "platforms": "Plataformas y Enlaces",
+    "press": "Prensa y Publicaciones"
+  },
+  "common": {
+    "read_article": "Leer Artículo",
+    "view_all": "Ver Todo",
+    "view_all_projects": "Ver Todos los Proyectos",
+    "view_all_insights": "Leer Todos los Artículos",
+    "view_services": "Ver Servicios",
+    "back": "Volver",
+    "loading": "Cargando...",
+    "no_results": "No se encontraron resultados.",
+    "search": "Buscar",
+    "all": "Todos"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados.",
+    "tagline": "Construido con propósito. Impulsado por el impacto.",
+    "navigate": "Navegar",
+    "ventures": "Empresas",
+    "translate": "Traducir"
+  }
+}

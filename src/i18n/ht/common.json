@@ -12,13 +12,25 @@
   "hero": {
     "tagline": "Finans · Enpak · Estrateji",
     "title": "Konstwi nan Entèseksyon Kapital, Teknoloji, ak Enpak Sosyal",
-    "subtitle": "Pwofesyonèl finans ak de diplòm gradye nan Colorado State University, kandida CFA Nivo I, ak antreprenè ki dedye pou kreye enpak mezurab nan mache ki ap devlope.",
-    "cta_primary": "Wè Travay Mwen",
-    "cta_secondary": "Kontakte Mwen"
+    "subtitle": "Avèk 4 diplòm gradye, tankou de nan Colorado State University, Etazini, mwen travay nan entèseksyon finans, antreprenaryat, dirab ak teknoloji pou konstwi antrepriz, analize opòtinite, epi sipòte pwojè ki kreye enpak ekonomik ak sosyal mezurab.",
+    "headline": "Pwofesyonèl Finans · Antreprenè · Estratèjis Pwojè · Konstwiktè Enpak",
+    "cta_cv": "Wè CV",
+    "cta_projects": "Eksplore Pwojè",
+    "cta_insights": "Li Atik",
+    "cta_contact": "Kontakte Mwen"
   },
   "sections": {
-    "featured_projects": "Pwojè an Vedèt",
-    "latest_insights": "Dènye Atik",
+    "credentials": "Kalifikasyon",
+    "credentials_title": "Edikasyon ak Eksperyans Pwofesyonèl",
+    "featured_projects": "Antrepriz ak Pwojè",
+    "featured_projects_title": "Sa M Ap Konstwi",
+    "featured_projects_subtitle": "Platfòm teknoloji ak inisyativ estratejik nan entèseksyon finans, dirab ak enpak sosyal.",
+    "latest_insights": "Atik",
+    "latest_insights_title": "Lidèchip Entelektyèl",
+    "latest_insights_subtitle": "Ekriti sou finans, antreprenaryat, jesyon pwojè, dirab ak avni ekonomik Ayiti.",
+    "services": "Sèvis",
+    "services_title": "Kijan Mwen Ka Ede",
+    "services_subtitle": "Sipò estratejik nan finans, antreprenaryat, jesyon pwojè ak dirab.",
     "portfolio": "Pòtfolyo",
     "blog": "Blog",
     "expertise": "Ekspètiz",
@@ -27,12 +39,12 @@
   },
   "cta": {
     "title": "Ann Konstwi Yon Bagay ki Gen Siyifikasyon",
-    "subtitle": "W ap chèche yon pwofesyonèl finans, yon estratèjis pwojè, oswa yon kolaboratè ki gen enpak? Mwen toujou ouvè pou konvèsasyon sou travay ki gen sans.",
-    "primary": "Kòmanse yon Konvèsasyon",
-    "secondary": "Wè Sèvis"
+    "subtitle": "Kit w ap eksplore opòtinite envestisman, konstwi yon startup, planifye yon pwojè, oswa travay sou inisyativ pou Ayiti — mwen ta renmen konekte.",
+    "primary": "Pran Kontak",
+    "secondary": "Aprann Plis Sou Mwen"
   },
   "contact": {
-    "title": "Kontakte Mwen",
+    "title": "Pran Kontak",
     "subtitle": "Mwen toujou ouvè pou konvèsasyon sou travay ki gen sans, kolaborasyon, ak opòtinite ki gen enpak.",
     "name": "Non konplè",
     "email": "Imèl",
@@ -41,11 +53,77 @@
     "message": "Mesaj",
     "send": "Voye Mesaj",
     "success_title": "Mesaj Voye",
-    "success_message": "Mèsi paske ou kontakte mwen. M ap reponn nan 48 èdtan."
+    "success_message": "Mèsi paske ou kontakte mwen. M ap reponn nan 48 èdtan.",
+    "reasons": {
+      "career": "Opòtinite Karyè",
+      "consulting": "Pwojè Konsiltasyon",
+      "startup": "Patenarya Startup",
+      "speaking": "Konferans / Ansèyman",
+      "investment": "Envestisman ak Konvèsasyon Kapital",
+      "haiti": "Inisyativ pou Ayiti",
+      "general": "Demann Jeneral"
+    }
+  },
+  "about": {
+    "title": "Istwa Dèyè Travay la",
+    "subtitle": "Finans, antreprenaryat ak enpak — yon vwayaj ki gen rasin nan Ayiti ak pòte mondyal."
+  },
+  "cv_page": {
+    "title": "CV Pwofesyonèl",
+    "download": "Telechaje PDF",
+    "summary": "Rezime Pwofesyonèl",
+    "education": "Edikasyon",
+    "experience": "Eksperyans Pwofesyonèl",
+    "skills": "Konpetans Teknik",
+    "languages": "Lang",
+    "awards": "Prim ak Rekonesans",
+    "certifications": "Sètifikasyon ak Devlopman Pwofesyonèl"
+  },
+  "projects_page": {
+    "title": "Pwojè ak Antrepriz",
+    "subtitle": "Platfòm teknoloji ak inisyativ estratejik ki pouse enpak mezurab.",
+    "problem": "Pwoblèm",
+    "solution": "Solisyon",
+    "role": "Wòl Mwen",
+    "status": "Estati",
+    "technologies": "Teknoloji",
+    "impact": "Enpak",
+    "visit": "Vizite Pwojè",
+    "all": "Tout",
+    "learn_more": "Aprann Plis"
+  },
+  "insights_page": {
+    "title": "Atik",
+    "subtitle": "Pèspektiv sou finans, antreprenaryat, jesyon pwojè, dirab ak devlopman.",
+    "search": "Chèche atik...",
+    "read_article": "Li Atik",
+    "back": "Retounen nan Atik",
+    "by": "Pa",
+    "read_time": "lekti",
+    "full_coming": "Atik konplè ap vini byento. Retounen pou li vèsyon konplè a."
+  },
+  "services_page": {
+    "title": "Kijan Mwen Ka Ede",
+    "subtitle": "Sipò estratejik nan finans, antreprenaryat, jesyon pwojè ak dirab.",
+    "for_whom": "Pou Kimoun",
+    "deliverables": "Livrab",
+    "outcomes": "Rezilta",
+    "consult": "Mande Konsiltasyon",
+    "disclaimer": "Sèvis yo sijè a disponibilite. Tout angajman kòmanse ak yon premye konsiltasyon."
+  },
+  "media_page": {
+    "title": "Konekte ak Eksplore",
+    "awards": "Prim ak Rekonesans",
+    "speaking": "Ansèyman ak Konferans",
+    "platforms": "Platfòm ak Lyen",
+    "press": "Laprès ak Piblikasyon"
   },
   "common": {
-    "read_article": "Li Atik la",
+    "read_article": "Li Atik",
     "view_all": "Wè Tout",
+    "view_all_projects": "Wè Tout Pwojè",
+    "view_all_insights": "Li Tout Atik",
+    "view_services": "Wè Sèvis",
     "back": "Retounen",
     "loading": "Ap chaje...",
     "no_results": "Pa gen rezilta.",
@@ -54,6 +132,9 @@
   },
   "footer": {
     "copyright": "Tout dwa rezève.",
-    "tagline": "Konstwi avèk objektif. Gide pa enpak."
+    "tagline": "Konstwi avèk objektif. Gide pa enpak.",
+    "navigate": "Navigasyon",
+    "ventures": "Antrepriz",
+    "translate": "Tradui"
   }
 }

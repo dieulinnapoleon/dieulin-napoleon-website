@@ -3,25 +3,27 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { LanguageSwitcher } from './language-switcher';
+import { useTranslation } from '@/lib/translation';
 
-const NAV_LINKS = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'CV', href: '/cv' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Insights', href: '/insights' },
-  { label: 'Services', href: '/services' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Media', href: '/media' },
+const NAV_KEYS = [
+  { key: 'home', href: '/' },
+  { key: 'about', href: '/about' },
+  { key: 'cv', href: '/cv' },
+  { key: 'projects', href: '/projects' },
+  { key: 'insights', href: '/insights' },
+  { key: 'services', href: '/services' },
+  { key: 'contact', href: '/contact' },
+  { key: 'media', href: '/media' },
 ];
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -74,7 +76,7 @@ export function Navigation() {
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-1">
-          {NAV_LINKS.map((link) => (
+          {NAV_KEYS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -85,7 +87,7 @@ export function Navigation() {
                   : scrolled ? 'text-gray-600 hover:text-navy hover:bg-gray-50' : 'text-white/70 hover:text-white hover:bg-white/10'
               )}
             >
-              {link.label}
+              {t(`nav.${link.key}`)}
             </Link>
           ))}
 
@@ -111,7 +113,7 @@ export function Navigation() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl animate-fade-in">
           <div className="section-container py-4 space-y-1">
-            {NAV_LINKS.map((link) => (
+            {NAV_KEYS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -122,7 +124,7 @@ export function Navigation() {
                     : 'text-gray-600 hover:text-navy hover:bg-gray-50'
                 )}
               >
-                {link.label}
+                {t(`nav.${link.key}`)}
               </Link>
             ))}
             <div className="pt-3 mt-3 border-t border-gray-100 px-4">

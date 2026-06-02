@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { LOCALES, type Locale } from '@/types';
+import { useTranslation } from '@/lib/translation';
 
 interface Props {
   scrolled: boolean;
@@ -11,19 +12,8 @@ interface Props {
 
 export function LanguageSwitcher({ scrolled }: Props) {
   const [open, setOpen] = useState(false);
-  const [currentLocale, setCurrentLocale] = useState<Locale>('en');
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Read locale from cookie or localStorage
-    const stored = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('locale='))
-      ?.split('=')[1] as Locale | undefined;
-    if (stored && LOCALES.some(l => l.code === stored)) {
-      setCurrentLocale(stored);
-    }
-  }, []);
+  const { locale, setLocale } = useTranslation();
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -33,16 +23,12 @@ export function LanguageSwitcher({ scrolled }: Props) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const switchLocale = (locale: Locale) => {
-    setCurrentLocale(locale);
-    document.cookie = `locale=${locale}; path=/; max-age=${365 * 24 * 60 * 60}`;
+  const switchLocale = (newLocale: Locale) => {
+    setLocale(newLocale);
     setOpen(false);
-    // In production, this would trigger a page reload with the new locale
-    // or use next-intl's routing to switch
-    window.location.reload();
   };
 
-  const current = LOCALES.find(l => l.code === currentLocale)!;
+  const current = LOCALES.find(l => l.code === locale)!;
 
   return (
     <div ref={ref} className="relative">
@@ -63,20 +49,20 @@ export function LanguageSwitcher({ scrolled }: Props) {
 
       {open && (
         <div className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-xl border border-gray-100 py-1 min-w-[180px] animate-fade-in z-50">
-          {LOCALES.map((locale) => (
+          {LOCALES.map((loc) => (
             <button
-              key={locale.code}
-              onClick={() => switchLocale(locale.code)}
+              key={loc.code}
+              onClick={() => switchLocale(loc.code)}
               className={cn(
                 'w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors',
-                locale.code === currentLocale
+                loc.code === locale
                   ? 'text-gold bg-gold-50 font-medium'
                   : 'text-gray-600 hover:bg-gray-50'
               )}
             >
-              <span className="text-base">{locale.flag}</span>
-              <span>{locale.nativeName}</span>
-              {locale.code === currentLocale && (
+              <span className="text-base">{loc.flag}</span>
+              <span>{loc.nativeName}</span>
+              {loc.code === locale && (
                 <span className="ml-auto text-gold text-xs">✓</span>
               )}
             </button>

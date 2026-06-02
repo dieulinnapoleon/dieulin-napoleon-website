@@ -12,13 +12,25 @@
   "hero": {
     "tagline": "Finance · Impact · Stratégie",
     "title": "Construire à l'Intersection du Capital, de la Technologie et de l'Impact Social",
-    "subtitle": "Professionnel de la finance avec deux diplômes de troisième cycle de la Colorado State University, candidat CFA Niveau I et entrepreneur en série dédié à la création d'un impact mesurable dans les marchés émergents.",
-    "cta_primary": "Voir Mon Travail",
-    "cta_secondary": "Me Contacter"
+    "subtitle": "Avec 4 diplômes de troisième cycle, dont deux de Colorado State University, États-Unis d'Amérique, je travaille à l'intersection de la finance, de l'entrepreneuriat, de la durabilité et de la technologie pour construire des entreprises, analyser des opportunités et soutenir des projets qui créent un impact économique et social mesurable.",
+    "headline": "Professionnel de la Finance · Entrepreneur · Stratège de Projets · Bâtisseur d'Impact",
+    "cta_cv": "Voir le CV",
+    "cta_projects": "Explorer les Projets",
+    "cta_insights": "Lire les Articles",
+    "cta_contact": "Me Contacter"
   },
   "sections": {
-    "featured_projects": "Projets en Vedette",
-    "latest_insights": "Derniers Articles",
+    "credentials": "Références",
+    "credentials_title": "Formation et Parcours Professionnel",
+    "featured_projects": "Entreprises et Projets",
+    "featured_projects_title": "Ce Que Je Construis",
+    "featured_projects_subtitle": "Plateformes technologiques et initiatives stratégiques à l'intersection de la finance, de la durabilité et de l'impact social.",
+    "latest_insights": "Articles",
+    "latest_insights_title": "Leadership Intellectuel",
+    "latest_insights_subtitle": "Écrits sur la finance, l'entrepreneuriat, la gestion de projets, la durabilité et l'avenir économique d'Haïti.",
+    "services": "Services",
+    "services_title": "Comment Je Peux Aider",
+    "services_subtitle": "Accompagnement stratégique en finance, entrepreneuriat, gestion de projets et durabilité.",
     "portfolio": "Portfolio",
     "blog": "Blog",
     "expertise": "Expertise",
@@ -27,25 +39,91 @@
   },
   "cta": {
     "title": "Construisons Quelque Chose de Significatif",
-    "subtitle": "Vous cherchez un professionnel de la finance, un stratège de projets ou un collaborateur axé sur l'impact ? Je suis toujours ouvert aux conversations sur le travail porteur de sens.",
-    "primary": "Commencer une Conversation",
-    "secondary": "Voir les Services"
+    "subtitle": "Que vous exploriez des opportunités d'investissement, construisiez une startup, planifiiez un projet ou travailliez sur des initiatives axées sur Haïti — j'aimerais échanger.",
+    "primary": "Prendre Contact",
+    "secondary": "En Savoir Plus Sur Moi"
   },
   "contact": {
-    "title": "Me Contacter",
+    "title": "Prendre Contact",
     "subtitle": "Je suis toujours ouvert aux conversations sur le travail porteur de sens, la collaboration et les opportunités à impact.",
     "name": "Nom complet",
     "email": "Courriel",
     "organization": "Organisation",
-    "reason": "Raison du contact",
+    "reason": "Motif du contact",
     "message": "Message",
     "send": "Envoyer le Message",
     "success_title": "Message Envoyé",
-    "success_message": "Merci de m'avoir contacté. Je répondrai dans les 48 heures."
+    "success_message": "Merci de m'avoir contacté. Je répondrai dans les 48 heures.",
+    "reasons": {
+      "career": "Opportunités de Carrière",
+      "consulting": "Projets de Conseil",
+      "startup": "Partenariats de Startups",
+      "speaking": "Conférences / Enseignement",
+      "investment": "Investissement et Capital-Risque",
+      "haiti": "Initiatives Axées sur Haïti",
+      "general": "Demande Générale"
+    }
+  },
+  "about": {
+    "title": "L'Histoire Derrière le Travail",
+    "subtitle": "Finance, entrepreneuriat et impact — un parcours enraciné en Haïti avec une portée mondiale."
+  },
+  "cv_page": {
+    "title": "Curriculum Vitae",
+    "download": "Télécharger PDF",
+    "summary": "Résumé Professionnel",
+    "education": "Formation",
+    "experience": "Expérience Professionnelle",
+    "skills": "Compétences Techniques",
+    "languages": "Langues",
+    "awards": "Prix et Distinctions",
+    "certifications": "Certifications et Développement Professionnel"
+  },
+  "projects_page": {
+    "title": "Projets et Entreprises",
+    "subtitle": "Plateformes technologiques et initiatives stratégiques générant un impact mesurable.",
+    "problem": "Problème",
+    "solution": "Solution",
+    "role": "Mon Rôle",
+    "status": "Statut",
+    "technologies": "Technologies",
+    "impact": "Impact",
+    "visit": "Visiter le Projet",
+    "all": "Tous",
+    "learn_more": "En Savoir Plus"
+  },
+  "insights_page": {
+    "title": "Articles",
+    "subtitle": "Perspectives sur la finance, l'entrepreneuriat, la gestion de projets, la durabilité et le développement.",
+    "search": "Rechercher des articles...",
+    "read_article": "Lire l'Article",
+    "back": "Retour aux Articles",
+    "by": "Par",
+    "read_time": "de lecture",
+    "full_coming": "Article complet à venir. Revenez pour lire la version complète."
+  },
+  "services_page": {
+    "title": "Comment Je Peux Aider",
+    "subtitle": "Accompagnement stratégique en finance, entrepreneuriat, gestion de projets et durabilité.",
+    "for_whom": "Pour Qui",
+    "deliverables": "Livrables",
+    "outcomes": "Résultats",
+    "consult": "Demander une Consultation",
+    "disclaimer": "Les services sont soumis à disponibilité. Chaque engagement commence par une consultation initiale."
+  },
+  "media_page": {
+    "title": "Connecter et Explorer",
+    "awards": "Prix et Distinctions",
+    "speaking": "Enseignement et Conférences",
+    "platforms": "Plateformes et Liens",
+    "press": "Presse et Publications"
   },
   "common": {
     "read_article": "Lire l'Article",
     "view_all": "Voir Tout",
+    "view_all_projects": "Voir Tous les Projets",
+    "view_all_insights": "Lire Tous les Articles",
+    "view_services": "Voir les Services",
     "back": "Retour",
     "loading": "Chargement...",
     "no_results": "Aucun résultat trouvé.",
@@ -54,6 +132,9 @@
   },
   "footer": {
     "copyright": "Tous droits réservés.",
-    "tagline": "Construit avec intention. Guidé par l'impact."
+    "tagline": "Construit avec intention. Guidé par l'impact.",
+    "navigate": "Naviguer",
+    "ventures": "Entreprises",
+    "translate": "Traduire"
   }
 }

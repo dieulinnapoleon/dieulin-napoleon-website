@@ -3,8 +3,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import { Save } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { listDocs, setDoc } from '@/lib/admin-api';
 import { useToast } from '@/components/ui/toast';
+import { listDocs, setDoc } from '@/lib/admin-api';
 
 const SETTING_KEYS = [
   { key: 'site_title', label: 'Site Title', type: 'text' },
@@ -21,20 +21,15 @@ export default function AdminSiteSettingsPage() {
   const [settings, setSettings] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [saved, setSaved] = useState(false);
   const toast = useToast();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchSettings = useCallback(async () => {
     try {
       const docs = await listDocs<{ id: string; value: string }>('siteSettings');
-      const mapped = docs.reduce((acc, doc) => {
-        acc[doc.id] = doc.value;
-        return acc;
-      }, {} as Record<string, string>);
+      const mapped = docs.reduce((acc, doc) => { acc[doc.id] = doc.value; return acc; }, {} as Record<string, string>);
       setSettings(mapped);
-    } catch (err) {
-      console.error(err);
-    }
+    } catch (err: any) { toast.error('Failed to load settings'); }
     setLoading(false);
   }, []);
 
@@ -42,13 +37,15 @@ export default function AdminSiteSettingsPage() {
 
   const handleSave = async () => {
     setSaving(true);
-    setSaved(false);
-    for (const [key, value] of Object.entries(settings)) {
-      await setDoc('siteSettings', key, { value });
+    try {
+      for (const [key, value] of Object.entries(settings)) {
+        await setDoc('siteSettings', key, { value });
+      }
+      toast.success('Settings saved');
+    } catch (err: any) {
+      toast.error(err.message || 'Failed to save settings');
     }
     setSaving(false);
-    setSaved(true);
-    setTimeout(() => setSaved(false), 3000);
   };
 
   if (loading) return <div className="text-gray-500">Loading settings...</div>;
@@ -67,29 +64,14 @@ export default function AdminSiteSettingsPage() {
           <div key={setting.key}>
             <label className="block text-sm font-medium text-navy mb-1">{setting.label}</label>
             {setting.type === 'textarea' ? (
-              <textarea
-                value={settings[setting.key] ?? ''}
-                onChange={(e) => setSettings({ ...settings, [setting.key]: e.target.value })}
-                className="input-field"
-                rows={3}
-              />
+              <textarea value={settings[setting.key] ?? ''} onChange={(e) => setSettings({ ...settings, [setting.key]: e.target.value })} className="input-field" rows={3} />
             ) : (
-              <input
-                value={settings[setting.key] ?? ''}
-                onChange={(e) => setSettings({ ...settings, [setting.key]: e.target.value })}
-                className="input-field"
-              />
+              <input value={settings[setting.key] ?? ''} onChange={(e) => setSettings({ ...settings, [setting.key]: e.target.value })} className="input-field" />
             )}
           </div>
         ))}
-
         <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-          <Button onClick={handleSave} loading={saving}>
-            <Save size={16} /> Save Settings
-          </Button>
-          {saved && (
-            <span className="text-sm text-emerald font-medium animate-fade-in">Settings saved!</span>
-          )}
+          <Button onClick={handleSave} loading={saving}><Save size={16} /> Save Settings</Button>
         </div>
       </div>
     </div>

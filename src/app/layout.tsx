@@ -67,6 +67,8 @@ const personSchema = {
   ],
 };
 
+import { TranslationProvider } from '@/lib/translation';
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -81,9 +83,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <TranslationProvider>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </TranslationProvider>
       </body>
     </html>
   );

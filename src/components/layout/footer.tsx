@@ -1,26 +1,23 @@
+'use client';
+
 import Link from 'next/link';
-import { getSocialLinks } from '@/lib/data';
 import { Linkedin, Github, Mail, Globe } from 'lucide-react';
+import { useTranslation } from '@/lib/translation';
+import { FALLBACK_SOCIAL } from '@/lib/fallback-data';
 
-const FOOTER_NAV = [
-  { label: 'About', href: '/about' },
-  { label: 'CV', href: '/cv' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Insights', href: '/insights' },
-  { label: 'Services', href: '/services' },
-  { label: 'Contact', href: '/contact' },
+const FOOTER_NAV_KEYS = [
+  { key: 'about', href: '/about' },
+  { key: 'cv', href: '/cv' },
+  { key: 'projects', href: '/projects' },
+  { key: 'insights', href: '/insights' },
+  { key: 'services', href: '/services' },
+  { key: 'contact', href: '/contact' },
 ];
 
-const VENTURES = [
-  'Creasti',
-  'FINANCEM',
-  'PATRIYA',
-  'LINEON Group',
-  'ReSource Haiti',
-];
+const VENTURES = ['Creasti', 'FINANCEM', 'PATRIYA', 'LINEON Group', 'ReSource Haiti'];
 
-export async function Footer() {
-  const socials = await getSocialLinks();
+export function Footer() {
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-navy text-white/60">
@@ -34,23 +31,24 @@ export async function Footer() {
               </div>
               <div>
                 <p className="font-display font-semibold text-white text-[15px]">Dieulin Napoleon</p>
-                <p className="text-[10px] font-semibold tracking-[0.12em] uppercase text-gold">Finance · Impact · Strategy</p>
+                <p className="text-[10px] font-semibold tracking-[0.12em] uppercase text-gold">
+                  {t('hero.tagline')}
+                </p>
               </div>
             </div>
             <p className="text-sm leading-relaxed mt-4">
-              Finance professional, entrepreneur, and project strategist building at the intersection of
-              capital markets, technology, and social impact.
+              {t('footer.tagline')}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="font-display font-semibold text-white text-sm mb-4">Navigation</h3>
+            <h3 className="font-display font-semibold text-white text-sm mb-4">{t('footer.navigate')}</h3>
             <ul className="space-y-2">
-              {FOOTER_NAV.map((link) => (
+              {FOOTER_NAV_KEYS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-gold transition-colors">
-                    {link.label}
+                    {t(`nav.${link.key}`)}
                   </Link>
                 </li>
               ))}
@@ -59,7 +57,7 @@ export async function Footer() {
 
           {/* Ventures */}
           <div>
-            <h3 className="font-display font-semibold text-white text-sm mb-4">Ventures</h3>
+            <h3 className="font-display font-semibold text-white text-sm mb-4">{t('footer.ventures')}</h3>
             <ul className="space-y-2">
               {VENTURES.map((v) => (
                 <li key={v} className="text-sm">{v}</li>
@@ -69,9 +67,9 @@ export async function Footer() {
 
           {/* Connect */}
           <div>
-            <h3 className="font-display font-semibold text-white text-sm mb-4">Connect</h3>
+            <h3 className="font-display font-semibold text-white text-sm mb-4">{t('sections.connect')}</h3>
             <div className="flex gap-3 mb-4">
-              {socials.map((social) => (
+              {FALLBACK_SOCIAL.map((social) => (
                 <a
                   key={social.id}
                   href={social.url}
@@ -93,10 +91,10 @@ export async function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} Dieulin Napoleon. All rights reserved.
+            © {new Date().getFullYear()} Dieulin Napoleon. {t('footer.copyright')}
           </p>
           <p className="text-xs text-white/20">
-            Built with purpose. Driven by impact.
+            {t('footer.tagline')}
           </p>
         </div>
       </div>

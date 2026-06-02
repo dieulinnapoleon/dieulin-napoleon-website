@@ -132,7 +132,7 @@ export interface MediaItem {
 // I18N TYPES
 // ===========================================
 
-export type Locale = 'en' | 'fr' | 'ht';
+export type Locale = 'en' | 'fr' | 'ht' | 'es';
 
 export interface LocaleConfig {
   code: Locale;
@@ -144,6 +144,7 @@ export interface LocaleConfig {
 export const LOCALES: LocaleConfig[] = [
   { code: 'en', name: 'English', nativeName: 'English', flag: '🇺🇸' },
   { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
   { code: 'ht', name: 'Haitian Creole', nativeName: 'Kreyòl Ayisyen', flag: '🇭🇹' },
 ];
 
