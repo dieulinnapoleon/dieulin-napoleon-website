@@ -166,25 +166,10 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           )}
 
-          {/* Share */}
-          <div className="flex items-center gap-3 mt-8 mb-8">
+                    <div className="flex items-center gap-3 mt-8 mb-8">
             <span className="text-sm text-gray-400 font-medium">Share:</span>
-            
-              href={'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://dieulinnapoleon.com/insights/' + post.slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0A66C2]/10 text-[#0A66C2] text-xs font-semibold hover:bg-[#0A66C2]/20 transition-colors"
-            >
-              LinkedIn
-            </a>
-            
-              href={'https://twitter.com/intent/tweet?text=' + encodeURIComponent(post.title) + '&url=' + encodeURIComponent('https://dieulinnapoleon.com/insights/' + post.slug)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 text-xs font-semibold hover:bg-gray-200 transition-colors"
-            >
-              X / Twitter
-            </a>
+            <a href={'https://www.linkedin.com/sharing/share-offsite/?url=https://dieulinnapoleon.com/insights/' + post.slug} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0A66C2]/10 text-[#0A66C2] text-xs font-semibold hover:bg-[#0A66C2]/20 transition-colors">LinkedIn</a>
+            <a href={'https://twitter.com/intent/tweet?url=https://dieulinnapoleon.com/insights/' + post.slug} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 text-xs font-semibold hover:bg-gray-200 transition-colors">X / Twitter</a>
           </div>
 
           {/* Tags */}
