@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     title: 'Dieulin Napoleon | Finance · Impact · Strategy',
     description:
       'Finance professional, entrepreneur, and project strategist building at the intersection of capital markets, technology, and social impact.',
-    images: [{ url: '/images/og-default.png', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+    images: [{ url: '/images/Dieulin-website.jpg', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dieulin Napoleon | Finance · Impact · Strategy',
     description: 'Finance, entrepreneurship, and social impact.',
-    images: ['/images/og-default.png'],
+    images: ['/images/Dieulin-website.jpg'],
   },
   robots: {
     index: true,

@@ -2,17 +2,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, GraduationCap, Briefcase, Leaf, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getBlogPosts, getProjects, getServices } from '@/lib/data';
+import { getBlogPosts, getProjects, getServices, getSiteSettings } from '@/lib/data';
 import { formatDate } from '@/lib/utils';
 
 export const revalidate = 3600; // ISR: revalidate every hour
 
 export default async function HomePage() {
-  const [posts, projects, services] = await Promise.all([
+  const [posts, projects, services, siteSettings] = await Promise.all([
     getBlogPosts(),
     getProjects(),
     getServices(),
+    getSiteSettings(),
   ]);
+
+  const profilePhotoUrl = siteSettings.profile_photo_url || '/images/Dieulin-website.jpg';
 
   const featuredProjects = projects.slice(0, 3);
   const recentPosts = posts.slice(0, 3);
@@ -46,19 +49,19 @@ export default async function HomePage() {
                   2. Uncomment the <Image> tag and remove the placeholder <div>
                 */}
                 <div className="hidden md:block shrink-0 mb-2">
-                  {/* Placeholder — shows initials until you add a real photo */}
                   <div className="w-28 h-28 rounded-2xl bg-gradient-to-br from-gold/30 to-gold/10 border-2 border-gold/30 flex items-center justify-center overflow-hidden">
-                    {/* Uncomment below and remove the User icon when you have a photo:
-                    <Image
-                      src="/images/dieulin-napoleon.jpg"
-                      alt="Dieulin Napoleon"
-                      width={112}
-                      height={112}
-                      className="w-full h-full object-cover"
-                      priority
-                    />
-                    */}
-                    <User size={40} className="text-gold/60" />
+                    {profilePhotoUrl ? (
+                      <Image
+                        src={profilePhotoUrl}
+                        alt="Dieulin Napoleon professional portrait"
+                        width={112}
+                        height={112}
+                        className="w-full h-full object-cover"
+                        priority
+                      />
+                    ) : (
+                      <User size={40} className="text-gold/60" />
+                    )}
                   </div>
                 </div>
               </div>
@@ -107,8 +110,11 @@ export default async function HomePage() {
                     Uncomment <Image> and remove the fallback when you add a photo.
                   */}
                   <div className="w-14 h-14 rounded-xl bg-gold/20 border border-gold/30 flex items-center justify-center overflow-hidden">
-                    {/* <Image src="/images/dieulin-napoleon.jpg" alt="DN" width={56} height={56} className="w-full h-full object-cover" /> */}
-                    <span className="font-display font-bold text-xl text-white">DN</span>
+                    {profilePhotoUrl ? (
+                      <Image src={profilePhotoUrl} alt="DN" width={56} height={56} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="font-display font-bold text-xl text-white">DN</span>
+                    )}
                   </div>
                   <div>
                     <p className="font-display font-semibold text-white text-lg">Dieulin Napoleon</p>
