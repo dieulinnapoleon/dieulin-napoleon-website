@@ -63,7 +63,7 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <p className="text-gold-light text-[clamp(15px,2vw,18px)] font-medium tracking-wide mb-6">
+              <p className="text-gold-300 text-[clamp(15px,2vw,18px)] font-medium tracking-wide mb-6">
                 Finance Professional · Entrepreneur · Project Strategist · Impact-Driven Builder
               </p>
 
@@ -76,7 +76,7 @@ export default async function HomePage() {
 
               <div className="flex flex-wrap gap-3">
                 <Link href="/cv">
-                  <Button className="bg-gold hover:bg-gold-light text-white">
+                  <Button className="bg-gold hover:bg-gold-300 text-white">
                     View CV <ArrowRight size={16} />
                   </Button>
                 </Link>
@@ -301,7 +301,7 @@ export default async function HomePage() {
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <Link href="/contact">
-              <Button size="lg" className="bg-gold hover:bg-gold-light text-white">
+              <Button size="lg" className="bg-gold hover:bg-gold-300 text-white">
                 Get in Touch <ArrowRight size={18} />
               </Button>
             </Link>
