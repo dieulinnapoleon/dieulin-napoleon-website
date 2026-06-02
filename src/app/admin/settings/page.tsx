@@ -118,7 +118,7 @@ export default function AdminSettingsPage() {
               <label className="block text-sm font-medium text-navy mb-1">Platform <span className="text-red-400">*</span></label>
               <select value={editing.platform ?? ''} onChange={(e) => setEditing({ ...editing, platform: e.target.value })} className="input-field">
                 <option value="">Select...</option>
-                {['LinkedIn', 'GitHub', 'Twitter / X', 'Blog', 'Email', 'Website', 'YouTube', 'Instagram', 'Facebook'].map((p) => (
+                {['LinkedIn', 'GitHub', 'Twitter / X', 'Facebook', 'Instagram', 'Blog', 'Email', 'Website', 'YouTube'].map((p) => (
                   <option key={p} value={p}>{p}</option>
                 ))}
               </select>

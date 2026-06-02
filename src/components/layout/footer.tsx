@@ -1,9 +1,13 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Linkedin, Github, Mail, Globe } from 'lucide-react';
+import { Linkedin, Github, Mail, Globe, Instagram, Facebook } from 'lucide-react';
 import { useTranslation } from '@/lib/translation';
 import { FALLBACK_SOCIAL } from '@/lib/fallback-data';
+import { getFirebaseClient } from '@/lib/firebase-client';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import type { SocialLink } from '@/types';
 
 const FOOTER_NAV_KEYS = [
   { key: 'about', href: '/about' },
@@ -18,12 +22,28 @@ const VENTURES = ['Creasti', 'FINANCEM', 'PATRIYA', 'LINEON Group', 'ReSource Ha
 
 export function Footer() {
   const { t } = useTranslation();
+  const [socials, setSocials] = useState<SocialLink[]>(FALLBACK_SOCIAL);
+
+  useEffect(() => {
+    async function fetchSocials() {
+      try {
+        const { db } = getFirebaseClient();
+        const q = query(collection(db, 'socialLinks'), orderBy('sort_order'));
+        const snap = await getDocs(q);
+        if (!snap.empty) {
+          setSocials(snap.docs.map(doc => ({ id: doc.id, ...doc.data() } as SocialLink)));
+        }
+      } catch {
+        // Keep fallback
+      }
+    }
+    fetchSocials();
+  }, []);
 
   return (
     <footer className="bg-navy text-white/60">
       <div className="section-container pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center font-display font-bold text-sm text-white">
@@ -41,21 +61,19 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Navigation */}
           <div>
             <h3 className="font-display font-semibold text-white text-sm mb-4">{t('footer.navigate')}</h3>
             <ul className="space-y-2">
               {FOOTER_NAV_KEYS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm hover:text-gold transition-colors">
-                    {t(`nav.${link.key}`)}
+                    {t('nav.' + link.key)}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Ventures */}
           <div>
             <h3 className="font-display font-semibold text-white text-sm mb-4">{t('footer.ventures')}</h3>
             <ul className="space-y-2">
@@ -65,12 +83,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Connect */}
           <div>
             <h3 className="font-display font-semibold text-white text-sm mb-4">{t('sections.connect')}</h3>
-            <div className="flex gap-3 mb-4">
-              {FALLBACK_SOCIAL.map((social) => (
-                <a
+            <div className="flex flex-wrap gap-3 mb-4">
+              {socials.map((social) => (
+                
                   key={social.id}
                   href={social.url}
                   target="_blank"
@@ -88,7 +105,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
             © {new Date().getFullYear()} Dieulin Napoleon. {t('footer.copyright')}
@@ -106,6 +122,8 @@ function SocialIcon({ platform }: { platform: string }) {
   const p = platform.toLowerCase();
   if (p.includes('linkedin')) return <Linkedin size={16} />;
   if (p.includes('github')) return <Github size={16} />;
+  if (p.includes('instagram')) return <Instagram size={16} />;
+  if (p.includes('facebook')) return <Facebook size={16} />;
   if (p.includes('mail') || p.includes('email')) return <Mail size={16} />;
   return <Globe size={16} />;
 }
