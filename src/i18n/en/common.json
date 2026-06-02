@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "cv": "CV",
+    "projects": "Projects",
+    "insights": "Insights",
+    "services": "Services",
+    "contact": "Contact",
+    "media": "Media"
+  },
+  "hero": {
+    "tagline": "Finance · Impact · Strategy",
+    "title": "Building at the Intersection of Capital, Technology, and Social Impact",
+    "subtitle": "Finance professional with dual graduate degrees from Colorado State University, CFA Level I Candidate, and serial entrepreneur dedicated to creating measurable impact in emerging markets.",
+    "cta_primary": "View My Work",
+    "cta_secondary": "Get in Touch"
+  },
+  "sections": {
+    "featured_projects": "Featured Projects",
+    "latest_insights": "Latest Insights",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "expertise": "Expertise",
+    "connect": "Connect",
+    "resume": "Resume"
+  },
+  "cta": {
+    "title": "Let's Build Something Meaningful",
+    "subtitle": "Looking for a finance professional, project strategist, or impact-driven collaborator? I'm always open to conversations about purposeful work.",
+    "primary": "Start a Conversation",
+    "secondary": "View Services"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "I am always open to conversations about purposeful work, collaboration, and impactful opportunities.",
+    "name": "Full Name",
+    "email": "Email",
+    "organization": "Organization",
+    "reason": "Reason for Contact",
+    "message": "Message",
+    "send": "Send Message",
+    "success_title": "Message Sent",
+    "success_message": "Thank you for reaching out. I will respond within 48 hours."
+  },
+  "common": {
+    "read_article": "Read Article",
+    "view_all": "View All",
+    "back": "Back",
+    "loading": "Loading...",
+    "no_results": "No results found.",
+    "search": "Search",
+    "all": "All"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "tagline": "Built with purpose. Driven by impact."
+  }
+}

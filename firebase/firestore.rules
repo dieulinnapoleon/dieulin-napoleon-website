@@ -1,0 +1,85 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─── Helper Functions ───────────────────────────────────────────
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isAuthenticated()
+        && exists(/databases/$(database)/documents/adminUsers/$(request.auth.uid));
+    }
+
+    // ─── Public Content (read-only for published items) ─────────────
+
+    match /blogPosts/{postId} {
+      allow read: if resource.data.published == true;
+      allow read, write: if isAdmin();
+    }
+
+    match /projects/{projectId} {
+      allow read: if resource.data.published == true;
+      allow read, write: if isAdmin();
+    }
+
+    match /services/{serviceId} {
+      allow read: if resource.data.published == true;
+      allow read, write: if isAdmin();
+    }
+
+    match /mediaItems/{itemId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /socialLinks/{linkId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /siteSettings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /hero/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ─── CV Sections (subcollections) ───────────────────────────────
+
+    match /cvSections/{sectionId} {
+      allow read: if true;
+      allow write: if isAdmin();
+
+      match /items/{itemId} {
+        allow read: if true;
+        allow write: if isAdmin();
+      }
+    }
+
+    // ─── Contact Messages ───────────────────────────────────────────
+    // Anyone can create (submit a contact form)
+    // Only admins can read, update, or delete
+
+    match /contactMessages/{messageId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // ─── Admin Users ────────────────────────────────────────────────
+    // Only admins can read/write admin user records
+
+    match /adminUsers/{userId} {
+      allow read, write: if isAdmin();
+    }
+
+    // ─── Default: deny everything else ──────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

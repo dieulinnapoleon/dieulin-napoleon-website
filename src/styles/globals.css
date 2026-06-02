@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-charcoal bg-white;
+  }
+
+  ::selection {
+    @apply bg-gold-100 text-navy;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-content mx-auto px-6 md:px-8;
+  }
+
+  .page-header {
+    @apply bg-navy pt-32 pb-16 text-center;
+  }
+
+  .page-header-label {
+    @apply text-[11px] font-bold tracking-[0.15em] uppercase text-gold mb-4;
+  }
+
+  .page-header-title {
+    @apply font-display text-section-title font-bold text-white mb-4;
+  }
+
+  .page-header-subtitle {
+    @apply text-white/50 text-[17px] max-w-2xl mx-auto;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 overflow-hidden
+           transition-all duration-300 hover:shadow-lg hover:border-gray-200;
+  }
+
+  .card-gold-bar {
+    @apply h-1.5 bg-gradient-to-r from-gold to-blue-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 bg-gold text-white
+           font-semibold text-sm rounded-xl transition-all duration-300
+           hover:bg-gold-500 hover:shadow-lg hover:shadow-gold/20;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border-2 border-navy
+           text-navy font-semibold text-sm rounded-xl transition-all duration-300
+           hover:bg-navy hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold
+           text-gold hover:text-gold-500 transition-colors;
+  }
+
+  .tag {
+    @apply inline-flex text-[11px] text-gray-400 bg-gray-50 px-2 py-0.5 rounded;
+  }
+
+  .category-badge {
+    @apply text-[11px] font-bold uppercase tracking-wider text-blue-700
+           bg-blue-50 px-2 py-0.5 rounded;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 text-sm
+           font-body outline-none transition-all duration-200
+           focus:border-gold focus:ring-2 focus:ring-gold/20;
+  }
+
+  /* Admin-specific */
+  .admin-sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm
+           font-medium transition-colors text-navy-200
+           hover:bg-navy-400/50 hover:text-white;
+  }
+
+  .admin-sidebar-link.active {
+    @apply bg-gold/20 text-gold;
+  }
+
+  .admin-card {
+    @apply bg-white rounded-xl border border-gray-100 p-6;
+  }
+
+  .admin-table {
+    @apply w-full text-sm;
+  }
+
+  .admin-table th {
+    @apply text-left text-xs font-semibold uppercase tracking-wider
+           text-gray-400 pb-3 border-b border-gray-100;
+  }
+
+  .admin-table td {
+    @apply py-3 border-b border-gray-50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+}

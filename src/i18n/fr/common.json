@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "cv": "CV",
+    "projects": "Projets",
+    "insights": "Articles",
+    "services": "Services",
+    "contact": "Contact",
+    "media": "Médias"
+  },
+  "hero": {
+    "tagline": "Finance · Impact · Stratégie",
+    "title": "Construire à l'Intersection du Capital, de la Technologie et de l'Impact Social",
+    "subtitle": "Professionnel de la finance avec deux diplômes de troisième cycle de la Colorado State University, candidat CFA Niveau I et entrepreneur en série dédié à la création d'un impact mesurable dans les marchés émergents.",
+    "cta_primary": "Voir Mon Travail",
+    "cta_secondary": "Me Contacter"
+  },
+  "sections": {
+    "featured_projects": "Projets en Vedette",
+    "latest_insights": "Derniers Articles",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "expertise": "Expertise",
+    "connect": "Connexion",
+    "resume": "CV"
+  },
+  "cta": {
+    "title": "Construisons Quelque Chose de Significatif",
+    "subtitle": "Vous cherchez un professionnel de la finance, un stratège de projets ou un collaborateur axé sur l'impact ? Je suis toujours ouvert aux conversations sur le travail porteur de sens.",
+    "primary": "Commencer une Conversation",
+    "secondary": "Voir les Services"
+  },
+  "contact": {
+    "title": "Me Contacter",
+    "subtitle": "Je suis toujours ouvert aux conversations sur le travail porteur de sens, la collaboration et les opportunités à impact.",
+    "name": "Nom complet",
+    "email": "Courriel",
+    "organization": "Organisation",
+    "reason": "Raison du contact",
+    "message": "Message",
+    "send": "Envoyer le Message",
+    "success_title": "Message Envoyé",
+    "success_message": "Merci de m'avoir contacté. Je répondrai dans les 48 heures."
+  },
+  "common": {
+    "read_article": "Lire l'Article",
+    "view_all": "Voir Tout",
+    "back": "Retour",
+    "loading": "Chargement...",
+    "no_results": "Aucun résultat trouvé.",
+    "search": "Rechercher",
+    "all": "Tous"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés.",
+    "tagline": "Construit avec intention. Guidé par l'impact."
+  }
+}

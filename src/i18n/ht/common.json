@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Akèy",
+    "about": "Sou Mwen",
+    "cv": "CV",
+    "projects": "Pwojè",
+    "insights": "Atik",
+    "services": "Sèvis",
+    "contact": "Kontakte",
+    "media": "Medya"
+  },
+  "hero": {
+    "tagline": "Finans · Enpak · Estrateji",
+    "title": "Konstwi nan Entèseksyon Kapital, Teknoloji, ak Enpak Sosyal",
+    "subtitle": "Pwofesyonèl finans ak de diplòm gradye nan Colorado State University, kandida CFA Nivo I, ak antreprenè ki dedye pou kreye enpak mezurab nan mache ki ap devlope.",
+    "cta_primary": "Wè Travay Mwen",
+    "cta_secondary": "Kontakte Mwen"
+  },
+  "sections": {
+    "featured_projects": "Pwojè an Vedèt",
+    "latest_insights": "Dènye Atik",
+    "portfolio": "Pòtfolyo",
+    "blog": "Blog",
+    "expertise": "Ekspètiz",
+    "connect": "Koneksyon",
+    "resume": "CV"
+  },
+  "cta": {
+    "title": "Ann Konstwi Yon Bagay ki Gen Siyifikasyon",
+    "subtitle": "W ap chèche yon pwofesyonèl finans, yon estratèjis pwojè, oswa yon kolaboratè ki gen enpak? Mwen toujou ouvè pou konvèsasyon sou travay ki gen sans.",
+    "primary": "Kòmanse yon Konvèsasyon",
+    "secondary": "Wè Sèvis"
+  },
+  "contact": {
+    "title": "Kontakte Mwen",
+    "subtitle": "Mwen toujou ouvè pou konvèsasyon sou travay ki gen sans, kolaborasyon, ak opòtinite ki gen enpak.",
+    "name": "Non konplè",
+    "email": "Imèl",
+    "organization": "Òganizasyon",
+    "reason": "Rezon pou kontakte",
+    "message": "Mesaj",
+    "send": "Voye Mesaj",
+    "success_title": "Mesaj Voye",
+    "success_message": "Mèsi paske ou kontakte mwen. M ap reponn nan 48 èdtan."
+  },
+  "common": {
+    "read_article": "Li Atik la",
+    "view_all": "Wè Tout",
+    "back": "Retounen",
+    "loading": "Ap chaje...",
+    "no_results": "Pa gen rezilta.",
+    "search": "Chèche",
+    "all": "Tout"
+  },
+  "footer": {
+    "copyright": "Tout dwa rezève.",
+    "tagline": "Konstwi avèk objektif. Gide pa enpak."
+  }
+}
