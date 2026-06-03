@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
   LayoutDashboard, FileText, FolderKanban, Briefcase, GraduationCap,
-  MessageSquare, Settings, Link2, LogOut, Image, Quote,
+  MessageSquare, Settings, Link2, LogOut, Image, Quote, BookOpen,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { getFirebaseClient } from '@/lib/firebase-client';
@@ -20,6 +20,7 @@ const ADMIN_NAV = [
   { label: 'Messages', href: '/admin/messages', icon: MessageSquare },
   { label: 'Media', href: '/admin/media', icon: Image },
   { label: 'Testimonials', href: '/admin/testimonials', icon: Quote },
+  { label: 'Books', href: '/admin/books', icon: BookOpen },
   { label: 'Social Links', href: '/admin/settings', icon: Link2 },
   { label: 'Settings', href: '/admin/site-settings', icon: Settings },
 ];

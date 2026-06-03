@@ -172,3 +172,14 @@ export interface Testimonial {
   sort_order: number;
   published: boolean;
 }
+
+export interface Book {
+  id: string;
+  title: string;
+  theme: string;
+  status: string;
+  description: string;
+  topics: string[];
+  sort_order: number;
+  published: boolean;
+}

@@ -43,6 +43,8 @@ function revalidateForCollection(collection: string) {
     siteSettings: ['/', '/about', '/cv', '/projects', '/insights', '/services', '/media', '/contact'],
     socialLinks: ['/'],
     contactMessages: [],
+    testimonials: ['/'],
+    books: ['/books'],
   };
   const paths = pathMap[collection] || ['/'];
   paths.forEach((p) => { try { revalidatePath(p); } catch {} });

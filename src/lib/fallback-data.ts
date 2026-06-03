@@ -7,7 +7,7 @@
  * Content here mirrors firebase/seed.ts.
  */
 
-import type { BlogPost, Project, Service, CVData, MediaItem, SocialLink, Testimonial } from '@/types';
+import type { BlogPost, Project, Service, CVData, MediaItem, SocialLink, Testimonial, Book } from '@/types';
 
 // ===========================================
 // BLOG POSTS
@@ -350,6 +350,43 @@ export const FALLBACK_TESTIMONIALS: Testimonial[] = [
     title: 'Institute for Entrepreneurship',
     organization: 'Colorado State University',
     quote: 'Creasti earned its Impact Award because Dieulin does not just build products \u2014 he builds solutions rooted in deep understanding of the communities he serves.',
+    sort_order: 2,
+    published: true,
+  },
+];
+
+// ===========================================
+// BOOKS
+// ===========================================
+
+export const FALLBACK_BOOKS: Book[] = [
+  {
+    id: 'bk-1',
+    title: 'Cardboard Walls: Building the Mindset to Succeed from Anywhere',
+    theme: 'Mindset & Personal Development',
+    status: 'In Progress',
+    description: 'If you can build a positive mindset and dream big, there is nothing that can prevent you from succeeding \u2014 no matter where you come from. This book explores how the barriers we face are rarely as solid as they appear, and why the sooner you build a mindset of possibility, the sooner everything changes. Drawing from personal experience growing up in Haiti to earning graduate degrees in the United States, this is a practical guide to breaking through the cardboard walls that hold us back.',
+    topics: ['Positive mindset', 'Dreaming beyond circumstances', 'Resilience', 'From Haiti to the world', 'Turning obstacles into staircases'],
+    sort_order: 0,
+    published: true,
+  },
+  {
+    id: 'bk-2',
+    title: 'Beyond Barriers: Why Knowledge Has No Color, Race, or Gender',
+    theme: 'Leadership & Equity',
+    status: 'Coming Soon',
+    description: 'Knowledge does not have a color, a race, or a sex \u2014 but society seems to make it easier for some people to access it. This book challenges the categorical barriers that limit human potential and argues that everyone can accomplish everything when they refuse to accept artificial limitations. A call to action for individuals, institutions, and systems to unlock talent wherever it exists.',
+    topics: ['Universal access to knowledge', 'Breaking categorical barriers', 'Equity in education', 'Talent has no borders', 'Systemic change through individual action'],
+    sort_order: 1,
+    published: true,
+  },
+  {
+    id: 'bk-3',
+    title: 'Put God First: The Formula That Always Works',
+    theme: 'Faith & Purpose',
+    status: 'Coming Soon',
+    description: 'In a world obsessed with strategies, frameworks, and formulas for success, this book offers the simplest and most powerful one: put God first. Drawing on faith, personal testimony, and the intersection of spiritual discipline with professional ambition, this book explores how prioritizing purpose over profit creates a foundation that never fails.',
+    topics: ['Faith-driven leadership', 'Purpose before profit', 'Spiritual discipline', 'The intersection of faith and ambition', 'Building on an unshakable foundation'],
     sort_order: 2,
     published: true,
   },

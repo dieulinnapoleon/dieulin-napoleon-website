@@ -1,11 +1,11 @@
 import { getAdminDb } from './firebase-admin';
 import {
-  FALLBACK_POSTS, FALLBACK_PROJECTS, FALLBACK_SERVICES, FALLBACK_TESTIMONIALS,
+  FALLBACK_POSTS, FALLBACK_PROJECTS, FALLBACK_SERVICES, FALLBACK_TESTIMONIALS, FALLBACK_BOOKS,
   FALLBACK_CV, FALLBACK_MEDIA, FALLBACK_SOCIAL,
 } from './fallback-data';
 import type {
   BlogPost, Project, Service, CVData, CVEducation, CVExperience,
-  ContactSubmission, SocialLink, MediaItem, Testimonial,
+  ContactSubmission, SocialLink, MediaItem, Testimonial, Book,
 } from '@/types';
 
 // Helper: Firestore doc → typed object with id
@@ -224,5 +224,22 @@ export async function getTestimonials(): Promise<Testimonial[]> {
   } catch {
     logRead('testimonials', FALLBACK_TESTIMONIALS.length, 'fallback');
     return FALLBACK_TESTIMONIALS;
+  }
+}
+
+// ===========================================
+// BOOKS
+// ===========================================
+
+export async function getBooks(): Promise<Book[]> {
+  try {
+    const db = getAdminDb();
+    const snap = await db.collection('books').where('published', '==', true).orderBy('sort_order').get();
+    if (snap.empty) { logRead('books', 0, 'fallback'); return FALLBACK_BOOKS; }
+    logRead('books', snap.size, 'firestore');
+    return snap.docs.map((doc) => docToObj<Book>(doc));
+  } catch {
+    logRead('books', FALLBACK_BOOKS.length, 'fallback');
+    return FALLBACK_BOOKS;
   }
 }
