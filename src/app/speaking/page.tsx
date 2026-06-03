@@ -46,6 +46,7 @@ export default async function SpeakingPage() {
                       <span className="flex items-center gap-1"><MapPin size={12} /> {event.location}</span>
                       <span className="flex items-center gap-1"><Calendar size={12} /> {event.date}</span>
                     </div>
+                    <Link href={"/speaking/" + event.id} className="inline-flex items-center gap-1 text-gold text-xs font-semibold hover:text-navy transition-colors">View Details</Link>
                     {event.url && (<a href={event.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-3 text-gold text-xs font-semibold hover:text-navy transition-colors">Learn more</a>)}
                   </div>
                 </div>
