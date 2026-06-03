@@ -183,3 +183,16 @@ export interface Book {
   sort_order: number;
   published: boolean;
 }
+
+export interface SpeakingEvent {
+  id: string;
+  title: string;
+  event_name: string;
+  location: string;
+  date: string;
+  description: string;
+  type: 'speaking' | 'panel' | 'lecture' | 'workshop' | 'competition';
+  url?: string;
+  sort_order: number;
+  published: boolean;
+}

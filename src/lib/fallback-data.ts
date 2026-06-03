@@ -7,7 +7,7 @@
  * Content here mirrors firebase/seed.ts.
  */
 
-import type { BlogPost, Project, Service, CVData, MediaItem, SocialLink, Testimonial, Book } from '@/types';
+import type { BlogPost, Project, Service, CVData, MediaItem, SocialLink, Testimonial, Book, SpeakingEvent } from '@/types';
 
 // ===========================================
 // BLOG POSTS
@@ -388,6 +388,57 @@ export const FALLBACK_BOOKS: Book[] = [
     description: 'In a world obsessed with strategies, frameworks, and formulas for success, this book offers the simplest and most powerful one: put God first. Drawing on faith, personal testimony, and the intersection of spiritual discipline with professional ambition, this book explores how prioritizing purpose over profit creates a foundation that never fails.',
     topics: ['Faith-driven leadership', 'Purpose before profit', 'Spiritual discipline', 'The intersection of faith and ambition', 'Building on an unshakable foundation'],
     sort_order: 2,
+    published: true,
+  },
+];
+
+// ===========================================
+// SPEAKING & EVENTS
+// ===========================================
+
+export const FALLBACK_EVENTS: SpeakingEvent[] = [
+  {
+    id: 'ev-1',
+    title: 'Creasti: Gamifying Financial Inclusion',
+    event_name: 'CSU Institute for Entrepreneurship Demo Day',
+    location: 'Colorado State University, Fort Collins, CO',
+    date: '2025',
+    description: 'Pitched Creasti to a panel of investors, entrepreneurs, and faculty. Awarded the Impact Award for social innovation.',
+    type: 'competition',
+    sort_order: 0,
+    published: true,
+  },
+  {
+    id: 'ev-2',
+    title: 'Ethics in Contemporary Organizations',
+    event_name: 'BUS220 — Graduate Teaching Assistant',
+    location: 'Colorado State University',
+    date: '2024-2025',
+    description: 'Facilitated discussions on business ethics, corporate responsibility, and stakeholder management for undergraduate students.',
+    type: 'lecture',
+    sort_order: 1,
+    published: true,
+  },
+  {
+    id: 'ev-3',
+    title: 'Financial Accounting & Management',
+    event_name: 'University Lecturer — 4 Institutions',
+    location: 'Haiti',
+    date: '2015-2022',
+    description: 'Taught undergraduate and graduate courses in financial accounting, management, organizational behavior, and financial mathematics across ISTEAH, UEH, UNDH, and UPNCH.',
+    type: 'lecture',
+    sort_order: 2,
+    published: true,
+  },
+  {
+    id: 'ev-4',
+    title: 'National Ethics Case Competition',
+    event_name: 'National Ethics Case Competition',
+    location: 'United States',
+    date: '2025',
+    description: 'Semifinalist in the national ethics case competition, analyzing complex business ethics scenarios.',
+    type: 'competition',
+    sort_order: 3,
     published: true,
   },
 ];

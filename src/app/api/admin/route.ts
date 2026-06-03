@@ -45,6 +45,7 @@ function revalidateForCollection(collection: string) {
     contactMessages: [],
     testimonials: ['/'],
     books: ['/books'],
+    events: ['/speaking'],
   };
   const paths = pathMap[collection] || ['/'];
   paths.forEach((p) => { try { revalidatePath(p); } catch {} });
