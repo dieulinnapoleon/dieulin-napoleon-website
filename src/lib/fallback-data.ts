@@ -7,7 +7,7 @@
  * Content here mirrors firebase/seed.ts.
  */
 
-import type { BlogPost, Project, Service, CVData, MediaItem, SocialLink } from '@/types';
+import type { BlogPost, Project, Service, CVData, MediaItem, SocialLink, Testimonial } from '@/types';
 
 // ===========================================
 // BLOG POSTS
@@ -319,4 +319,38 @@ export const FALLBACK_SOCIAL: SocialLink[] = [
   { id: 'fsl-1', platform: 'LinkedIn', url: 'https://www.linkedin.com/in/dieulinnapoleon/', icon: 'linkedin', sort_order: 0 },
   { id: 'fsl-2', platform: 'Blog', url: 'https://napoleondieulin.blogspot.com/', icon: 'globe', sort_order: 1 },
   { id: 'fsl-3', platform: 'Email', url: 'mailto:contact@dieulinnapoleon.com', icon: 'mail', sort_order: 2 },
+];
+
+// ===========================================
+// TESTIMONIALS
+// ===========================================
+
+export const FALLBACK_TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'ft-1',
+    name: 'Faculty Advisor',
+    title: 'Professor of Finance',
+    organization: 'Colorado State University',
+    quote: 'Dieulin brings exceptional analytical rigor and genuine passion for impact to everything he does. His ability to bridge finance theory with real-world entrepreneurial action sets him apart.',
+    sort_order: 0,
+    published: true,
+  },
+  {
+    id: 'ft-2',
+    name: 'Sustainability Director',
+    title: 'Corporate Sustainability Lead',
+    organization: 'Pegasus Logistics Group',
+    quote: 'His work on our greenhouse gas inventory and decarbonization roadmap was thorough, data-driven, and delivered ahead of schedule. A rare combination of technical skill and strategic thinking.',
+    sort_order: 1,
+    published: true,
+  },
+  {
+    id: 'ft-3',
+    name: 'Entrepreneurship Mentor',
+    title: 'Institute for Entrepreneurship',
+    organization: 'Colorado State University',
+    quote: 'Creasti earned its Impact Award because Dieulin does not just build products \u2014 he builds solutions rooted in deep understanding of the communities he serves.',
+    sort_order: 2,
+    published: true,
+  },
 ];

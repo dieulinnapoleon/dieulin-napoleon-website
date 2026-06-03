@@ -162,3 +162,13 @@ export interface PageMeta {
   description: string;
   ogImage?: string;
 }
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  title: string;
+  organization: string;
+  quote: string;
+  sort_order: number;
+  published: boolean;
+}

@@ -1,19 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, GraduationCap, Briefcase, Leaf, User } from 'lucide-react';
+import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, GraduationCap, Briefcase, Leaf, User, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getBlogPosts, getProjects, getServices, getSiteSettings } from '@/lib/data';
+import { getBlogPosts, getProjects, getServices, getSiteSettings, getTestimonials } from '@/lib/data';
 import { formatDate } from '@/lib/utils';
 import { NewsletterForm } from '@/components/ui/newsletter-form';
 
 export const revalidate = 60; // ISR: revalidate every hour
 
 export default async function HomePage() {
-  const [posts, projects, services, siteSettings] = await Promise.all([
+  const [posts, projects, services, siteSettings, testimonials] = await Promise.all([
     getBlogPosts(),
     getProjects(),
     getServices(),
     getSiteSettings(),
+    getTestimonials(),
   ]);
 
   const profilePhotoUrl = siteSettings.profile_photo_url || '/images/Dieulin-website.jpg';
@@ -319,6 +320,29 @@ export default async function HomePage() {
         </div>
       </section>
 
+
+
+      {/* ===== TESTIMONIALS ===== */}
+      <section className="py-section bg-gray-50/50">
+        <div className="section-container">
+          <p className="page-header-label text-center">Testimonials</p>
+          <h2 className="font-display text-section-title font-bold text-navy text-center mb-12">
+            What People Say
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div key={t.id} className="p-8 rounded-2xl bg-white border border-gray-100 relative">
+                <Quote size={32} className="text-gold/20 absolute top-6 right-6" />
+                <p className="text-gray-600 leading-relaxed mb-6 italic">&ldquo;{t.quote}&rdquo;</p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="font-display font-semibold text-navy text-sm">{t.name}</p>
+                  <p className="text-xs text-gray-400">{t.title}, {t.organization}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ===== NEWSLETTER ===== */}
       <section className="py-16 bg-white">
