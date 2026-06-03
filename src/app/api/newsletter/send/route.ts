@@ -47,6 +47,16 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Log the sent newsletter
+    await db.collection('newslettersSent').add({
+      subject,
+      body,
+      sent_to: sent,
+      total: emails.length,
+      sent_at: new Date().toISOString(),
+      sent_by: decoded.email || decoded.uid,
+    });
+
     return NextResponse.json({ success: true, sent, total: emails.length });
   } catch (err: any) {
     return NextResponse.json({ error: err.message || 'Failed' }, { status: 500 });

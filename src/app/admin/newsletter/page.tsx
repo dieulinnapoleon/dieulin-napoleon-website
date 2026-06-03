@@ -12,12 +12,15 @@ export default function AdminNewsletterPage() {
   const [body, setBody] = useState("");
   const [sending, setSending] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [sentHistory, setSentHistory] = useState<any[]>([]);
   const toast = useToast();
 
   const fetchSubs = useCallback(async () => {
     try {
       const data = await listDocs("newsletterSubscribers", { field: "subscribed_at", direction: "desc" });
       setSubscribers(data);
+      const history = await listDocs("newslettersSent", { field: "sent_at", direction: "desc" });
+      setSentHistory(history);
     } catch { /* empty */ }
     setLoading(false);
   }, []);
@@ -69,6 +72,25 @@ export default function AdminNewsletterPage() {
         <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
           <Button onClick={handleSend} loading={sending}><Send size={16} /> Send to {subscribers.length} Subscriber(s)</Button>
         </div>
+      </div>
+
+      <div className="admin-card mb-6">
+        <h2 className="font-display text-base font-semibold text-navy mb-4">Sent Newsletters</h2>
+        {sentHistory.length === 0 ? (
+          <p className="text-sm text-gray-400 py-4">No newsletters sent yet.</p>
+        ) : (
+          <div className="space-y-3">
+            {sentHistory.map((item: any) => (
+              <div key={item.id} className="p-4 rounded-lg bg-gray-50 border border-gray-100">
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-sm font-medium text-navy">{item.subject}</p>
+                  <span className="text-[10px] text-gray-400">{item.sent_at ? new Date(item.sent_at).toLocaleString() : ""}</span>
+                </div>
+                <p className="text-xs text-gray-400">Sent to {item.sent_to}/{item.total} subscribers</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="admin-card">
