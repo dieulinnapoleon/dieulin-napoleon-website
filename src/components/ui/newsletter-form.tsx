@@ -38,7 +38,7 @@ export function NewsletterForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} translate="no" translate="no" className="flex gap-2 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} translate="no" className="flex gap-2 max-w-md mx-auto">
       <input
         type="email"
         value={email}
