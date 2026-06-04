@@ -6,6 +6,7 @@ import { getBlogPost, getBlogPosts } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { formatDate } from '@/lib/utils';
 import { ShareButtons } from '@/components/ui/share-buttons';
+import { ReadingProgress } from '@/components/ui/reading-progress';
 import type { ContentBlock } from '@/types';
 
 interface Props {
@@ -18,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+  const [post, allPosts] = await Promise.all([getBlogPost(params.slug), getBlogPosts()]);
   if (!post) return {};
 
   return {
@@ -84,7 +85,7 @@ function renderBlock(block: ContentBlock, index: number) {
 }
 
 export default async function ArticlePage({ params }: Props) {
-  const post = await getBlogPost(params.slug);
+  const [post, allPosts] = await Promise.all([getBlogPost(params.slug), getBlogPosts()]);
 
   if (!post) notFound();
 
@@ -108,6 +109,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <>
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
