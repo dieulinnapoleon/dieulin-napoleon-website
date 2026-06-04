@@ -22,8 +22,23 @@ const COLORS = [
 export default async function BooksPage() {
   const books = await getBooks();
 
+  const bookSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: books.map((book, i) => ({
+      '@type': 'Book',
+      position: i + 1,
+      name: book.title,
+      description: book.description,
+      author: { '@type': 'Person', name: 'Dieulin Napoleon' },
+      bookEdition: book.status,
+      genre: book.theme,
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema) }} />
       <section className="bg-navy pt-32 pb-16">
         <div className="section-container text-center">
           <p className="page-header-label">Publications</p>

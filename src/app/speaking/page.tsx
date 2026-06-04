@@ -16,8 +16,22 @@ const ICONS: Record<string, any> = { speaking: Mic, panel: Users, lecture: Gradu
 export default async function SpeakingPage() {
   const events = await getEvents();
 
+  const eventSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: events.map((event, i) => ({
+      '@type': 'Event',
+      position: i + 1,
+      name: event.title,
+      description: event.description,
+      location: { '@type': 'Place', name: event.location },
+      organizer: { '@type': 'Person', name: 'Dieulin Napoleon' },
+    })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
       <section className="bg-navy pt-32 pb-16">
         <div className="section-container text-center">
           <p className="page-header-label">Engagements</p>
