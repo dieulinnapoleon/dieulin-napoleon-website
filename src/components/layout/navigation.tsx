@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { LanguageSwitcher } from './language-switcher';
+import { DarkModeToggle } from '@/components/ui/dark-mode-toggle';
 import { useTranslation } from '@/lib/translation';
 
 const NAV_KEYS = [
@@ -93,7 +94,8 @@ export function Navigation() {
             </Link>
           ))}
 
-          <div className="ml-3 pl-3 border-l border-gray-200/30">
+          <div className="ml-3 pl-3 border-l border-gray-200/30 flex items-center gap-1">
+            <DarkModeToggle scrolled={scrolled} />
             <LanguageSwitcher scrolled={scrolled} />
           </div>
         </div>
