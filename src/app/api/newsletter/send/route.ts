@@ -39,7 +39,22 @@ export async function POST(request: NextRequest) {
           from: fromEmail,
           to: email,
           subject: subject,
-          html: '<div style="max-width:600px;margin:0 auto;font-family:sans-serif;"><h2>' + subject + '</h2>' + body.split('\n').map((p: string) => '<p>' + p + '</p>').join('') + '<hr style="margin:24px 0;border:none;border-top:1px solid #eee;"><p style="color:#999;font-size:12px;">Dieulin Napoleon &middot; <a href="https://dieulinnapoleon.com">dieulinnapoleon.com</a></p></div>',
+          html: '<div style="max-width:600px;margin:0 auto;font-family:Georgia,serif;background:#ffffff;">' +
+              '<div style="background:#0B1A2F;padding:32px 24px;text-align:center;border-radius:12px 12px 0 0;">' +
+                '<div style="display:inline-block;width:48px;height:48px;background:rgba(196,149,58,0.2);border-radius:12px;line-height:48px;color:#C4953A;font-weight:bold;font-size:20px;font-family:Georgia,serif;">DN</div>' +
+                '<p style="color:#C4953A;font-size:11px;letter-spacing:2px;margin:12px 0 0;text-transform:uppercase;">Dieulin Napoleon</p>' +
+                '<p style="color:rgba(255,255,255,0.4);font-size:12px;margin:4px 0 0;">Finance \u00b7 Impact \u00b7 Strategy</p>' +
+              '</div>' +
+              '<div style="padding:32px 24px;border:1px solid #f0f0f0;border-top:none;">' +
+                '<h2 style="color:#0B1A2F;font-size:22px;margin:0 0 16px;font-family:Georgia,serif;">' + subject + '</h2>' +
+                body.split('\n').map((p: string) => '<p style="color:#555;font-size:15px;line-height:1.7;margin:0 0 12px;">' + p + '</p>').join('') +
+              '</div>' +
+              '<div style="background:#f9f9f9;padding:24px;text-align:center;border:1px solid #f0f0f0;border-top:none;border-radius:0 0 12px 12px;">' +
+                '<p style="color:#999;font-size:12px;margin:0 0 8px;">Dieulin Napoleon &middot; Finance Professional &middot; Entrepreneur</p>' +
+                '<a href="https://dieulinnapoleon.com" style="color:#C4953A;font-size:12px;text-decoration:none;">dieulinnapoleon.com</a>' +
+                '<p style="color:#ccc;font-size:10px;margin:12px 0 0;">You received this because you subscribed to insights from Dieulin Napoleon.</p>' +
+              '</div>' +
+            '</div>',
         });
         sent++;
       } catch (err) {

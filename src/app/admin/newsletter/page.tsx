@@ -12,6 +12,7 @@ export default function AdminNewsletterPage() {
   const [body, setBody] = useState("");
   const [sending, setSending] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
   const [sentHistory, setSentHistory] = useState<any[]>([]);
   const toast = useToast();
 
@@ -81,12 +82,20 @@ export default function AdminNewsletterPage() {
         ) : (
           <div className="space-y-3">
             {sentHistory.map((item: any) => (
-              <div key={item.id} className="p-4 rounded-lg bg-gray-50 border border-gray-100">
-                <div className="flex items-center justify-between mb-1">
-                  <p className="text-sm font-medium text-navy">{item.subject}</p>
-                  <span className="text-[10px] text-gray-400">{item.sent_at ? new Date(item.sent_at).toLocaleString() : ""}</span>
-                </div>
-                <p className="text-xs text-gray-400">Sent to {item.sent_to}/{item.total} subscribers</p>
+              <div key={item.id} className="rounded-lg border border-gray-100 overflow-hidden">
+                <button onClick={() => setExpandedId(expandedId === item.id ? null : item.id)} className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left">
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-sm font-medium text-navy">{item.subject}</p>
+                    <span className="text-[10px] text-gray-400">{item.sent_at ? new Date(item.sent_at).toLocaleString() : ""}</span>
+                  </div>
+                  <p className="text-xs text-gray-400">Sent to {item.sent_to}/{item.total} subscriber(s) &middot; Click to {expandedId === item.id ? "collapse" : "view content"}</p>
+                </button>
+                {expandedId === item.id && (
+                  <div className="p-4 border-t border-gray-100 bg-white">
+                    <p className="text-xs text-gray-500 whitespace-pre-wrap leading-relaxed">{item.body}</p>
+                    <p className="text-[10px] text-gray-300 mt-3">Sent by {item.sent_by}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
