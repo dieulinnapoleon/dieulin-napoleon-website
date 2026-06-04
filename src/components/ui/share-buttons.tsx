@@ -33,7 +33,7 @@ export function ShareButtons({ slug, title }: { slug: string; title: string }) {
   };
 
   return (
-    <div className="flex items-center gap-3 mt-8 mb-8">
+    <div className="flex items-center gap-3 mt-8 mb-8 notranslate" translate="no">
       <span className="text-sm text-gray-400 font-medium">Share:</span>
       <a href={"https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(url)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0A66C2]/10 text-[#0A66C2] text-xs font-semibold hover:bg-[#0A66C2]/20 transition-colors">LinkedIn</a>
       <a href={"https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#1877F2]/10 text-[#1877F2] text-xs font-semibold hover:bg-[#1877F2]/20 transition-colors">Facebook</a>
