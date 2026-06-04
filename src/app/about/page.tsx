@@ -142,7 +142,7 @@ export default async function AboutPage() {
             challenges and possibilities of the country I come from.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            I believe deeply that Haiti's future depends on the intersection of education, entrepreneurship,
+            I believe deeply that Haiti&apos;s future depends on the intersection of education, entrepreneurship,
             technology, and committed leadership. That belief drives everything I build.
           </p>
           <div className="flex flex-wrap gap-3">
