@@ -193,6 +193,27 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </div>
 
+
+          {/* Related Posts */}
+          {(() => {
+            const related = allPosts.filter((p) => p.slug !== post.slug && (p.category === post.category || p.tags?.some((t) => post.tags?.includes(t)))).slice(0, 3);
+            if (related.length === 0) return null;
+            return (
+              <div className="mt-12 pt-8 border-t border-gray-200">
+                <h3 className="font-display text-xl font-bold text-navy mb-6">Related Insights</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {related.map((r) => (
+                    <Link key={r.id} href={'/insights/' + r.slug} className="group p-5 rounded-xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all">
+                      <span className="text-[10px] font-bold tracking-[0.1em] uppercase text-gold">{r.category}</span>
+                      <h4 className="font-display text-sm font-semibold text-navy mt-1 mb-2 group-hover:text-gold transition-colors leading-snug">{r.title}</h4>
+                      <p className="text-xs text-gray-400 line-clamp-2">{r.excerpt}</p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+
           {/* CTA */}
           <div className="mt-12 text-center">
             <Link href="/insights">

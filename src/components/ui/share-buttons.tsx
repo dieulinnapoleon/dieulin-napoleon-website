@@ -7,10 +7,29 @@ export function ShareButtons({ slug, title }: { slug: string; title: string }) {
   const [copied, setCopied] = useState(false);
   const url = "https://dieulinnapoleon.com/insights/" + slug;
 
-  const copyLink = () => {
-    navigator.clipboard.writeText(url);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyLink = async () => {
+    try {
+      // Use the canonical URL to avoid issues with Google Translate
+      const canonical = "https://dieulinnapoleon.com/insights/" + slug;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(canonical);
+      } else {
+        // Fallback for older browsers or translated pages
+        const textarea = document.createElement("textarea");
+        textarea.value = canonical;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Last resort: open in new window for manual copy
+      window.prompt("Copy this link:", "https://dieulinnapoleon.com/insights/" + slug);
+    }
   };
 
   return (
