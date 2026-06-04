@@ -193,6 +193,7 @@ export interface SpeakingEvent {
   description: string;
   type: 'speaking' | 'panel' | 'lecture' | 'workshop' | 'competition';
   url?: string;
+  image_url?: string;
   sort_order: number;
   published: boolean;
 }

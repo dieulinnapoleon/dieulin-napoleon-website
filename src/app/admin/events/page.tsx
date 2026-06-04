@@ -39,7 +39,7 @@ export default function AdminEventsPage() {
   const handleSave = async () => {
     if (!validate()) return;
     setSaving(true);
-    const payload = { title: editing!.title!.trim(), event_name: editing!.event_name!.trim(), location: editing!.location?.trim() ?? "", date: editing!.date?.trim() ?? "", description: editing!.description?.trim() ?? "", type: editing!.type ?? "speaking", url: editing!.url?.trim() ?? "", sort_order: editing!.sort_order ?? 0, published: editing!.published ?? true };
+    const payload = { title: editing!.title!.trim(), event_name: editing!.event_name!.trim(), location: editing!.location?.trim() ?? "", date: editing!.date?.trim() ?? "", description: editing!.description?.trim() ?? "", type: editing!.type ?? "speaking", url: editing!.url?.trim() ?? "", sort_order: editing!.sort_order ?? 0, published: editing!.published ?? true, image_url: editing!.image_url?.trim() ?? '' };
     try {
       if (editing!.id) { await updateDoc("events", editing!.id, payload); toast.success("Event updated"); }
       else { await createDoc("events", payload); toast.success("Event added"); }
@@ -79,6 +79,7 @@ export default function AdminEventsPage() {
             <div><label className="block text-sm font-medium text-navy mb-1">Sort Order</label><input type="number" value={editing.sort_order ?? 0} onChange={(e) => setEditing({ ...editing, sort_order: parseInt(e.target.value) || 0 })} className="input-field" /></div>
           </div>
           <div><label className="block text-sm font-medium text-navy mb-1">Description</label><textarea value={editing.description ?? ""} onChange={(e) => setEditing({ ...editing, description: e.target.value })} className="input-field" rows={3} /></div>
+          <div><label className="block text-sm font-medium text-navy mb-1">Photo URL (optional)</label><input value={editing.image_url ?? ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })} className="input-field" placeholder="/images/events/photo.jpg or https://..." /><p className="text-xs text-gray-400 mt-1">Add a photo for this event</p></div>
           <div><label className="block text-sm font-medium text-navy mb-1">URL (optional)</label><input value={editing.url ?? ""} onChange={(e) => setEditing({ ...editing, url: e.target.value })} className="input-field" placeholder="https://..." /></div>
           <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={editing.published ?? true} onChange={(e) => setEditing({ ...editing, published: e.target.checked })} className="rounded border-gray-300" /> Published</label>
           <div className="flex gap-3 pt-4 border-t border-gray-100"><Button onClick={handleSave} loading={saving}><Save size={16} /> Save</Button><Button variant="outline" onClick={() => setEditing(null)}>Cancel</Button></div>

@@ -56,6 +56,11 @@ export default async function SpeakingPage() {
                       <span className="text-xs bg-navy/5 text-navy px-3 py-1 rounded-full shrink-0 capitalize">{event.type}</span>
                     </div>
                     <p className="text-sm text-gray-600 leading-relaxed mb-3">{event.description}</p>
+                    {event.image_url && (
+                      <div className="mt-3 rounded-xl overflow-hidden border border-gray-100">
+                        <img src={event.image_url} alt={event.title} className="w-full h-48 object-cover" />
+                      </div>
+                    )}
                     <div className="flex items-center gap-4 text-xs text-gray-400">
                       <span className="flex items-center gap-1"><MapPin size={12} /> {event.location}</span>
                       <span className="flex items-center gap-1"><Calendar size={12} /> {event.date}</span>

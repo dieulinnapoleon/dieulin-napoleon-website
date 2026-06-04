@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Project } from '@/types';
