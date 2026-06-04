@@ -12,9 +12,12 @@ export const metadata: Metadata = {
   description:
     'Finance professional, entrepreneur, and project strategist building at the intersection of capital markets, technology, and social impact.',
   keywords: [
-    'Dieulin Napoleon', 'finance', 'entrepreneurship', 'project management',
-    'impact investing', 'Haiti', 'Colorado State University', 'MBA', 'CFA',
-    'sustainability', 'ESG', 'fintech', 'Creasti', 'FINANCEM',
+    'Dieulin Napoleon', 'Napoleon Dieulin', 'Dieulin', 'Napoleon',
+    'Dieulin Napoleon finance', 'Dieulin Napoleon Haiti', 'Dieulin Napoleon CSU',
+    'finance professional', 'entrepreneur Haiti', 'impact investing',
+    'Colorado State University MBA', 'CFA candidate', 'project management',
+    'sustainability', 'ESG', 'fintech', 'Creasti', 'FINANCEM', 'PATRIYA', 'LINEON',
+    'Haitian entrepreneur', 'dieulinnapoleon',
   ],
   authors: [{ name: 'Dieulin Napoleon' }],
   creator: 'Dieulin Napoleon',
@@ -53,17 +56,32 @@ const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Dieulin Napoleon',
+  alternateName: ['Napoleon Dieulin', 'Dieulin', 'DN'],
   url: 'https://dieulinnapoleon.com',
+  image: 'https://dieulinnapoleon.com/images/Dieulin-website.jpg',
   jobTitle: 'Finance Professional & Entrepreneur',
+  description: 'Finance professional, entrepreneur, and project strategist with four graduate degrees including a Master of Finance and Impact MBA from Colorado State University.',
+  nationality: { '@type': 'Country', name: 'Haiti' },
   alumniOf: [
-    {
-      '@type': 'CollegeOrUniversity',
-      name: 'Colorado State University',
-    },
+    { '@type': 'CollegeOrUniversity', name: 'Colorado State University', department: 'College of Business' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Para la Cooperacion Internacional' },
+    { '@type': 'CollegeOrUniversity', name: 'ISTEAH' },
+    { '@type': 'CollegeOrUniversity', name: 'Universite Publique du Nord au Cap-Haitien' },
   ],
-  knowsAbout: ['Finance', 'Entrepreneurship', 'Project Management', 'ESG', 'Impact Investing'],
+  knowsAbout: ['Finance', 'Entrepreneurship', 'Project Management', 'ESG', 'Impact Investing', 'Sustainability', 'Haiti', 'Valuation', 'CFA'],
+  knowsLanguage: ['English', 'French', 'Haitian Creole', 'Spanish'],
+  hasCredential: [
+    { '@type': 'EducationalOccupationalCredential', name: 'Master of Finance', credentialCategory: 'degree' },
+    { '@type': 'EducationalOccupationalCredential', name: 'Impact MBA', credentialCategory: 'degree' },
+    { '@type': 'EducationalOccupationalCredential', name: 'CFA Level I Candidate', credentialCategory: 'certificate' },
+  ],
   sameAs: [
     'https://www.linkedin.com/in/dieulinnapoleon/',
+    'https://napoleondieulin.blogspot.com/',
+  ],
+  worksFor: [
+    { '@type': 'Organization', name: 'Creasti' },
+    { '@type': 'Organization', name: 'GACED Consulting' },
   ],
 };
 
