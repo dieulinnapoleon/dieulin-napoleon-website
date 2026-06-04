@@ -62,7 +62,7 @@ export default function AdminProjectsPage() {
       solution: editing!.solution?.trim() ?? '', role: editing!.role?.trim() ?? '',
       status: editing!.status ?? 'In Progress',
       tech: techInput.split(',').map((t) => t.trim()).filter(Boolean),
-      impact: editing!.impact?.trim() ?? '', url: editing!.url?.trim() ?? '',
+      impact: editing!.impact?.trim() ?? '', url: editing!.url?.trim() ?? '', image_url: editing!.image_url?.trim() ?? '',
       sort_order: editing!.sort_order ?? 0, published: editing!.published ?? true,
     };
     try {
@@ -114,6 +114,7 @@ export default function AdminProjectsPage() {
           </div>
           <div><label className="block text-sm font-medium text-navy mb-1">Impact</label><textarea value={editing.impact ?? ''} onChange={(e) => setEditing({ ...editing, impact: e.target.value })} className="input-field" rows={2} /></div>
           <div className="grid md:grid-cols-2 gap-5">
+            <div><label className="block text-sm font-medium text-navy mb-1">Logo / Image URL</label><input value={editing.image_url ?? ""} onChange={(e) => setEditing({ ...editing, image_url: e.target.value })} className="input-field" placeholder="/images/projects/logo.png or https://..." /></div>
             <div><label className="block text-sm font-medium text-navy mb-1">URL</label><input value={editing.url ?? ''} onChange={(e) => setEditing({ ...editing, url: e.target.value })} className="input-field" /></div>
             <div><label className="block text-sm font-medium text-navy mb-1">Sort Order</label><input type="number" value={editing.sort_order ?? 0} onChange={(e) => setEditing({ ...editing, sort_order: parseInt(e.target.value) || 0 })} className="input-field" /></div>
           </div>
