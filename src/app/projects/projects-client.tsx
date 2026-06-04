@@ -53,7 +53,12 @@ export function ProjectsClient({ projects }: { projects: Project[] }) {
                           {project.status}
                         </span>
                       </div>
-                      <h3 className="font-display text-xl font-semibold text-navy mb-2">{project.title}</h3>
+                      {project.image_url && (
+                      <div className="w-14 h-14 rounded-xl overflow-hidden mb-3 bg-gray-50 border border-gray-100 flex items-center justify-center">
+                        <img src={project.image_url} alt={project.title} className="w-full h-full object-contain p-1.5" />
+                      </div>
+                    )}
+                    <h3 className="font-display text-xl font-semibold text-navy mb-2">{project.title}</h3>
                       <p className="text-sm text-gray-500 leading-relaxed">{project.description}</p>
                     </div>
                     <button

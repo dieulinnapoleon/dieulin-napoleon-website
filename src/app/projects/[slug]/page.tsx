@@ -41,6 +41,11 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
             <span className="category-badge bg-gold/15 text-gold border-gold/30">{project.category}</span>
             <span className="text-xs text-white/40">{project.status}</span>
           </div>
+          {project.image_url && (
+            <div className="w-16 h-16 rounded-xl overflow-hidden mb-4 bg-white/10 border border-white/20 flex items-center justify-center">
+              <img src={project.image_url} alt={project.title} className="w-full h-full object-contain p-2" />
+            </div>
+          )}
           <h1 className="font-display text-[clamp(32px,5vw,52px)] font-bold text-white mb-4">{project.title}</h1>
           <p className="text-lg text-white/50 max-w-2xl leading-relaxed">{project.description}</p>
           {project.url && (
