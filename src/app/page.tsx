@@ -150,7 +150,7 @@ export default async function HomePage() {
 
                 <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap gap-2">
                   {['English', 'French', 'Kreyòl', 'Spanish'].map((l) => (
-                    <span key={l} className="text-[11px] text-white/30 bg-white/5 px-2.5 py-1 rounded-md">{l}</span>
+                    <span key={l} className="text-[11px] text-gold/50 bg-gold/5 px-2.5 py-1 rounded-md border border-gold/10">{l}</span>
                   ))}
                 </div>
               </div>
