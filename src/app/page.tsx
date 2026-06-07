@@ -26,9 +26,10 @@ export default async function HomePage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-[#0d1f3c] to-charcoal" />
-        <div className="absolute top-[10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(196,149,58,0.08)_0%,transparent_70%)]" />
-        <div className="absolute bottom-[5%] left-[10%] w-[300px] h-[300px] rounded-full bg-[radial-gradient(circle,rgba(30,64,175,0.06)_0%,transparent_70%)]" />
+        <div className="absolute inset-0">
+          <img src="/images/hero-background.jpeg" alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/70" />
+        </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
         <div className="section-container relative z-10 py-32">
