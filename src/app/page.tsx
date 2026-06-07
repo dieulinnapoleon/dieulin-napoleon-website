@@ -27,8 +27,8 @@ export default async function HomePage() {
       {/* ===== HERO ===== */}
       <section className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/hero-background.jpeg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/90 to-navy/75" />
+          <img src="/images/hero-background.jpeg" alt="" className="w-full h-full object-cover object-[center_65%]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/[0.97] via-navy/[0.92] to-navy/[0.65]" />
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
