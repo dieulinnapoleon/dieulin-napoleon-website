@@ -28,7 +28,7 @@ export default async function HomePage() {
       <section className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero-background.jpeg" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/80 to-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/90 to-navy/75" />
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
 
@@ -73,7 +73,7 @@ export default async function HomePage() {
                 Finance Professional · Entrepreneur · Project Strategist · Impact-Driven Builder
               </p>
 
-              <p className="text-[17px] text-white/50 leading-[1.85] max-w-xl mb-10">
+              <p className="text-[17px] text-white/70 leading-[1.85] max-w-xl mb-10">
                 With 4 graduate degrees including two from Colorado State University, United States
                 of America, I work at the intersection of finance, entrepreneurship, sustainability,
                 and technology to build ventures, analyze opportunities, and support projects that
