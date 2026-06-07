@@ -142,7 +142,7 @@ export default async function HomePage() {
                       </div>
                       <div>
                         <p className="text-[13px] font-medium text-white/90 leading-snug">{item.label}</p>
-                        <p className="text-[11px] text-white/35 leading-snug">{item.sub}</p>
+                        <p className="text-[11px] text-gold/50 leading-snug">{item.sub}</p>
                       </div>
                     </div>
                   ))}
