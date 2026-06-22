@@ -19,9 +19,17 @@ export interface BlogPost {
 }
 
 export interface ContentBlock {
-  type: 'p' | 'h' | 'h3' | 'note' | 'quote' | 'list';
+  type: 'p' | 'h' | 'h3' | 'note' | 'quote' | 'list' | 'table' | 'image' | 'link' | 'callout';
   text: string;
   items?: string[];
+  headers?: string[];
+  rows?: string[][];
+  src?: string;
+  alt?: string;
+  caption?: string;
+  url?: string;
+  label?: string;
+  icon?: string;
 }
 
 export interface Project {
