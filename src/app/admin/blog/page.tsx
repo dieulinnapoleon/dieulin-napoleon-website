@@ -44,7 +44,7 @@ export default function AdminBlogPage() {
     const p = post ?? { ...EMPTY_POST };
     setEditing(p);
     setTagsInput((p.tags ?? []).join(', '));
-    setContentJson(JSON.stringify(p.content ?? [], null, 2));
+    setContentJson(typeof p.content === 'string' ? JSON.stringify(JSON.parse(p.content), null, 2) : JSON.stringify(p.content ?? [], null, 2));
     setContentError('');
     setValidationErrors([]);
   };
@@ -94,7 +94,7 @@ export default function AdminBlogPage() {
       slug,
       category: editing!.category ?? 'Finance',
       excerpt: editing!.excerpt?.trim() ?? '',
-      content: parsedContent,
+      content: JSON.stringify(parsedContent),
       tags: tagsInput.split(',').map((t) => t.trim()).filter(Boolean),
       published: editing!.published ?? false,
       featured: editing!.featured ?? false,

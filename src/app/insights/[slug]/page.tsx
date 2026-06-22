@@ -205,7 +205,7 @@ export default async function ArticlePage({ params }: Props) {
           {/* Content */}
           {content.length > 0 ? (
             <article className="prose-custom">
-              {content.map((block, i) => renderBlock(block, i))}
+              {(typeof content === 'string' ? JSON.parse(content) : content).map((block: ContentBlock, i: number) => renderBlock(block, i))}
             </article>
           ) : (
             <div>
