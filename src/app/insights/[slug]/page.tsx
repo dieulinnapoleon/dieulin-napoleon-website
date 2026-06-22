@@ -75,6 +75,53 @@ function renderBlock(block: ContentBlock, index: number) {
           ))}
         </ul>
       );
+    case 'table':
+      return (
+        <div key={index} className="mt-6 mb-8 overflow-x-auto rounded-xl border border-gray-200">
+          <table className="w-full text-sm">
+            {block.headers && (
+              <thead>
+                <tr className="bg-navy text-white">
+                  {block.headers.map((h, i) => (
+                    <th key={i} className="px-4 py-3 text-left font-semibold text-[13px] tracking-wide">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+            )}
+            <tbody>
+              {block.rows?.map((row, ri) => (
+                <tr key={ri} className={ri % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} className={'px-4 py-3 text-gray-700 text-[13px] leading-relaxed' + (ci === 0 ? ' font-medium text-navy' : '')}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {block.caption && <p className="px-4 py-2 text-[11px] text-gray-400 border-t border-gray-100 bg-gray-50">{block.caption}</p>}
+        </div>
+      );
+    case 'image':
+      return (
+        <figure key={index} className="mt-6 mb-8">
+          <img src={block.src} alt={block.alt || ''} className="w-full rounded-xl border border-gray-100" />
+          {block.caption && <figcaption className="mt-2 text-center text-[12px] text-gray-400 italic">{block.caption}</figcaption>}
+        </figure>
+      );
+    case 'link':
+      return (
+        <div key={index} className="mt-4 mb-6">
+          <a href={block.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gold/10 text-gold font-semibold text-sm hover:bg-gold/20 transition-colors">
+            {block.label || block.text || 'Learn more'} &rarr;
+          </a>
+        </div>
+      );
+    case 'callout':
+      return (
+        <div key={index} className="mt-6 mb-8 p-5 rounded-xl bg-navy/5 border border-navy/10">
+          <p className="text-[15px] text-navy font-medium leading-relaxed">{block.text}</p>
+        </div>
+      );
     default:
       return (
         <p key={index} className="text-[17px] text-gray-700 leading-[1.9] mb-5">
