@@ -55,12 +55,12 @@ export default function AdminBlogPage() {
       const parsed = JSON.parse(json);
       if (!Array.isArray(parsed)) { setContentError('Content must be a JSON array'); return null; }
       for (let i = 0; i < parsed.length; i++) {
-        if (!parsed[i].type || !parsed[i].text) {
+        if (!parsed[i].type || (!parsed[i].text && !['table', 'image', 'link'].includes(parsed[i].type))) {
           setContentError(`Block ${i + 1}: requires "type" and "text" fields`);
           return null;
         }
-        if (!['p', 'h', 'h3', 'note', 'quote', 'list'].includes(parsed[i].type)) {
-          setContentError(`Block ${i + 1}: invalid type "${parsed[i].type}". Use: p, h, h3, note, quote, list`);
+        if (!['p', 'h', 'h3', 'note', 'quote', 'list', 'table', 'image', 'link', 'callout'].includes(parsed[i].type)) {
+          setContentError(`Block ${i + 1}: invalid type "${parsed[i].type}". Use: p, h, h3, note, quote, list, table, image, link, callout`);
           return null;
         }
       }
@@ -236,7 +236,7 @@ export default function AdminBlogPage() {
               placeholder='[&#10;  { "type": "p", "text": "Paragraph..." },&#10;  { "type": "h", "text": "Section Heading" },&#10;  { "type": "note", "text": "A callout note" }&#10;]' />
             {contentError && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle size={12} /> {contentError}</p>}
             <p className="text-xs text-gray-400 mt-1">
-              Types: <code className="bg-gray-100 px-1 rounded">p</code> paragraph · <code className="bg-gray-100 px-1 rounded">h</code> heading · <code className="bg-gray-100 px-1 rounded">h3</code> subheading · <code className="bg-gray-100 px-1 rounded">note</code> callout · <code className="bg-gray-100 px-1 rounded">quote</code> · <code className="bg-gray-100 px-1 rounded">list</code> (add items array)
+              Types: <code className="bg-gray-100 px-1 rounded">p</code> paragraph · <code className="bg-gray-100 px-1 rounded">h</code> heading · <code className="bg-gray-100 px-1 rounded">h3</code> subheading · <code className="bg-gray-100 px-1 rounded">note</code> callout · <code className="bg-gray-100 px-1 rounded">quote</code> · <code className="bg-gray-100 px-1 rounded">list</code> (add items array) · <code className="bg-gray-100 px-1 rounded">table</code> (add headers + rows arrays) · <code className="bg-gray-100 px-1 rounded">image</code> (add src) · <code className="bg-gray-100 px-1 rounded">link</code> (add url + label) · <code className="bg-gray-100 px-1 rounded">callout</code> highlight
             </p>
           </div>
 
