@@ -20,6 +20,16 @@ export default function Haiti2077Page() {
 
   return (
     <div>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        name: 'Haiti 2077 — A 50-Year Civic Vision for National Transformation',
+        description: 'A nonpartisan civic reflection initiative for Haiti long-term development.',
+        url: 'https://dieulinnapoleon.com/haiti-2077',
+        author: { '@type': 'Person', name: 'Dieulin Napoleon' },
+        about: { '@type': 'Thing', name: 'Haiti National Development' },
+      }) }} />
       {/* Hero */}
       <section className="bg-navy pt-32 pb-20">
         <div className="section-container text-center max-w-4xl">
@@ -78,13 +88,13 @@ export default function Haiti2077Page() {
             {pillars.map((p, i) => {
               const Icon = ICONS[p.icon] || Target;
               return (
-                <div key={i} className="p-5 rounded-xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all">
+                <Link key={i} href={'/haiti-2077/pillars/' + p.slug} className="block p-5 rounded-xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all">
                   <div className="w-9 h-9 rounded-lg bg-gold/10 flex items-center justify-center mb-3">
                     <Icon size={18} className="text-gold" />
                   </div>
                   <h3 className="font-display text-sm font-semibold text-navy mb-1.5">{p.title}</h3>
                   <p className="text-[12px] text-gray-400 leading-relaxed">{p.description}</p>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -98,7 +108,7 @@ export default function Haiti2077Page() {
           <p className="text-gray-500 text-center mb-12 max-w-2xl mx-auto">Each department has unique assets, challenges, and development potential. A national vision must account for regional diversity.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {departments.map((d, i) => (
-              <div key={i} className="p-5 rounded-xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all bg-white">
+              <Link key={i} href={'/haiti-2077/departments/' + d.slug} className="block p-5 rounded-xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all bg-white">
                 <div className="w-8 h-8 rounded-lg bg-navy/5 flex items-center justify-center mb-3">
                   <MapPin size={16} className="text-navy/50" />
                 </div>
@@ -109,7 +119,7 @@ export default function Haiti2077Page() {
                     <span key={si} className="text-[9px] bg-gold/5 text-gold/70 px-1.5 py-0.5 rounded">{s}</span>
                   ))}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

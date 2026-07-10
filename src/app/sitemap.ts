@@ -1,4 +1,4 @@
-import { getBlogPosts, getProjects, getEvents, getBooks } from '@/lib/data';
+import { getBlogPosts, getProjects, getEvents, getBooks, getPillars, getDepartments } from '@/lib/data';
 
 const BASE = 'https://dieulinnapoleon.com';
 
@@ -20,6 +20,10 @@ export default async function sitemap() {
     { url: BASE + '/speaking', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: BASE + '/contact', lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.6 },
     { url: BASE + '/media', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: BASE + '/quotes', lastModified: new Date(), changeFrequency: 'daily' as const, priority: 0.7 },
+    { url: BASE + '/haiti-2077', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: BASE + '/haiti-2077/contribute', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: BASE + '/haiti-2077/proposals', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
   ];
 
   const blogPages = posts.map((post) => ({
@@ -43,5 +47,19 @@ export default async function sitemap() {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...blogPages, ...projectPages, ...eventPages];
+  const pillarPages = getPillars().map((p) => ({
+    url: BASE + '/haiti-2077/pillars/' + p.slug,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  const deptPages = getDepartments().map((d) => ({
+    url: BASE + '/haiti-2077/departments/' + d.slug,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...blogPages, ...projectPages, ...eventPages, ...pillarPages, ...deptPages];
 }
