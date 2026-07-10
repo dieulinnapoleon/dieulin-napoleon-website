@@ -5,12 +5,14 @@ import { Check, Link2 } from "lucide-react";
 
 export function ShareButtons({ slug, title }: { slug: string; title: string }) {
   const [copied, setCopied] = useState(false);
-  const url = "https://dieulinnapoleon.com/insights/" + slug;
+  const basePath = slug.includes("dieulinnapoleon.com") ? "" : (typeof window !== "undefined" && window.location.pathname.includes("/quotes/") ? "/quotes/" : "/insights/");
+  const url = basePath ? "https://dieulinnapoleon.com" + basePath + slug : slug;
 
   const copyLink = async () => {
     try {
       // Use the canonical URL to avoid issues with Google Translate
-      const canonical = "https://dieulinnapoleon.com/insights/" + slug;
+      const basePath = typeof window !== "undefined" && window.location.pathname.includes("/quotes/") ? "/quotes/" : "/insights/";
+      const canonical = "https://dieulinnapoleon.com" + basePath + slug;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(canonical);
       } else {

@@ -2,13 +2,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, GraduationCap, Briefcase, Leaf, User, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { getBlogPosts, getProjects, getServices, getSiteSettings, getTestimonials } from '@/lib/data';
+import { getBlogPosts, getProjects, getServices, getSiteSettings, getTestimonials, getDailyQuote } from '@/lib/data';
+import { Quote as QuoteIcon } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 import { NewsletterForm } from '@/components/ui/newsletter-form';
 
 export const revalidate = 60; // ISR: revalidate every hour
 
 export default async function HomePage() {
+  const dailyQuote = await getDailyQuote();
   const [posts, projects, services, siteSettings, testimonials] = await Promise.all([
     getBlogPosts(),
     getProjects(),

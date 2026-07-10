@@ -3,6 +3,7 @@ import {
   FALLBACK_POSTS, FALLBACK_PROJECTS, FALLBACK_SERVICES, FALLBACK_TESTIMONIALS, FALLBACK_BOOKS, FALLBACK_EVENTS,
   FALLBACK_CV, FALLBACK_MEDIA, FALLBACK_SOCIAL,
 } from './fallback-data';
+import { fallbackQuotes } from './fallback-data';
 import type {
   BlogPost, Project, Service, CVData, CVEducation, CVExperience,
   ContactSubmission, SocialLink, MediaItem, Testimonial, Book, SpeakingEvent,
@@ -258,5 +259,59 @@ export async function getEvents(): Promise<SpeakingEvent[]> {
   } catch {
     logRead('events', FALLBACK_EVENTS.length, 'fallback');
     return FALLBACK_EVENTS;
+  }
+}
+
+
+// ===== QUOTES =====
+export async function getQuotes(): Promise<any[]> {
+  try {
+    const db = getAdminDb();
+    const snap = await db.collection('quotes').orderBy('sortOrder', 'asc').get();
+    if (snap.empty) return fallbackQuotes;
+    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  } catch {
+    return fallbackQuotes;
+  }
+}
+
+export async function getPublishedQuotes(): Promise<any[]> {
+  try {
+    const db = getAdminDb();
+    const snap = await db.collection('quotes').where('published', '==', true).orderBy('sortOrder', 'asc').get();
+    if (snap.empty) return fallbackQuotes.filter(q => q.published);
+    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  } catch {
+    return fallbackQuotes.filter(q => q.published);
+  }
+}
+
+export async function getQuoteBySlug(slug: string): Promise<any | null> {
+  try {
+    const db = getAdminDb();
+    const snap = await db.collection('quotes').where('slug', '==', slug).where('published', '==', true).limit(1).get();
+    if (snap.empty) return fallbackQuotes.find(q => q.slug === slug) || null;
+    const doc = snap.docs[0];
+    return { id: doc.id, ...doc.data() };
+  } catch {
+    return fallbackQuotes.find(q => q.slug === slug) || null;
+  }
+}
+
+export async function getDailyQuote(): Promise<any> {
+  try {
+    const today = new Date().toISOString().split('T')[0];
+    const db = getAdminDb();
+    // Check for scheduled quote
+    const scheduled = await db.collection('quotes').where('scheduledDate', '==', today).where('published', '==', true).limit(1).get();
+    if (!scheduled.empty) return { id: scheduled.docs[0].id, ...scheduled.docs[0].data() };
+    // Deterministic daily rotation
+    const all = await getPublishedQuotes();
+    if (all.length === 0) return fallbackQuotes[0];
+    const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+    return all[dayOfYear % all.length];
+  } catch {
+    const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
+    return fallbackQuotes[dayOfYear % fallbackQuotes.length];
   }
 }

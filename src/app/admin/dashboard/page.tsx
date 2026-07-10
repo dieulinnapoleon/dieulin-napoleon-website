@@ -21,7 +21,7 @@ export default function AdminDashboardPage() {
   useEffect(() => {
     async function load() {
       try {
-        const [posts, projects, services, messages, media, socials, testimonials, books, events, subscribers] = await Promise.all([
+        const [posts, projects, services, messages, media, socials, testimonials, books, events, quotes, subscribers] = await Promise.all([
           listDocs("blogPosts").catch(() => []),
           listDocs("projects").catch(() => []),
           listDocs("services").catch(() => []),
@@ -31,6 +31,7 @@ export default function AdminDashboardPage() {
           listDocs("testimonials").catch(() => []),
           listDocs("books").catch(() => []),
           listDocs("events").catch(() => []),
+          listDocs("quotes").catch(() => []),
           listDocs("newsletterSubscribers", { field: "subscribed_at", direction: "desc" }).catch(() => []),
         ]);
 
@@ -43,6 +44,7 @@ export default function AdminDashboardPage() {
           { label: "Testimonials", count: testimonials.length, icon: Quote, color: "bg-cyan-50 text-cyan-600", href: "/admin/testimonials" },
           { label: "Books", count: books.length, icon: BookOpen, color: "bg-orange-50 text-orange-600", href: "/admin/books" },
           { label: "Events", count: events.length, icon: Mic, color: "bg-indigo-50 text-indigo-600", href: "/admin/events" },
+          { label: "Quotes", count: quotes.length, icon: MessageSquare, color: "bg-teal-50 text-teal-600", href: "/admin/quotes" },
         ]);
 
         setRecentMessages(messages.slice(0, 5));

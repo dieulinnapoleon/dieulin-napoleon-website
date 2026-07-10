@@ -205,3 +205,21 @@ export interface SpeakingEvent {
   sort_order: number;
   published: boolean;
 }
+
+
+export interface Quote {
+  id: string;
+  text: string;
+  author: string;
+  source: string;
+  category: string;
+  tags: string[];
+  slug: string;
+  language: string;
+  published: boolean;
+  featured: boolean;
+  scheduledDate?: string;
+  sortOrder: number;
+  created_at: string;
+  updated_at: string;
+}
