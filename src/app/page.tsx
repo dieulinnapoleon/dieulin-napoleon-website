@@ -357,6 +357,24 @@ export default async function HomePage() {
         </div>
       </section>
 
+
+      {/* Daily Motivation */}
+      {dailyQuote && (
+        <section className="py-16 bg-navy">
+          <div className="section-container max-w-3xl text-center">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-2">Daily Motivation</p>
+            <h2 className="font-display text-2xl font-bold text-white mb-8">Today&apos;s Reflection</h2>
+            <div className="p-8 rounded-2xl bg-white/5 border border-white/10">
+              <p className="text-lg md:text-xl text-white/90 font-display italic leading-relaxed mb-5">&ldquo;{dailyQuote.text}&rdquo;</p>
+              <p className="text-gold/70 text-sm font-medium">&mdash; {dailyQuote.author || 'Dieulin Napoleon'}</p>
+            </div>
+            <Link href="/quotes" className="inline-flex items-center gap-2 mt-8 text-gold text-sm font-semibold hover:text-white transition-colors">
+              View All Quotes <ArrowRight size={14} />
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* ===== CTA ===== */}
       <section className="py-section bg-navy relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(196,149,58,0.08)_0%,transparent_60%)]" />
