@@ -462,9 +462,9 @@ export const fallbackQuotes = [
   { id: 'q15', text: 'Growth does not come from what is easy. It comes from what you refuse to quit.', author: 'Dieulin Napoleon', source: 'Original', category: 'Growth', tags: ['growth','perseverance','discipline'], slug: 'growth-refuse-to-quit', language: 'en', published: true, featured: false, sortOrder: 14, created_at: '2026-06-01', updated_at: '2026-06-01' },
 ];
 
-// ===== HAITI 2075 STATIC DATA =====
+// ===== HAITI 2077 STATIC DATA =====
 
-export const haiti2075Pillars = [
+export const haiti2077Pillars = [
   { slug: 'governance-institutions', title: 'Governance and Institutions', description: 'Building transparent, accountable, and effective public institutions that serve citizens and sustain long-term national development.', icon: 'Landmark', priority: 1 },
   { slug: 'security-justice-rule-of-law', title: 'Security, Justice, and Rule of Law', description: 'Establishing a functional justice system, professional security forces, and the rule of law as the foundation for stability and investment.', icon: 'Shield', priority: 2 },
   { slug: 'education-human-capital', title: 'Education and Human Capital', description: 'Building a modern education system that develops skills, civic responsibility, technical capacity, and national productivity.', icon: 'GraduationCap', priority: 3 },
@@ -487,7 +487,7 @@ export const haiti2075Pillars = [
   { slug: 'civic-culture-national-identity', title: 'Civic Culture and National Identity', description: 'Strengthening civic responsibility, patriotic commitment, cultural pride, and a shared national narrative of possibility.', icon: 'Flag', priority: 20 },
 ];
 
-export const haiti2075Departments = [
+export const haiti2077Departments = [
   { slug: 'artibonite', name: 'Artibonite', description: 'Haiti\'s agricultural heartland and largest rice-producing region, with significant potential for agricultural modernization and agro-industrial development.', prioritySectors: ['Agriculture', 'Infrastructure', 'Water management', 'Trade'] },
   { slug: 'centre', name: 'Centre', description: 'A mountainous interior department with agricultural potential, cross-border trade opportunities, and significant infrastructure needs.', prioritySectors: ['Agriculture', 'Infrastructure', 'Cross-border trade', 'Education'] },
   { slug: 'grand-anse', name: "Grand'Anse", description: 'A coastal department with rich agricultural land, fishing potential, and emerging tourism opportunities.', prioritySectors: ['Agriculture', 'Fishing', 'Tourism', 'Infrastructure'] },
@@ -500,9 +500,9 @@ export const haiti2075Departments = [
   { slug: 'sud-est', name: 'Sud-Est', description: 'A coastal department with fishing, agriculture, and cross-border trade potential with the Dominican Republic.', prioritySectors: ['Agriculture', 'Fishing', 'Cross-border trade', 'Tourism'] },
 ];
 
-export const haiti2075Timeline = [
-  { period: '2026-2030', title: 'Stabilization and Institutional Recovery', description: 'Restore basic security, rebuild core institutions, establish rule of law foundations, launch emergency infrastructure programs, and create the national development planning framework.' },
-  { period: '2031-2040', title: 'Foundations for Growth', description: 'Invest systematically in education, agricultural modernization, energy infrastructure, healthcare systems, and the legal and regulatory frameworks that enable private-sector-led growth.' },
-  { period: '2041-2050', title: 'Industrialization and Modernization', description: 'Build domestic productive capacity, develop technology and digital infrastructure, implement comprehensive urban planning, expand export capacity, and strengthen regional trade integration.' },
-  { period: '2051-2075', title: 'Regional Leadership and Shared Prosperity', description: 'Achieve advanced institutional quality, innovation-driven economic growth, universal public services, environmental sustainability, and a position of leadership and respect in the Caribbean and the world.' },
+export const haiti2077Timeline = [
+  { period: '2027-2032', title: 'Stabilization and Institutional Recovery', description: 'Restore basic security, rebuild core institutions, establish rule of law foundations, launch emergency infrastructure programs, and create the national development planning framework.' },
+  { period: '2033-2045', title: 'Foundations for Growth', description: 'Invest systematically in education, agricultural modernization, energy infrastructure, healthcare systems, and the legal and regulatory frameworks that enable private-sector-led growth.' },
+  { period: '2046-2060', title: 'Industrialization and Modernization', description: 'Build domestic productive capacity, develop technology and digital infrastructure, implement comprehensive urban planning, expand export capacity, and strengthen regional trade integration.' },
+  { period: '2061-2077', title: 'Regional Leadership and Shared Prosperity', description: 'Achieve advanced institutional quality, innovation-driven economic growth, universal public services, environmental sustainability, and a position of leadership and respect in the Caribbean and the world.' },
 ];

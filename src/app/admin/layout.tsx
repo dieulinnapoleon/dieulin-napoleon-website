@@ -24,7 +24,7 @@ const ADMIN_NAV = [
   { label: 'Events', href: '/admin/events', icon: Mic },
   { label: 'Newsletter', href: '/admin/newsletter', icon: Mail },
   { label: 'Quotes', href: '/admin/quotes', icon: MessageCircle },
-  { label: 'Haiti 2075', href: '/admin/haiti-2075', icon: Globe },
+  { label: 'Haiti 2077', href: '/admin/haiti-2077', icon: Globe },
   { label: 'Social Links', href: '/admin/settings', icon: Link2 },
   { label: 'Settings', href: '/admin/site-settings', icon: Settings },
 ];

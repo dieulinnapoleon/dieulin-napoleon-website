@@ -47,7 +47,7 @@ function revalidateForCollection(collection: string) {
     testimonials: ['/'],
     books: ['/books'],
     quotes: ['/quotes', '/'],
-    haiti2075Proposals: ['/haiti-2075/proposals', '/haiti-2075'],
+    haiti2077Proposals: ['/haiti-2077/proposals', '/haiti-2077'],
   };
   const paths = pathMap[collection] || ['/'];
   paths.forEach((p) => { try { revalidatePath(p); } catch {} });

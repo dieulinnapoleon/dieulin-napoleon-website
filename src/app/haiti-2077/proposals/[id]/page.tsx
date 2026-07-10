@@ -10,9 +10,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   const p = await getProposalById(params.id);
   if (!p) return { title: 'Proposal Not Found' };
   return {
-    title: p.proposalTitle + ' | Haiti 2075',
+    title: p.proposalTitle + ' | Haiti 2077',
     description: p.problemAddressed?.substring(0, 160),
-    openGraph: { title: p.proposalTitle + ' | Haiti 2075', description: p.problemAddressed?.substring(0, 160), images: [{ url: '/images/Dieulin-website.jpg' }] },
+    openGraph: { title: p.proposalTitle + ' | Haiti 2077', description: p.problemAddressed?.substring(0, 160), images: [{ url: '/images/Dieulin-website.jpg' }] },
   };
 }
 
@@ -24,7 +24,7 @@ export default async function ProposalDetailPage({ params }: { params: { id: str
     <div>
       <section className="bg-navy pt-32 pb-16">
         <div className="section-container max-w-3xl">
-          <Link href="/haiti-2075/proposals" className="inline-flex items-center gap-2 text-gold text-sm font-medium mb-8 hover:text-gold-300 transition-colors"><ArrowLeft size={16} /> All Proposals</Link>
+          <Link href="/haiti-2077/proposals" className="inline-flex items-center gap-2 text-gold text-sm font-medium mb-8 hover:text-gold-300 transition-colors"><ArrowLeft size={16} /> All Proposals</Link>
           <h1 className="font-display text-[clamp(24px,4vw,36px)] font-bold text-white mb-4">{p.proposalTitle}</h1>
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="text-[11px] bg-gold/10 text-gold px-3 py-1 rounded-full flex items-center gap-1"><Target size={10} /> {p.policyPillar}</span>
@@ -72,10 +72,10 @@ export default async function ProposalDetailPage({ params }: { params: { id: str
 
           <div className="mt-16 text-center p-10 rounded-2xl bg-navy">
             <h3 className="font-display text-xl font-semibold text-white mb-3">Share Your Ideas Too</h3>
-            <p className="text-white/40 text-sm mb-6">Haiti 2075 welcomes constructive proposals from all citizens.</p>
+            <p className="text-white/40 text-sm mb-6">Haiti 2077 welcomes constructive proposals from all citizens.</p>
             <div className="flex justify-center gap-3 flex-wrap">
-              <Link href="/haiti-2075/contribute" className="bg-gold hover:bg-gold-300 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors flex items-center gap-2">Submit a Proposal <ArrowRight size={14} /></Link>
-              <Link href="/haiti-2075/proposals" className="border border-white/20 hover:bg-white/10 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">All Proposals</Link>
+              <Link href="/haiti-2077/contribute" className="bg-gold hover:bg-gold-300 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors flex items-center gap-2">Submit a Proposal <ArrowRight size={14} /></Link>
+              <Link href="/haiti-2077/proposals" className="border border-white/20 hover:bg-white/10 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">All Proposals</Link>
             </div>
           </div>
         </div>

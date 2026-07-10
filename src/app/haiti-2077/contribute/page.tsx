@@ -32,7 +32,7 @@ export default function ContributePage() {
 
     setSubmitting(true);
     try {
-      const res = await fetch('/api/haiti-2075', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) });
+      const res = await fetch('/api/haiti-2077', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) });
       const data = await res.json();
       if (res.ok) { setSubmitted(true); } else { setError(data.error || 'Submission failed. Please try again.'); }
     } catch { setError('Network error. Please try again.'); }
@@ -47,8 +47,8 @@ export default function ContributePage() {
           <h1 className="font-display text-3xl font-bold text-white mb-4">Thank You for Your Contribution</h1>
           <p className="text-white/50 mb-8">Your proposal has been submitted and is under review. Approved proposals will appear on the public proposals page. You will not receive a confirmation email, but your submission has been recorded.</p>
           <div className="flex justify-center gap-3">
-            <Link href="/haiti-2075" className="bg-gold hover:bg-gold-300 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">Back to Haiti 2075</Link>
-            <Link href="/haiti-2075/proposals" className="border border-white/20 hover:bg-white/10 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">View Proposals</Link>
+            <Link href="/haiti-2077" className="bg-gold hover:bg-gold-300 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">Back to Haiti 2077</Link>
+            <Link href="/haiti-2077/proposals" className="border border-white/20 hover:bg-white/10 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">View Proposals</Link>
           </div>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default function ContributePage() {
     <div>
       <section className="page-header">
         <div className="section-container">
-          <Link href="/haiti-2075" className="inline-flex items-center gap-2 text-gold text-sm font-medium mb-6 hover:text-gold-300 transition-colors"><ArrowLeft size={16} /> Haiti 2075</Link>
+          <Link href="/haiti-2077" className="inline-flex items-center gap-2 text-gold text-sm font-medium mb-6 hover:text-gold-300 transition-colors"><ArrowLeft size={16} /> Haiti 2077</Link>
           <h1 className="page-header-title">Submit a Proposal</h1>
           <p className="page-header-subtitle">Contribute a structured idea for Haiti&apos;s long-term transformation. All submissions are reviewed before publication.</p>
         </div>

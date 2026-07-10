@@ -359,15 +359,15 @@ export default async function HomePage() {
 
 
 
-      {/* Haiti 2075 */}
+      {/* Haiti 2077 */}
       <section className="py-16 bg-gray-50/50">
         <div className="section-container max-w-3xl text-center">
           <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-2">Civic Initiative</p>
-          <h2 className="font-display text-2xl font-bold text-navy mb-4">Haiti 2075: A 50-Year Civic Vision</h2>
+          <h2 className="font-display text-2xl font-bold text-navy mb-4">Haiti 2077: A 50-Year Civic Vision</h2>
           <p className="text-gray-500 text-base leading-relaxed mb-8 max-w-xl mx-auto">A nonpartisan civic reflection initiative inviting Haitians, diaspora members, professionals, students, entrepreneurs, educators, and policymakers to contribute structured ideas for Haiti&apos;s long-term transformation.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/haiti-2075" className="bg-navy hover:bg-navy/90 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">Explore Haiti 2075</Link>
-            <Link href="/haiti-2075/contribute" className="border border-navy/20 text-navy hover:bg-navy hover:text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">Submit an Idea</Link>
+            <Link href="/haiti-2077" className="bg-navy hover:bg-navy/90 text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">Explore Haiti 2077</Link>
+            <Link href="/haiti-2077/contribute" className="border border-navy/20 text-navy hover:bg-navy hover:text-white px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors">Submit an Idea</Link>
           </div>
         </div>
       </section>

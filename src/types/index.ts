@@ -225,7 +225,7 @@ export interface Quote {
 }
 
 
-export interface Haiti2075Proposal {
+export interface Haiti2077Proposal {
   id: string;
   fullName: string;
   email: string;
@@ -255,7 +255,7 @@ export interface Haiti2075Proposal {
   updated_at: string;
 }
 
-export interface Haiti2075Pillar {
+export interface Haiti2077Pillar {
   slug: string;
   title: string;
   description: string;
@@ -263,7 +263,7 @@ export interface Haiti2075Pillar {
   priority: number;
 }
 
-export interface Haiti2075Department {
+export interface Haiti2077Department {
   slug: string;
   name: string;
   description: string;

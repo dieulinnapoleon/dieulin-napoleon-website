@@ -9,7 +9,7 @@ import { listDocs, updateDoc, deleteDoc } from "@/lib/admin-api";
 const STATUSES = ['all', 'pending', 'approved', 'rejected'];
 const STATUS_COLORS: Record<string, string> = { pending: 'bg-amber-50 text-amber-600', approved: 'bg-emerald-50 text-emerald-600', rejected: 'bg-red-50 text-red-500' };
 
-export default function AdminHaiti2075Page() {
+export default function AdminHaiti2077Page() {
   const [proposals, setProposals] = useState<any[]>([]);
   const [filter, setFilter] = useState('all');
   const [selected, setSelected] = useState<any | null>(null);
@@ -18,7 +18,7 @@ export default function AdminHaiti2075Page() {
 
   const fetch = useCallback(async () => {
     try {
-      const data = await listDocs('haiti2075Proposals', { field: 'created_at', direction: 'desc' });
+      const data = await listDocs('haiti2077Proposals', { field: 'created_at', direction: 'desc' });
       setProposals(data);
     } catch { /* empty */ }
     setLoading(false);
@@ -28,7 +28,7 @@ export default function AdminHaiti2075Page() {
 
   const updateStatus = async (id: string, status: string) => {
     try {
-      await updateDoc('haiti2075Proposals', id, { status, updated_at: new Date().toISOString() });
+      await updateDoc('haiti2077Proposals', id, { status, updated_at: new Date().toISOString() });
       toast.success('Status updated to ' + status);
       fetch();
       if (selected?.id === id) setSelected({ ...selected, status });
@@ -37,7 +37,7 @@ export default function AdminHaiti2075Page() {
 
   const toggleFeatured = async (id: string, current: boolean) => {
     try {
-      await updateDoc('haiti2075Proposals', id, { featured: !current });
+      await updateDoc('haiti2077Proposals', id, { featured: !current });
       toast.success(current ? 'Unfeatured' : 'Featured');
       fetch();
     } catch { toast.error('Failed to update'); }
@@ -46,7 +46,7 @@ export default function AdminHaiti2075Page() {
   const handleDelete = async (id: string) => {
     if (!confirm('Delete this proposal permanently?')) return;
     try {
-      await deleteDoc('haiti2075Proposals', id);
+      await deleteDoc('haiti2077Proposals', id);
       toast.success('Deleted');
       setSelected(null);
       fetch();
@@ -55,7 +55,7 @@ export default function AdminHaiti2075Page() {
 
   const saveNotes = async (id: string, notes: string) => {
     try {
-      await updateDoc('haiti2075Proposals', id, { adminNotes: notes });
+      await updateDoc('haiti2077Proposals', id, { adminNotes: notes });
       toast.success('Notes saved');
     } catch { toast.error('Failed to save notes'); }
   };
@@ -101,7 +101,7 @@ export default function AdminHaiti2075Page() {
         <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
           <Button onClick={() => updateStatus(selected.id, 'approved')} className="bg-emerald-500 hover:bg-emerald-600 text-white"><Check size={14} /> Approve</Button>
           <Button onClick={() => updateStatus(selected.id, 'rejected')} className="bg-red-500 hover:bg-red-600 text-white"><X size={14} /> Reject</Button>
-          <Button onClick={async () => { try { await updateDoc('haiti2075Proposals', selected.id, { incorporatedIntoPlan: !selected.incorporatedIntoPlan, updated_at: new Date().toISOString() }); toast.success(selected.incorporatedIntoPlan ? 'Removed from plan' : 'Incorporated into plan'); fetch(); setSelected({ ...selected, incorporatedIntoPlan: !selected.incorporatedIntoPlan }); } catch { toast.error('Failed'); } }} className="bg-blue-500 hover:bg-blue-600 text-white"><FileText size={14} /> {selected.incorporatedIntoPlan ? 'Remove from Plan' : 'Incorporate'}</Button>
+          <Button onClick={async () => { try { await updateDoc('haiti2077Proposals', selected.id, { incorporatedIntoPlan: !selected.incorporatedIntoPlan, updated_at: new Date().toISOString() }); toast.success(selected.incorporatedIntoPlan ? 'Removed from plan' : 'Incorporated into plan'); fetch(); setSelected({ ...selected, incorporatedIntoPlan: !selected.incorporatedIntoPlan }); } catch { toast.error('Failed'); } }} className="bg-blue-500 hover:bg-blue-600 text-white"><FileText size={14} /> {selected.incorporatedIntoPlan ? 'Remove from Plan' : 'Incorporate'}</Button>
           <Button onClick={() => toggleFeatured(selected.id, selected.featured)} variant="outline"><Star size={14} /> {selected.featured ? 'Unfeature' : 'Feature'}</Button>
           <Button onClick={() => handleDelete(selected.id)} variant="outline" className="text-red-500 border-red-200 hover:bg-red-50"><Trash2 size={14} /> Delete</Button>
         </div>
@@ -113,7 +113,7 @@ export default function AdminHaiti2075Page() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="font-display text-2xl font-bold text-navy">Haiti 2075 Proposals</h1>
+          <h1 className="font-display text-2xl font-bold text-navy">Haiti 2077 Proposals</h1>
           <p className="text-sm text-gray-500">{proposals.length} total, {proposals.filter(p => p.status === 'pending').length} pending</p>
         </div>
       </div>

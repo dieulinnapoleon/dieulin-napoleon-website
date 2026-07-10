@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
       updated_at: new Date().toISOString(),
     };
 
-    await db.collection('haiti2075Proposals').add(proposal);
+    await db.collection('haiti2077Proposals').add(proposal);
     return NextResponse.json({ success: true });
   } catch (err: any) {
     return NextResponse.json({ error: err.message || 'Submission failed' }, { status: 500 });
