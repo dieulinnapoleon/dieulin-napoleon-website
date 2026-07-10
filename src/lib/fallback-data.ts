@@ -461,3 +461,48 @@ export const fallbackQuotes = [
   { id: 'q14', text: 'Wisdom is knowing when to speak, when to listen, and when to walk away and build.', author: 'Dieulin Napoleon', source: 'Original', category: 'Wisdom', tags: ['wisdom','patience','growth'], slug: 'wisdom-speak-listen-build', language: 'en', published: true, featured: false, sortOrder: 13, created_at: '2026-06-01', updated_at: '2026-06-01' },
   { id: 'q15', text: 'Growth does not come from what is easy. It comes from what you refuse to quit.', author: 'Dieulin Napoleon', source: 'Original', category: 'Growth', tags: ['growth','perseverance','discipline'], slug: 'growth-refuse-to-quit', language: 'en', published: true, featured: false, sortOrder: 14, created_at: '2026-06-01', updated_at: '2026-06-01' },
 ];
+
+// ===== HAITI 2075 STATIC DATA =====
+
+export const haiti2075Pillars = [
+  { slug: 'governance-institutions', title: 'Governance and Institutions', description: 'Building transparent, accountable, and effective public institutions that serve citizens and sustain long-term national development.', icon: 'Landmark', priority: 1 },
+  { slug: 'security-justice-rule-of-law', title: 'Security, Justice, and Rule of Law', description: 'Establishing a functional justice system, professional security forces, and the rule of law as the foundation for stability and investment.', icon: 'Shield', priority: 2 },
+  { slug: 'education-human-capital', title: 'Education and Human Capital', description: 'Building a modern education system that develops skills, civic responsibility, technical capacity, and national productivity.', icon: 'GraduationCap', priority: 3 },
+  { slug: 'healthcare-public-health', title: 'Healthcare and Public Health', description: 'Creating accessible, quality healthcare infrastructure and preventive health systems for all Haitians.', icon: 'Heart', priority: 4 },
+  { slug: 'agriculture-food-sovereignty', title: 'Agriculture and Food Sovereignty', description: 'Modernizing agriculture to achieve food security, reduce import dependence, and build rural prosperity.', icon: 'Wheat', priority: 5 },
+  { slug: 'infrastructure-transportation', title: 'Infrastructure and Transportation', description: 'Building roads, ports, airports, and logistics networks that connect communities and enable economic growth.', icon: 'Truck', priority: 6 },
+  { slug: 'housing-urban-planning', title: 'Housing, Urban Planning, and Real Estate', description: 'Developing planned, resilient, and livable cities with affordable housing and functional public spaces.', icon: 'Building2', priority: 7 },
+  { slug: 'energy-electricity', title: 'Energy and Electricity', description: 'Achieving universal electricity access through renewable energy, grid modernization, and sustainable power generation.', icon: 'Zap', priority: 8 },
+  { slug: 'water-sanitation-waste', title: 'Water, Sanitation, and Waste Management', description: 'Providing clean water, modern sanitation, and effective waste management systems across all departments.', icon: 'Droplets', priority: 9 },
+  { slug: 'technology-digital', title: 'Technology and Digital Transformation', description: 'Leveraging technology, connectivity, and digital government to leapfrog development and empower citizens.', icon: 'Cpu', priority: 10 },
+  { slug: 'natural-resources-environment', title: 'Natural Resources and Environmental Protection', description: 'Governing natural resources transparently while restoring forests, watersheds, and ecological resilience.', icon: 'TreePine', priority: 11 },
+  { slug: 'tourism-culture-heritage', title: 'Tourism, Culture, and Heritage', description: 'Positioning Haiti as a premier Caribbean destination by investing in cultural assets, hospitality, and heritage preservation.', icon: 'Palmtree', priority: 12 },
+  { slug: 'industrial-policy-manufacturing', title: 'Industrial Policy and Manufacturing', description: 'Building domestic productive capacity through strategic industrialization, value-added manufacturing, and export development.', icon: 'Factory', priority: 13 },
+  { slug: 'finance-banking-capital', title: 'Finance, Banking, and Capital Formation', description: 'Developing inclusive financial systems, capital markets, and investment frameworks that fund national development.', icon: 'Banknote', priority: 14 },
+  { slug: 'diaspora-engagement', title: 'Diaspora Engagement', description: 'Channeling the diaspora\'s financial, intellectual, and professional resources toward structured national development.', icon: 'Globe', priority: 15 },
+  { slug: 'trade-regional-integration', title: 'Trade and Regional Integration', description: 'Expanding trade capacity, strengthening regional partnerships, and integrating Haiti into Caribbean and global value chains.', icon: 'ArrowLeftRight', priority: 16 },
+  { slug: 'women-youth-family', title: 'Women, Youth, and Family Policy', description: 'Empowering women, investing in youth development, and strengthening the family as the foundation of social stability.', icon: 'Users', priority: 17 },
+  { slug: 'disaster-resilience-climate', title: 'Disaster Resilience and Climate Adaptation', description: 'Building climate-resilient infrastructure, early warning systems, and disaster preparedness across all departments.', icon: 'CloudRain', priority: 18 },
+  { slug: 'local-government-decentralization', title: 'Local Government and Decentralization', description: 'Empowering departmental and municipal governments with authority, resources, and accountability.', icon: 'MapPin', priority: 19 },
+  { slug: 'civic-culture-national-identity', title: 'Civic Culture and National Identity', description: 'Strengthening civic responsibility, patriotic commitment, cultural pride, and a shared national narrative of possibility.', icon: 'Flag', priority: 20 },
+];
+
+export const haiti2075Departments = [
+  { slug: 'artibonite', name: 'Artibonite', description: 'Haiti\'s agricultural heartland and largest rice-producing region, with significant potential for agricultural modernization and agro-industrial development.', prioritySectors: ['Agriculture', 'Infrastructure', 'Water management', 'Trade'] },
+  { slug: 'centre', name: 'Centre', description: 'A mountainous interior department with agricultural potential, cross-border trade opportunities, and significant infrastructure needs.', prioritySectors: ['Agriculture', 'Infrastructure', 'Cross-border trade', 'Education'] },
+  { slug: 'grand-anse', name: "Grand'Anse", description: 'A coastal department with rich agricultural land, fishing potential, and emerging tourism opportunities.', prioritySectors: ['Agriculture', 'Fishing', 'Tourism', 'Infrastructure'] },
+  { slug: 'nippes', name: 'Nippes', description: 'A small but strategically located department with agricultural potential and coastal tourism assets.', prioritySectors: ['Agriculture', 'Tourism', 'Infrastructure', 'Energy'] },
+  { slug: 'nord', name: 'Nord', description: 'Home to the Citadelle Laferriere and Cap-Haitien, with extraordinary tourism, historical, agricultural, and port development potential.', prioritySectors: ['Tourism', 'Infrastructure', 'Agriculture', 'Urban planning', 'Trade'] },
+  { slug: 'nord-est', name: 'Nord-Est', description: 'A border department with cross-border trade potential, agricultural resources, and the Maribahoux agricultural zone.', prioritySectors: ['Agriculture', 'Cross-border trade', 'Infrastructure', 'Mining'] },
+  { slug: 'nord-ouest', name: 'Nord-Ouest', description: 'One of Haiti\'s most underserved departments, with significant needs in infrastructure, water, and basic services.', prioritySectors: ['Infrastructure', 'Water', 'Agriculture', 'Energy'] },
+  { slug: 'ouest', name: 'Ouest', description: 'The most populated department, containing Port-au-Prince. Faces urban planning, security, infrastructure, and governance challenges at scale.', prioritySectors: ['Urban planning', 'Security', 'Infrastructure', 'Governance', 'Housing'] },
+  { slug: 'sud', name: 'Sud', description: 'A department with beautiful coastline, agricultural potential, and significant reconstruction needs following the 2021 earthquake.', prioritySectors: ['Tourism', 'Agriculture', 'Reconstruction', 'Infrastructure'] },
+  { slug: 'sud-est', name: 'Sud-Est', description: 'A coastal department with fishing, agriculture, and cross-border trade potential with the Dominican Republic.', prioritySectors: ['Agriculture', 'Fishing', 'Cross-border trade', 'Tourism'] },
+];
+
+export const haiti2075Timeline = [
+  { period: '2026-2030', title: 'Stabilization and Institutional Recovery', description: 'Restore basic security, rebuild core institutions, establish rule of law foundations, launch emergency infrastructure programs, and create the national development planning framework.' },
+  { period: '2031-2040', title: 'Foundations for Growth', description: 'Invest systematically in education, agricultural modernization, energy infrastructure, healthcare systems, and the legal and regulatory frameworks that enable private-sector-led growth.' },
+  { period: '2041-2050', title: 'Industrialization and Modernization', description: 'Build domestic productive capacity, develop technology and digital infrastructure, implement comprehensive urban planning, expand export capacity, and strengthen regional trade integration.' },
+  { period: '2051-2075', title: 'Regional Leadership and Shared Prosperity', description: 'Achieve advanced institutional quality, innovation-driven economic growth, universal public services, environmental sustainability, and a position of leadership and respect in the Caribbean and the world.' },
+];

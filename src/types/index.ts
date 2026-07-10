@@ -223,3 +223,49 @@ export interface Quote {
   created_at: string;
   updated_at: string;
 }
+
+
+export interface Haiti2075Proposal {
+  id: string;
+  fullName: string;
+  email: string;
+  countryCity: string;
+  departmentInterest: string;
+  educationLevel: string;
+  profession: string;
+  organization: string;
+  areaOfExpertise: string;
+  proposalTitle: string;
+  policyPillar: string;
+  departmentConcerned: string;
+  problemAddressed: string;
+  proposedSolution: string;
+  expectedImpact: string;
+  timeHorizon: string;
+  implementationActors: string[];
+  sources: string;
+  permissionToPublishName: boolean;
+  consentGiven: boolean;
+  status: 'pending' | 'approved' | 'rejected' | 'incorporated';
+  featured: boolean;
+  incorporatedIntoPlan: boolean;
+  adminNotes: string;
+  slug: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface Haiti2075Pillar {
+  slug: string;
+  title: string;
+  description: string;
+  icon: string;
+  priority: number;
+}
+
+export interface Haiti2075Department {
+  slug: string;
+  name: string;
+  description: string;
+  prioritySectors: string[];
+}

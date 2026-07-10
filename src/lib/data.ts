@@ -3,7 +3,7 @@ import {
   FALLBACK_POSTS, FALLBACK_PROJECTS, FALLBACK_SERVICES, FALLBACK_TESTIMONIALS, FALLBACK_BOOKS, FALLBACK_EVENTS,
   FALLBACK_CV, FALLBACK_MEDIA, FALLBACK_SOCIAL,
 } from './fallback-data';
-import { fallbackQuotes } from './fallback-data';
+import { fallbackQuotes, haiti2075Pillars, haiti2075Departments, haiti2075Timeline } from './fallback-data';
 import type {
   BlogPost, Project, Service, CVData, CVEducation, CVExperience,
   ContactSubmission, SocialLink, MediaItem, Testimonial, Book, SpeakingEvent,
@@ -314,4 +314,37 @@ export async function getDailyQuote(): Promise<any> {
     const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0).getTime()) / 86400000);
     return fallbackQuotes[dayOfYear % fallbackQuotes.length];
   }
+}
+
+
+// ===== HAITI 2075 =====
+export function getPillars() { return haiti2075Pillars; }
+export function getDepartments() { return haiti2075Departments; }
+export function getTimeline() { return haiti2075Timeline; }
+
+export async function getApprovedProposals(): Promise<any[]> {
+  try {
+    const db = getAdminDb();
+    const snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').orderBy('created_at', 'desc').get();
+    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  } catch { return []; }
+}
+
+export async function getProposalById(id: string): Promise<any | null> {
+  try {
+    const db = getAdminDb();
+    const doc = await db.collection('haiti2075Proposals').doc(id).get();
+    if (!doc.exists) return null;
+    const data = doc.data();
+    if (data?.status !== 'approved') return null;
+    return { id: doc.id, ...data };
+  } catch { return null; }
+}
+
+export async function getFeaturedProposals(): Promise<any[]> {
+  try {
+    const db = getAdminDb();
+    const snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').where('featured', '==', true).orderBy('created_at', 'desc').limit(6).get();
+    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  } catch { return []; }
 }
