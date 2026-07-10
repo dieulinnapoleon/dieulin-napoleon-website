@@ -325,8 +325,15 @@ export function getTimeline() { return haiti2075Timeline; }
 export async function getApprovedProposals(): Promise<any[]> {
   try {
     const db = getAdminDb();
-    const snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').orderBy('created_at', 'desc').get();
-    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    let snap;
+    try {
+      snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').orderBy('created_at', 'desc').get();
+    } catch {
+      // Fallback if composite index not ready
+      snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').get();
+    }
+    const docs = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return docs.sort((a: any, b: any) => (b.created_at || '').localeCompare(a.created_at || ''));
   } catch { return []; }
 }
 
@@ -344,7 +351,15 @@ export async function getProposalById(id: string): Promise<any | null> {
 export async function getFeaturedProposals(): Promise<any[]> {
   try {
     const db = getAdminDb();
-    const snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').where('featured', '==', true).orderBy('created_at', 'desc').limit(6).get();
+    let snap;
+    try {
+      snap = await db.collection('haiti2075Proposals').where('status', '==', 'approved').where('featured', '==', true).orderBy('created_at', 'desc').limit(6).get();
+    } catch {
+      // Fallback if composite index not ready
+      const all = await db.collection('haiti2075Proposals').where('status', '==', 'approved').get();
+      const featured = all.docs.filter(doc => doc.data().featured === true).map(doc => ({ id: doc.id, ...doc.data() }));
+      return featured.sort((a: any, b: any) => (b.created_at || '').localeCompare(a.created_at || '')).slice(0, 6);
+    }
     return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   } catch { return []; }
 }
