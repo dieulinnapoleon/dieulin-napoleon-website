@@ -336,7 +336,7 @@ export async function getProposalById(id: string): Promise<any | null> {
     const doc = await db.collection('haiti2075Proposals').doc(id).get();
     if (!doc.exists) return null;
     const data = doc.data();
-    if (data?.status !== 'approved') return null;
+    if (data?.status !== 'approved' && data?.status !== 'incorporated') return null;
     return { id: doc.id, ...data };
   } catch { return null; }
 }

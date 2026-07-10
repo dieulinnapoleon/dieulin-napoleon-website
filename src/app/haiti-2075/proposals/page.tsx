@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Star, Clock, MapPin } from 'lucide-react';
 import { getApprovedProposals, getFeaturedProposals } from '@/lib/data';
 import type { Metadata } from 'next';
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Citizen Proposals | Haiti 2075',

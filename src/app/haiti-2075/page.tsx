@@ -3,7 +3,7 @@ import { ArrowRight, Target, Clock, MapPin, Users, Lightbulb, Shield, Graduation
 import { getPillars, getDepartments, getTimeline } from '@/lib/data';
 import type { Metadata } from 'next';
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'Haiti 2075 — A 50-Year Civic Vision for National Transformation',

@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Clock, MapPin, Users, Target } from 'lucide-reac
 import { getProposalById } from '@/lib/data';
 import type { Metadata } from 'next';
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const p = await getProposalById(params.id);

@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast";
 import { listDocs, updateDoc, deleteDoc } from "@/lib/admin-api";
 
-const STATUSES = ['all', 'pending', 'approved', 'rejected', 'incorporated'];
-const STATUS_COLORS: Record<string, string> = { pending: 'bg-amber-50 text-amber-600', approved: 'bg-emerald-50 text-emerald-600', rejected: 'bg-red-50 text-red-500', incorporated: 'bg-blue-50 text-blue-600' };
+const STATUSES = ['all', 'pending', 'approved', 'rejected'];
+const STATUS_COLORS: Record<string, string> = { pending: 'bg-amber-50 text-amber-600', approved: 'bg-emerald-50 text-emerald-600', rejected: 'bg-red-50 text-red-500' };
 
 export default function AdminHaiti2075Page() {
   const [proposals, setProposals] = useState<any[]>([]);
@@ -101,7 +101,7 @@ export default function AdminHaiti2075Page() {
         <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
           <Button onClick={() => updateStatus(selected.id, 'approved')} className="bg-emerald-500 hover:bg-emerald-600 text-white"><Check size={14} /> Approve</Button>
           <Button onClick={() => updateStatus(selected.id, 'rejected')} className="bg-red-500 hover:bg-red-600 text-white"><X size={14} /> Reject</Button>
-          <Button onClick={() => updateStatus(selected.id, 'incorporated')} className="bg-blue-500 hover:bg-blue-600 text-white"><FileText size={14} /> Incorporate</Button>
+          <Button onClick={async () => { try { await updateDoc('haiti2075Proposals', selected.id, { incorporatedIntoPlan: !selected.incorporatedIntoPlan, updated_at: new Date().toISOString() }); toast.success(selected.incorporatedIntoPlan ? 'Removed from plan' : 'Incorporated into plan'); fetch(); setSelected({ ...selected, incorporatedIntoPlan: !selected.incorporatedIntoPlan }); } catch { toast.error('Failed'); } }} className="bg-blue-500 hover:bg-blue-600 text-white"><FileText size={14} /> {selected.incorporatedIntoPlan ? 'Remove from Plan' : 'Incorporate'}</Button>
           <Button onClick={() => toggleFeatured(selected.id, selected.featured)} variant="outline"><Star size={14} /> {selected.featured ? 'Unfeature' : 'Feature'}</Button>
           <Button onClick={() => handleDelete(selected.id)} variant="outline" className="text-red-500 border-red-200 hover:bg-red-50"><Trash2 size={14} /> Delete</Button>
         </div>
@@ -128,7 +128,7 @@ export default function AdminHaiti2075Page() {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
                 <span className={"text-[10px] px-2 py-0.5 rounded-full font-medium " + (STATUS_COLORS[p.status] || 'bg-gray-100 text-gray-500')}>{p.status}</span>
-                {p.featured && <Star size={10} className="text-gold fill-gold" />}
+                {p.featured && <Star size={10} className="text-gold fill-gold" />}{p.incorporatedIntoPlan && <FileText size={10} className="text-blue-500" />}
               </div>
               <p className="text-sm font-medium text-navy truncate">{p.proposalTitle}</p>
               <p className="text-[11px] text-gray-400 truncate">{p.policyPillar} &middot; {p.fullName} &middot; {p.timeHorizon}</p>
