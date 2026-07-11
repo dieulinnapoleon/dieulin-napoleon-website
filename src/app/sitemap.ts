@@ -24,6 +24,7 @@ export default async function sitemap() {
     { url: BASE + '/haiti-2077', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: BASE + '/haiti-2077/contribute', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: BASE + '/haiti-2077/proposals', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
+    { url: BASE + '/haiti-2077/methodology', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
   ];
 
   const blogPages = posts.map((post) => ({

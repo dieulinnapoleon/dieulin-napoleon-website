@@ -39,6 +39,7 @@ export default function Haiti2077Page() {
           <p className="text-white/50 text-base leading-relaxed max-w-2xl mx-auto mb-10">Haiti 2077 is a nonpartisan civic reflection initiative dedicated to organizing long-term ideas, policy priorities, and citizen contributions around Haiti&apos;s transformation over the next five decades.</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a href="#pillars" className="bg-gold hover:bg-gold-300 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors">Explore the Vision</a>
+            <Link href="/haiti-2077/methodology" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors">Our Methodology</Link>
             <Link href="/haiti-2077/contribute" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors">Submit an Idea</Link>
             <Link href="/haiti-2077/proposals" className="border border-white/20 hover:bg-white/10 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-colors">View Proposals</Link>
           </div>

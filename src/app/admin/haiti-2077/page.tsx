@@ -98,6 +98,30 @@ export default function AdminHaiti2077Page() {
           <h3 className="text-sm font-semibold text-navy mb-1">Admin Notes</h3>
           <textarea defaultValue={selected.adminNotes || ''} onBlur={(e) => saveNotes(selected.id, e.target.value)} className="input-field text-sm" rows={3} placeholder="Internal notes..." />
         </div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <h3 className="text-sm font-semibold text-navy mb-1">Quality Score</h3>
+            <select defaultValue={selected.qualityScore || ''} onChange={async (e) => { try { await updateDoc('haiti2077Proposals', selected.id, { qualityScore: parseInt(e.target.value) || 0 }); toast.success('Score saved'); } catch { toast.error('Failed'); } }} className="input-field text-sm">
+              <option value="">Not rated</option>
+              <option value="1">1 — Not suitable</option>
+              <option value="2">2 — Needs more detail</option>
+              <option value="3">3 — Interesting idea</option>
+              <option value="4">4 — Strong proposal</option>
+              <option value="5">5 — Exceptional</option>
+            </select>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-navy mb-1">Review Category</h3>
+            <select defaultValue={selected.reviewCategory || ''} onChange={async (e) => { try { await updateDoc('haiti2077Proposals', selected.id, { reviewCategory: e.target.value }); toast.success('Category saved'); } catch { toast.error('Failed'); } }} className="input-field text-sm">
+              <option value="">Not categorized</option>
+              <option value="Strong proposal">Strong proposal</option>
+              <option value="Needs more detail">Needs more detail</option>
+              <option value="Interesting idea">Interesting idea</option>
+              <option value="Not suitable for publication">Not suitable for publication</option>
+              <option value="Duplicate or similar">Duplicate or similar</option>
+            </select>
+          </div>
+        </div>
         <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-100">
           <Button onClick={() => updateStatus(selected.id, 'approved')} className="bg-emerald-500 hover:bg-emerald-600 text-white"><Check size={14} /> Approve</Button>
           <Button onClick={() => updateStatus(selected.id, 'rejected')} className="bg-red-500 hover:bg-red-600 text-white"><X size={14} /> Reject</Button>
@@ -131,7 +155,7 @@ export default function AdminHaiti2077Page() {
                 {p.featured && <Star size={10} className="text-gold fill-gold" />}{p.incorporatedIntoPlan && <FileText size={10} className="text-blue-500" />}
               </div>
               <p className="text-sm font-medium text-navy truncate">{p.proposalTitle}</p>
-              <p className="text-[11px] text-gray-400 truncate">{p.policyPillar} &middot; {p.fullName} &middot; {p.timeHorizon}</p>
+              <p className="text-[11px] text-gray-400 truncate">{p.policyPillar} &middot; {p.fullName} &middot; {p.timeHorizon}{p.qualityScore ? ' ⭐' + p.qualityScore + '/5' : ''}</p>
             </div>
             <span className="text-[10px] text-gray-300 shrink-0">{p.created_at ? new Date(p.created_at).toLocaleDateString() : ''}</span>
           </button>
