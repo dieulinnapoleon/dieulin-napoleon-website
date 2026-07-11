@@ -24,7 +24,7 @@ if (getApps().length === 0) initializeApp({ credential: cert(getServiceAccount()
 const db = getFirestore();
 
 async function fixIncorporated() {
-  const snap = await db.collection('haiti2075Proposals').where('status', '==', 'incorporated').get();
+  const snap = await db.collection('haiti2077Proposals').where('status', '==', 'incorporated').get();
   if (snap.empty) {
     console.log('No proposals with status "incorporated" found.');
     return;

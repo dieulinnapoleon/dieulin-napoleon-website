@@ -24,8 +24,8 @@ if (getApps().length === 0) initializeApp({ credential: cert(getServiceAccount()
 const db = getFirestore();
 
 async function diagnose() {
-  console.log('=== All proposals in haiti2075Proposals ===');
-  const all = await db.collection('haiti2075Proposals').get();
+  console.log('=== All proposals in haiti2077Proposals ===');
+  const all = await db.collection('haiti2077Proposals').get();
   console.log('Total docs:', all.size);
   all.docs.forEach(doc => {
     const d = doc.data();
@@ -34,7 +34,7 @@ async function diagnose() {
 
   console.log('\n=== Query: status == approved ===');
   try {
-    const approved = await db.collection('haiti2075Proposals').where('status', '==', 'approved').get();
+    const approved = await db.collection('haiti2077Proposals').where('status', '==', 'approved').get();
     console.log('Approved count:', approved.size);
   } catch (err: any) {
     console.log('ERROR querying approved:', err.message);
@@ -42,7 +42,7 @@ async function diagnose() {
 
   console.log('\n=== Query: status == approved + orderBy created_at desc ===');
   try {
-    const ordered = await db.collection('haiti2075Proposals').where('status', '==', 'approved').orderBy('created_at', 'desc').get();
+    const ordered = await db.collection('haiti2077Proposals').where('status', '==', 'approved').orderBy('created_at', 'desc').get();
     console.log('Ordered count:', ordered.size);
   } catch (err: any) {
     console.log('ERROR with ordered query:', err.message);
