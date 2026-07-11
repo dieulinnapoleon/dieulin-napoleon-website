@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Target, Shield, GraduationCap, Heart, Lightbulb, Truck, Building2, Zap, Droplets, Cpu, TreePine, Globe, Factory, Banknote, Users, CloudRain, MapPin, Flag } from 'lucide-react';
-import { getPillars, getApprovedProposals } from '@/lib/data';
+import { getPillars, getApprovedProposals, getPillarDetails } from '@/lib/data';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -28,6 +28,7 @@ export default async function PillarDetailPage({ params }: { params: { slug: str
   if (!pillar) notFound();
 
   const Icon = ICONS[pillar.icon] || Target;
+  const details = getPillarDetails(params.slug);
   const proposals = await getApprovedProposals();
   const pillarProposals = proposals.filter((p: any) => p.policyPillar === pillar.title);
 
@@ -55,8 +56,36 @@ export default async function PillarDetailPage({ params }: { params: { slug: str
 
       <section className="py-section bg-white">
         <div className="section-container max-w-3xl">
-          <h2 className="font-display text-xl font-bold text-navy mb-6">Why This Pillar Matters</h2>
-          <p className="text-gray-600 leading-relaxed mb-6">{pillar.description} Without sustained progress in this area, Haiti&apos;s broader transformation cannot succeed. This pillar is interconnected with every other dimension of the national development framework — progress here enables progress everywhere.</p>
+          {details && (
+            <>
+              <h2 className="font-display text-xl font-bold text-navy mb-6">Key Challenges</h2>
+              <div className="space-y-3 mb-10">
+                {details.challenges.map((c: string, i: number) => (
+                  <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-red-50/50 border border-red-100/50">
+                    <span className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center shrink-0 text-xs font-bold text-red-500 mt-0.5">{i + 1}</span>
+                    <p className="text-sm text-gray-700 leading-relaxed">{c}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="font-display text-xl font-bold text-navy mb-6">Key Questions for This Pillar</h2>
+              <div className="space-y-3 mb-10">
+                {details.keyQuestions.map((q: string, i: number) => (
+                  <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-gold/5 border border-gold/10">
+                    <span className="text-gold text-lg font-display font-bold shrink-0">?</span>
+                    <p className="text-sm text-gray-700 leading-relaxed italic">{q}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="font-display text-xl font-bold text-navy mb-4">Comparative Example</h2>
+              <div className="p-6 rounded-2xl bg-navy/5 border border-navy/10 mb-10">
+                <p className="text-xs font-bold tracking-[0.15em] uppercase text-gold mb-2">{details.comparativeExample.country}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{details.comparativeExample.lesson}</p>
+              </div>
+            </>
+          )}
+
           <p className="text-gray-600 leading-relaxed">Haiti 2077 invites citizens, professionals, diaspora members, and organizations to contribute structured proposals addressing the challenges and opportunities within this pillar.</p>
         </div>
       </section>

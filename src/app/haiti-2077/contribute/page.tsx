@@ -26,8 +26,10 @@ export default function ContributePage() {
 
   const handleSubmit = async () => {
     setError('');
-    if (!form.fullName.trim() || !form.email.trim() || !form.educationLevel.trim() || !form.profession.trim()) { setError('Please fill in all required contributor fields.'); return; }
-    if (!form.proposalTitle.trim() || !form.policyPillar || !form.problemAddressed.trim() || !form.proposedSolution.trim() || !form.expectedImpact.trim() || !form.timeHorizon) { setError('Please fill in all required proposal fields.'); return; }
+    if (!form.fullName.trim() || !form.email.trim() || !form.educationLevel.trim() || !form.profession.trim()) { setError('Please fill in all required contributor fields (name, email, education, profession).'); return; }
+    if (!form.proposalTitle.trim() || !form.policyPillar || !form.problemAddressed.trim() || !form.proposedSolution.trim() || !form.expectedImpact.trim() || !form.timeHorizon) { setError('Please fill in all required proposal fields (title, pillar, problem, solution, impact, time horizon).'); return; }
+    if (form.problemAddressed.length < 50) { setError('Problem Addressed should be at least 50 characters for a quality submission.'); return; }
+    if (form.proposedSolution.length < 100) { setError('Proposed Solution should be at least 100 characters for a quality submission.'); return; }
     if (!form.consentGiven) { setError('You must agree to the submission guidelines.'); return; }
 
     setSubmitting(true);
@@ -114,9 +116,12 @@ export default function ContributePage() {
                 <select value={form.departmentConcerned} onChange={e => set('departmentConcerned', e.target.value)} className="input-field"><option value="">National / All departments</option>{DEPARTMENTS.filter(Boolean).map(d => <option key={d} value={d}>{d}</option>)}</select>
               </div>
             </div>
-            <div><label className="block text-sm font-medium text-navy mb-1">Problem Addressed <span className="text-red-400">*</span></label><textarea value={form.problemAddressed} onChange={e => set('problemAddressed', e.target.value)} className="input-field" rows={3} placeholder="Describe the problem your proposal aims to solve..." /></div>
-            <div><label className="block text-sm font-medium text-navy mb-1">Proposed Solution <span className="text-red-400">*</span></label><textarea value={form.proposedSolution} onChange={e => set('proposedSolution', e.target.value)} className="input-field" rows={4} placeholder="Describe your proposed solution in detail..." /></div>
-            <div><label className="block text-sm font-medium text-navy mb-1">Expected Impact <span className="text-red-400">*</span></label><textarea value={form.expectedImpact} onChange={e => set('expectedImpact', e.target.value)} className="input-field" rows={3} placeholder="What impact would this proposal have if implemented?" /></div>
+            <div><label className="block text-sm font-medium text-navy mb-1">Problem Addressed <span className="text-red-400">*</span></label><textarea value={form.problemAddressed} onChange={e => set('problemAddressed', e.target.value)} className="input-field" rows={3} placeholder="Describe the problem your proposal aims to solve..." />
+            <p className="text-[10px] text-gray-400 mt-1 text-right">{form.problemAddressed.length}/2000 characters {form.problemAddressed.length < 50 && form.problemAddressed.length > 0 ? '(minimum 50 recommended)' : ''}</p></div>
+            <div><label className="block text-sm font-medium text-navy mb-1">Proposed Solution <span className="text-red-400">*</span></label><textarea value={form.proposedSolution} onChange={e => set('proposedSolution', e.target.value)} className="input-field" rows={4} placeholder="Describe your proposed solution in detail..." />
+            <p className="text-[10px] text-gray-400 mt-1 text-right">{form.proposedSolution.length}/3000 characters {form.proposedSolution.length < 100 && form.proposedSolution.length > 0 ? '(minimum 100 recommended)' : ''}</p></div>
+            <div><label className="block text-sm font-medium text-navy mb-1">Expected Impact <span className="text-red-400">*</span></label><textarea value={form.expectedImpact} onChange={e => set('expectedImpact', e.target.value)} className="input-field" rows={3} placeholder="What impact would this proposal have if implemented?" />
+            <p className="text-[10px] text-gray-400 mt-1 text-right">{form.expectedImpact.length}/2000 characters {form.expectedImpact.length < 50 && form.expectedImpact.length > 0 ? '(minimum 50 recommended)' : ''}</p></div>
             <div className="grid sm:grid-cols-2 gap-4">
               <div><label className="block text-sm font-medium text-navy mb-1">Time Horizon <span className="text-red-400">*</span></label>
                 <select value={form.timeHorizon} onChange={e => set('timeHorizon', e.target.value)} className="input-field"><option value="">Select time horizon</option><option value="5 years">5 years</option><option value="10 years">10 years</option><option value="25 years">25 years</option><option value="50 years">50 years</option></select>

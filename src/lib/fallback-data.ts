@@ -506,3 +506,121 @@ export const haiti2077Timeline = [
   { period: '2046-2060', title: 'Industrialization and Modernization', description: 'Build domestic productive capacity, develop technology and digital infrastructure, implement comprehensive urban planning, expand export capacity, and strengthen regional trade integration.' },
   { period: '2061-2077', title: 'Regional Leadership and Shared Prosperity', description: 'Achieve advanced institutional quality, innovation-driven economic growth, universal public services, environmental sustainability, and a position of leadership and respect in the Caribbean and the world.' },
 ];
+
+
+export const pillarDetails: Record<string, { challenges: string[]; keyQuestions: string[]; comparativeExample: { country: string; lesson: string } }> = {
+  'governance-institutions': {
+    challenges: ['Chronic political instability and frequent government transitions', 'Weak separation of powers and limited judicial independence', 'Low public trust in government institutions', 'Patronage-based civil service rather than merit-based recruitment'],
+    keyQuestions: ['How can Haiti build institutions that survive changes in government?', 'What mechanisms can ensure accountability without paralyzing governance?', 'How can the civil service be professionalized within a generation?'],
+    comparativeExample: { country: 'Rwanda', lesson: 'Rwanda rebuilt its entire governance framework after 1994, achieving one of Africa\'s highest government effectiveness scores within two decades through merit-based recruitment, anti-corruption enforcement, and performance contracts for public officials.' },
+  },
+  'security-justice-rule-of-law': {
+    challenges: ['Gang-controlled territories in major urban areas', 'Severely underfunded and understaffed judiciary', 'Prison overcrowding and prolonged pretrial detention', 'Limited police presence outside Port-au-Prince'],
+    keyQuestions: ['What security model is appropriate for Haiti\'s context?', 'How can the justice system process cases faster while protecting rights?', 'What role should community-based security play?'],
+    comparativeExample: { country: 'Colombia', lesson: 'Colombia reduced its homicide rate by 80% between 1991 and 2020 through a combination of police reform, community policing, targeted social investment in high-violence areas, and sustained political commitment across multiple administrations.' },
+  },
+  'education-human-capital': {
+    challenges: ['Over 80% of schools are private with no quality standards', 'Teacher training and compensation far below regional averages', 'Curriculum disconnected from labor market needs', 'Language of instruction barriers (French vs. Creole)'],
+    keyQuestions: ['Should Haiti adopt Creole as the primary language of instruction?', 'How can teacher quality be improved at scale?', 'What role should technical and vocational education play?'],
+    comparativeExample: { country: 'South Korea', lesson: 'South Korea transformed from one of the poorest countries in Asia to a global education leader in 40 years by investing 20% of its national budget in education, establishing rigorous teacher selection, and aligning curriculum with industrial policy.' },
+  },
+  'healthcare-public-health': {
+    challenges: ['Fewer than 3 physicians per 10,000 people', 'Maternal and infant mortality rates among the highest in the hemisphere', 'Limited healthcare infrastructure outside Port-au-Prince', 'Brain drain of trained health professionals'],
+    keyQuestions: ['How can Haiti retain trained healthcare workers?', 'What is the right balance between preventive and curative care?', 'How can community health workers extend coverage to rural areas?'],
+    comparativeExample: { country: 'Cuba', lesson: 'Despite limited resources, Cuba achieved health outcomes comparable to developed nations by investing heavily in preventive care, community-based health systems, and training one of the highest ratios of physicians per capita in the world.' },
+  },
+  'agriculture-food-sovereignty': {
+    challenges: ['40% of workforce in agriculture producing only 20% of GDP', 'Extreme deforestation and soil erosion reducing yields', 'Near-total dependence on imported food', 'No modern irrigation, storage, or processing infrastructure'],
+    keyQuestions: ['Which crops should Haiti prioritize for food security vs. export?', 'How can land tenure reform unlock agricultural investment?', 'What role should cooperatives play in modernization?'],
+    comparativeExample: { country: 'Vietnam', lesson: 'Vietnam transformed from a food-deficit country to the world\'s second-largest rice exporter in 20 years through land reform, irrigation investment, agricultural extension services, and strategic integration into global value chains.' },
+  },
+  'infrastructure-transportation': {
+    challenges: ['Only 1,714 km of paved roads in the entire country', 'Port-au-Prince handles 87% of all port traffic', 'No rail transport system', 'Limited domestic air connectivity'],
+    keyQuestions: ['Should Haiti prioritize roads, ports, or energy infrastructure first?', 'How can infrastructure investment be distributed across departments?', 'What financing models can attract private infrastructure investment?'],
+    comparativeExample: { country: 'Ethiopia', lesson: 'Ethiopia built Africa\'s first modern light rail system and expanded its road network by 400% between 2000 and 2020, funded through a combination of government investment, Chinese development finance, and public-private partnerships.' },
+  },
+  'housing-urban-planning': {
+    challenges: ['Informal settlements dominate urban areas with no planning', 'No functioning building code enforcement', 'Extreme vulnerability to earthquakes and hurricanes', 'Rural-to-urban migration overwhelming city infrastructure'],
+    keyQuestions: ['How can Haiti urbanize safely in earthquake-prone zones?', 'What affordable housing models work for low-income populations?', 'How can secondary cities absorb growth pressure from Port-au-Prince?'],
+    comparativeExample: { country: 'Singapore', lesson: 'Singapore housed 80% of its population in quality public housing within 30 years through the Housing Development Board, combining government land acquisition, standardized construction, and subsidized homeownership.' },
+  },
+  'energy-electricity': {
+    challenges: ['Only 45% of the population has electricity access (3% rural)', 'Heavy dependence on imported diesel for generation', 'Massive grid losses from theft and poor infrastructure', 'Highest electricity costs in the Caribbean'],
+    keyQuestions: ['Should Haiti prioritize grid extension or off-grid solar?', 'How can electricity theft be reduced without criminalizing poverty?', 'What role should renewable energy play in the energy mix?'],
+    comparativeExample: { country: 'Kenya', lesson: 'Kenya achieved 75% electricity access (from 20%) in one decade through a combination of grid extension, off-grid solar home systems, and mobile-payment-enabled pay-as-you-go models that made electricity affordable for rural households.' },
+  },
+  'water-sanitation-waste': {
+    challenges: ['Less than 50% of the population has access to clean water', 'Open defecation remains common in rural areas', 'No functioning municipal waste collection in most cities', 'Waterborne diseases remain a leading cause of child mortality'],
+    keyQuestions: ['How can Haiti finance water infrastructure at scale?', 'What waste management models work for dense informal settlements?', 'Can circular economy approaches turn waste into economic value?'],
+    comparativeExample: { country: 'Bangladesh', lesson: 'Bangladesh reduced open defecation from 34% to near zero in 20 years through community-led total sanitation (CLTS), a low-cost approach that mobilizes communities to build and maintain their own latrines without external subsidies.' },
+  },
+  'technology-digital': {
+    challenges: ['137th out of 139 countries for digital maturity', 'Highest mobile broadband costs in the region', 'No e-commerce legal framework', 'Limited digital literacy across the population'],
+    keyQuestions: ['Can Haiti leapfrog traditional infrastructure through digital solutions?', 'How can digital government reduce corruption and increase efficiency?', 'What digital skills should be prioritized in education?'],
+    comparativeExample: { country: 'Estonia', lesson: 'Estonia built the world\'s most advanced digital government in 20 years, enabling 99% of government services online, digital identity for every citizen, and e-residency for global entrepreneurs, all from a starting point of post-Soviet underdevelopment.' },
+  },
+  'natural-resources-environment': {
+    challenges: ['Less than 2% of original forest cover remaining', 'Significant mineral deposits (gold, copper) with no governance framework', 'Severe watershed degradation increasing flood risk', 'Charcoal production driving continued deforestation'],
+    keyQuestions: ['Should Haiti develop its mining sector, and under what conditions?', 'How can reforestation be incentivized at scale?', 'What alternative energy sources can replace charcoal?'],
+    comparativeExample: { country: 'Costa Rica', lesson: 'Costa Rica reversed deforestation from 21% forest cover in 1987 to over 52% today through payments for ecosystem services, eco-tourism development, and a constitutional commitment to environmental protection.' },
+  },
+  'tourism-culture-heritage': {
+    challenges: ['The Citadelle receives a fraction of its tourism potential', 'Negative international image suppresses tourism demand', 'Limited hospitality infrastructure and trained workforce', 'Tourism revenues leak to foreign operators'],
+    keyQuestions: ['How can Haiti reposition its international image for tourism?', 'What tourism model maximizes local economic benefit?', 'How can cultural heritage sites be preserved and promoted simultaneously?'],
+    comparativeExample: { country: 'Dominican Republic', lesson: 'The Dominican Republic built the Caribbean\'s largest tourism industry ($8.5B annually) through sustained investment in resort infrastructure, airport development, marketing, and hospitality training over four decades.' },
+  },
+  'industrial-policy-manufacturing': {
+    challenges: ['Near-absence of domestic manufacturing capacity', 'Extreme dependence on imported consumer goods', 'Assembly sector limited to low-value garment production', 'No strategic industrial policy framework'],
+    keyQuestions: ['What industries should Haiti target for development?', 'How can value-added processing of agricultural products create jobs?', 'What role should special economic zones play?'],
+    comparativeExample: { country: 'Mauritius', lesson: 'Mauritius transformed from a sugar-dependent economy to a diversified industrial and services hub by creating export processing zones, investing in education, and strategically positioning itself as a gateway between Africa and Asia.' },
+  },
+  'finance-banking-capital': {
+    challenges: ['3 banks control 80% of assets', '10% of borrowers hold 70% of loans', 'Microfinance rates exceed 40%', 'No capital markets or stock exchange'],
+    keyQuestions: ['How can financial inclusion reach the unbanked majority?', 'Should Haiti develop a stock exchange?', 'What role should mobile money play in financial inclusion?'],
+    comparativeExample: { country: 'Kenya', lesson: 'Kenya\'s M-Pesa mobile money system reached 80% of the adult population within a decade, enabling financial transactions, savings, and credit access for millions who had never had a bank account.' },
+  },
+  'diaspora-engagement': {
+    challenges: ['$4.2B in remittances consumed rather than invested', 'No institutional framework for diaspora participation', 'Brain drain of educated professionals', 'Diaspora expertise underutilized in national development'],
+    keyQuestions: ['How can remittances be channeled toward productive investment?', 'What institutional mechanisms enable diaspora professional contributions?', 'Should diaspora members have voting rights or political representation?'],
+    comparativeExample: { country: 'India', lesson: 'India transformed its diaspora from a brain drain into a brain gain by creating investment frameworks (NRI deposits, diaspora bonds), professional exchange programs, and policy channels that enabled the diaspora to contribute expertise to national development.' },
+  },
+  'trade-regional-integration': {
+    challenges: ['Chronic trade deficit with imports far exceeding exports', 'Limited export diversification beyond garments', 'Weak trade facilitation infrastructure', 'Underutilization of CARICOM trade preferences'],
+    keyQuestions: ['What products should Haiti develop for export?', 'How can Haiti better integrate into Caribbean trade networks?', 'What trade facilitation reforms would have the highest impact?'],
+    comparativeExample: { country: 'Chile', lesson: 'Chile became Latin America\'s most open and competitive economy by signing over 60 free trade agreements, investing in port infrastructure, and developing export industries (wine, salmon, copper) that leverage natural comparative advantages.' },
+  },
+  'women-youth-family': {
+    challenges: ['Women do 70% of commercial activity but own few formal assets', 'Youth unemployment among the highest in the hemisphere', 'Limited access to reproductive healthcare', 'Gender-based violence underreported and underprosecuted'],
+    keyQuestions: ['How can women\'s economic participation be formalized and protected?', 'What youth employment programs have worked in similar contexts?', 'How can family policy support both economic productivity and social stability?'],
+    comparativeExample: { country: 'Rwanda', lesson: 'Rwanda achieved the world\'s highest percentage of women in parliament (61%) and dramatically improved women\'s economic participation through constitutional gender quotas, property rights reform, and targeted enterprise support programs.' },
+  },
+  'disaster-resilience-climate': {
+    challenges: ['Located in hurricane corridor and seismic zone', 'Deforestation amplifies flood and landslide risk', 'No functional early warning systems in most areas', 'Building standards not enforced'],
+    keyQuestions: ['How can Haiti build back better after each disaster?', 'What early warning systems are feasible for Haiti\'s context?', 'How can climate adaptation be integrated into every sector?'],
+    comparativeExample: { country: 'Japan', lesson: 'Japan, despite being one of the most disaster-prone countries on Earth, achieves remarkably low casualty rates through rigorous building codes, comprehensive early warning systems, regular disaster drills, and a culture of preparedness built over generations.' },
+  },
+  'local-government-decentralization': {
+    challenges: ['All administrative functions concentrated in Port-au-Prince', 'Local governments lack authority, resources, and capacity', 'No functional municipal tax collection in most areas', 'Provincial cities locked out of formal economic participation'],
+    keyQuestions: ['What powers should be transferred to departments and municipalities?', 'How can local government capacity be built simultaneously with decentralization?', 'What fiscal mechanisms can fund local government?'],
+    comparativeExample: { country: 'Indonesia', lesson: 'Indonesia decentralized governance to 500+ districts after 1999, transferring authority over education, healthcare, and infrastructure to local governments, resulting in improved service delivery and reduced regional inequality despite significant implementation challenges.' },
+  },
+  'civic-culture-national-identity': {
+    challenges: ['Low civic participation and voter engagement', 'Erosion of trust in public institutions', 'Cultural identity sometimes undermined by external narratives', 'Limited civic education in schools'],
+    keyQuestions: ['How can civic responsibility be cultivated from childhood?', 'What national narrative can unite Haitians across class, geography, and diaspora?', 'How can Haiti\'s revolutionary heritage be channeled into constructive nation-building?'],
+    comparativeExample: { country: 'Botswana', lesson: 'Botswana built one of Africa\'s most stable democracies by cultivating a civic culture rooted in traditional governance values (kgotla), investing in civic education, and establishing a national identity centered on prudent resource management and consensus-building.' },
+  },
+};
+
+
+export const departmentDetails: Record<string, { population: string; capital: string; keyAssets: string[]; criticalNeeds: string[] }> = {
+  'artibonite': { population: '~1.7 million', capital: 'Gonaives', keyAssets: ['Largest rice-producing region', 'Artibonite River and valley', 'Major commercial crossroads', 'Agricultural processing potential'], criticalNeeds: ['Irrigation modernization', 'Flood management infrastructure', 'Road network connecting farms to markets', 'Post-harvest storage facilities'] },
+  'centre': { population: '~750,000', capital: 'Hinche', keyAssets: ['Cross-border trade with Dominican Republic', 'Agricultural land', 'Livestock farming', 'Strategic interior location'], criticalNeeds: ['Road infrastructure', 'Border trade facilitation', 'Education facilities', 'Healthcare access'] },
+  'grand-anse': { population: '~470,000', capital: 'Jeremie', keyAssets: ['Rich agricultural land', 'Cocoa and coffee production', 'Coastal fishing', 'Emerging tourism potential'], criticalNeeds: ['Coastal road connections', 'Agricultural processing', 'Hurricane resilience', 'Port development'] },
+  'nippes': { population: '~340,000', capital: 'Miragoane', keyAssets: ['Coastal tourism potential', 'Agricultural land', 'Proximity to Port-au-Prince', 'Fishing industry'], criticalNeeds: ['Infrastructure connections', 'Tourism development', 'Energy access', 'Education facilities'] },
+  'nord': { population: '~1.1 million', capital: 'Cap-Haitien', keyAssets: ['Citadelle Laferriere (UNESCO)', 'Cap-Haitien international port and airport', 'Rich historical and cultural heritage', 'Tourism and agricultural potential'], criticalNeeds: ['Tourism infrastructure', 'Port modernization', 'Urban planning for Cap-Haitien', 'Agricultural development'] },
+  'nord-est': { population: '~400,000', capital: 'Fort-Liberte', keyAssets: ['Maribahoux agricultural zone', 'Cross-border trade potential', 'Mining resources', 'Historical sites'], criticalNeeds: ['Agricultural modernization', 'Border infrastructure', 'Mining governance framework', 'Road network'] },
+  'nord-ouest': { population: '~730,000', capital: 'Port-de-Paix', keyAssets: ['Tortuga Island (tourism potential)', 'Fishing industry', 'Agricultural land', 'Maritime access'], criticalNeeds: ['Basic infrastructure (roads, water, electricity)', 'Healthcare facilities', 'Education access', 'Disaster resilience'] },
+  'ouest': { population: '~4.0 million', capital: 'Port-au-Prince', keyAssets: ['National capital and economic center', 'Primary port and airport', 'Largest consumer market', 'University and institutional concentration'], criticalNeeds: ['Urban planning and housing', 'Security and rule of law', 'Infrastructure rehabilitation', 'Decongestion and decentralization'] },
+  'sud': { population: '~780,000', capital: 'Les Cayes', keyAssets: ['Beautiful coastline (Ile-a-Vache, Port Salut)', 'Agricultural production', 'Tourism potential', 'Fishing industry'], criticalNeeds: ['Post-earthquake reconstruction (2021)', 'Tourism infrastructure', 'Agricultural recovery', 'Road connections'] },
+  'sud-est': { population: '~630,000', capital: 'Jacmel', keyAssets: ['Jacmel cultural capital (arts, carnival)', 'Coffee production', 'Coastal tourism', 'Cross-border trade potential'], criticalNeeds: ['Road infrastructure', 'Tourism development', 'Agricultural modernization', 'Cultural heritage preservation'] },
+};

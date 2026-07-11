@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, MapPin } from 'lucide-react';
-import { getDepartments, getApprovedProposals } from '@/lib/data';
+import { getDepartments, getApprovedProposals, getDepartmentDetails } from '@/lib/data';
 import type { Metadata } from 'next';
 
 export const revalidate = 60;
@@ -26,6 +26,7 @@ export default async function DepartmentDetailPage({ params }: { params: { slug:
   if (!dept) notFound();
 
   const proposals = await getApprovedProposals();
+  const details = getDepartmentDetails(params.slug);
   const deptProposals = proposals.filter((p: any) => p.departmentConcerned === dept.name || p.departmentInterest === dept.name);
 
   return (
@@ -47,12 +48,49 @@ export default async function DepartmentDetailPage({ params }: { params: { slug:
 
       <section className="py-section bg-white">
         <div className="section-container max-w-3xl">
-          <h2 className="font-display text-xl font-bold text-navy mb-6">Priority Sectors</h2>
-          <div className="flex flex-wrap gap-3">
+          {details && (
+            <div className="grid sm:grid-cols-2 gap-4 mb-10">
+              <div className="p-4 rounded-xl bg-navy/5 border border-navy/10">
+                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-gold mb-1">Capital</p>
+                <p className="text-sm font-semibold text-navy">{details.capital}</p>
+              </div>
+              <div className="p-4 rounded-xl bg-navy/5 border border-navy/10">
+                <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-gold mb-1">Population</p>
+                <p className="text-sm font-semibold text-navy">{details.population}</p>
+              </div>
+            </div>
+          )}
+
+          <h2 className="font-display text-xl font-bold text-navy mb-4">Priority Sectors</h2>
+          <div className="flex flex-wrap gap-3 mb-10">
             {dept.prioritySectors.map((s, i) => (
               <span key={i} className="text-sm bg-gold/10 text-gold px-4 py-2 rounded-xl font-medium">{s}</span>
             ))}
           </div>
+
+          {details && (
+            <>
+              <h2 className="font-display text-xl font-bold text-navy mb-4">Key Assets</h2>
+              <div className="space-y-2 mb-10">
+                {details.keyAssets.map((a: string, i: number) => (
+                  <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-emerald-50/50 border border-emerald-100/50">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
+                    <p className="text-sm text-gray-700">{a}</p>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="font-display text-xl font-bold text-navy mb-4">Critical Development Needs</h2>
+              <div className="space-y-2">
+                {details.criticalNeeds.map((n: string, i: number) => (
+                  <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-red-50/50 border border-red-100/50">
+                    <span className="w-2 h-2 rounded-full bg-red-400 shrink-0" />
+                    <p className="text-sm text-gray-700">{n}</p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 

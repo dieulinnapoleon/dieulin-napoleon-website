@@ -3,7 +3,7 @@ import {
   FALLBACK_POSTS, FALLBACK_PROJECTS, FALLBACK_SERVICES, FALLBACK_TESTIMONIALS, FALLBACK_BOOKS, FALLBACK_EVENTS,
   FALLBACK_CV, FALLBACK_MEDIA, FALLBACK_SOCIAL,
 } from './fallback-data';
-import { fallbackQuotes, haiti2077Pillars, haiti2077Departments, haiti2077Timeline } from './fallback-data';
+import { fallbackQuotes, haiti2077Pillars, haiti2077Departments, haiti2077Timeline, pillarDetails, departmentDetails } from './fallback-data';
 import type {
   BlogPost, Project, Service, CVData, CVEducation, CVExperience,
   ContactSubmission, SocialLink, MediaItem, Testimonial, Book, SpeakingEvent,
@@ -363,3 +363,7 @@ export async function getFeaturedProposals(): Promise<any[]> {
     return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   } catch { return []; }
 }
+
+export function getPillarDetails(slug: string) { return pillarDetails[slug] || null; }
+
+export function getDepartmentDetails(slug: string) { return departmentDetails[slug] || null; }
