@@ -97,7 +97,7 @@ const QUOTES = [
   { text: 'Impact is not about doing something big once. It is about doing something meaningful consistently.', category: 'Service', tags: ['service','consistency','impact'] },
 ];
 
-function slugify(text) {
+function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').substring(0, 60);
 }
 
