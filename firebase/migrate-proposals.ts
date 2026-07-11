@@ -26,8 +26,8 @@ const db = getFirestore();
 async function migrate() {
   console.log('=== Checking collections ===');
 
-  const oldSnap = await db.collection('haiti2075Proposals').get();
-  console.log('haiti2075Proposals:', oldSnap.size, 'docs');
+  const oldSnap = await db.collection('haiti2077Proposals').get();
+  console.log('haiti2077Proposals:', oldSnap.size, 'docs');
 
   const newSnap = await db.collection('haiti2077Proposals').get();
   console.log('haiti2077Proposals:', newSnap.size, 'docs');
@@ -42,13 +42,13 @@ async function migrate() {
     return;
   }
 
-  console.log('\nMigrating ' + oldSnap.size + ' docs from haiti2075Proposals to haiti2077Proposals...');
+  console.log('\nMigrating ' + oldSnap.size + ' docs from haiti2077Proposals to haiti2077Proposals...');
   for (const doc of oldSnap.docs) {
     await db.collection('haiti2077Proposals').doc(doc.id).set(doc.data());
     console.log('  Copied: ' + doc.id + ' (' + doc.data().proposalTitle + ')');
   }
   console.log('\nMigration complete! ' + oldSnap.size + ' docs copied.');
-  console.log('Old collection (haiti2075Proposals) preserved as backup.');
+  console.log('Old collection (haiti2077Proposals) preserved as backup.');
 }
 
 migrate().catch(console.error);
