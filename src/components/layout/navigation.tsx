@@ -20,6 +20,7 @@ const NAV_KEYS = [
   { key: 'speaking', href: '/speaking' },
   { key: 'books', href: '/books' },
   { key: 'media', href: '/media' },
+  { key: 'haiti2077', href: '/haiti-2077' },
 ];
 
 export function Navigation() {
