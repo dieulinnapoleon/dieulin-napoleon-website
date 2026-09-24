@@ -133,7 +133,7 @@ export default async function HomePage() {
                     { icon: GraduationCap, label: 'Master of Business Administration — Impact MBA', sub: 'Colorado State University, United States, 2026' },
                     { icon: GraduationCap, label: 'Master in Project Management', sub: 'University for International Cooperation, Costa Rica, 2024' },
                     { icon: GraduationCap, label: 'Master of Business Administration', sub: "Institut des Sciences, des Technologies et des Études Avancées d'Haïti (ISTEAH), 2021" },
-                    { icon: BarChart3, label: 'CFA Level I Candidate', sub: 'CFA Institute' },
+                    { icon: BarChart3, label: 'Passed CFA Level I Exam', sub: 'CFA Institute · August 2026' },
                     { icon: Leaf, label: 'Sustainability Fellow', sub: 'Pegasus Logistics Group, 2025' },
                     { icon: Briefcase, label: 'Founder & Builder', sub: 'Creasti · FINANCEM · GACED · PATRIYA · LINEON' },
                     { icon: BookOpen, label: 'University Lecturer', sub: '4 Institutions in Haiti' },
@@ -168,7 +168,7 @@ export default async function HomePage() {
             {[
               { icon: TrendingUp, label: 'Master of Finance', sub: 'Colorado State University' },
               { icon: Lightbulb, label: 'Impact MBA', sub: 'Colorado State University' },
-              { icon: BarChart3, label: 'CFA Level I', sub: 'Candidate' },
+              { icon: BarChart3, label: 'CFA Level I', sub: 'Exam Passed · August 2026' },
               { icon: Globe2, label: 'MPM', sub: 'UCI Costa Rica' },
               { icon: Award, label: 'CSU Awards', sub: 'Impact & Innovation' },
               { icon: BookOpen, label: 'University Lecturer', sub: '4 Institutions' },
@@ -197,7 +197,7 @@ export default async function HomePage() {
             {[
               { label: 'Completing', value: 'Master of Finance & Impact MBA at Colorado State University (May 2026)' },
               { label: 'Building', value: 'Creasti — a gamified savings and financial wellness app' },
-              { label: 'Seeking', value: 'Summer 2026 opportunities in finance, impact investing, and strategy' },
+              { label: 'Seeking', value: 'Opportunities in finance, investment research, corporate finance, and impact-driven strategy' },
               { label: 'Writing', value: 'Thought leadership on finance, entrepreneurship, and Haiti-focused innovation' },
             ].map((item, i) => (
               <div key={i} className="p-5 rounded-xl bg-white border border-gray-100">

@@ -91,7 +91,7 @@ export function Navigation() {
                   : scrolled ? 'text-gray-600 hover:text-navy hover:bg-gray-50' : 'text-white/70 hover:text-white hover:bg-white/10'
               )}
             >
-              {t(`nav.${link.key}`)}
+              <span className="whitespace-nowrap">{t(`nav.${link.key}`)}</span>
             </Link>
           ))}
 
@@ -129,7 +129,7 @@ export function Navigation() {
                     : 'text-gray-600 hover:text-navy hover:bg-gray-50'
                 )}
               >
-                {t(`nav.${link.key}`)}
+                <span className="whitespace-nowrap">{t(`nav.${link.key}`)}</span>
               </Link>
             ))}
             <div className="pt-3 mt-3 border-t border-gray-100 px-4">

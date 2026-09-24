@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'Dieulin Napoleon', 'Napoleon Dieulin', 'Dieulin', 'Napoleon',
     'Dieulin Napoleon finance', 'Dieulin Napoleon Haiti', 'Dieulin Napoleon CSU',
     'finance professional', 'entrepreneur Haiti', 'impact investing',
-    'Colorado State University MBA', 'CFA candidate', 'project management',
+    'Colorado State University MBA', 'Passed CFA Level I Exam', 'project management',
     'sustainability', 'ESG', 'fintech', 'Creasti', 'FINANCEM', 'PATRIYA', 'LINEON',
     'Haitian entrepreneur', 'dieulinnapoleon',
   ],
@@ -73,7 +73,7 @@ const personSchema = {
   hasCredential: [
     { '@type': 'EducationalOccupationalCredential', name: 'Master of Finance', credentialCategory: 'degree' },
     { '@type': 'EducationalOccupationalCredential', name: 'Impact MBA', credentialCategory: 'degree' },
-    { '@type': 'EducationalOccupationalCredential', name: 'CFA Level I Candidate', credentialCategory: 'certificate' },
+    { '@type': 'EducationalOccupationalCredential', name: 'Passed CFA Level I Exam', credentialCategory: 'certificate' },
   ],
   sameAs: [
     'https://www.linkedin.com/in/dieulinnapoleon/',

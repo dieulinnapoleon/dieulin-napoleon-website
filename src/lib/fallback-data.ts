@@ -269,7 +269,7 @@ export const FALLBACK_SERVICES: Service[] = [
 // ===========================================
 
 export const FALLBACK_CV: CVData = {
-  summary: "Finance professional and entrepreneur with a Master of Finance and Impact MBA from Colorado State University (2026), a Master's in Project Management from Universidad Para la Cooperación Internacional (Costa Rica), and an MBA in Accounting and Corporate Taxation from ISTEAH (Haiti). Experienced in corporate finance, investment analysis, sustainability strategy, project management, public administration, and startup development. CFA Level I Candidate with a track record of building technology-enabled platforms for financial inclusion, civic education, and economic development. Deeply committed to creating measurable impact at the intersection of finance, technology, and social innovation.",
+  summary: "Finance professional and entrepreneur with a Master of Finance and Impact MBA from Colorado State University (2026), a Master's in Project Management from Universidad Para la Cooperación Internacional (Costa Rica), and an MBA in Accounting and Corporate Taxation from ISTEAH (Haiti). Experienced in corporate finance, investment analysis, sustainability strategy, project management, public administration, and startup development. Passed CFA Level I Exam with a track record of building technology-enabled platforms for financial inclusion, civic education, and economic development. Deeply committed to creating measurable impact at the intersection of finance, technology, and social innovation.",
   education: [
     { id: 'fe-1', degree: 'Master of Finance', institution: 'Colorado State University', year: 'May 2026', details: 'Corporate Finance, Investment Analysis, Valuation, Portfolio Management, Financial Modeling', sort_order: 0 },
     { id: 'fe-2', degree: 'Master of Business Administration — Impact MBA', institution: 'Colorado State University', year: 'May 2026', details: 'Entrepreneurship, Sustainability, Social Impact, Strategy, Innovation', sort_order: 1 },
@@ -292,7 +292,7 @@ export const FALLBACK_CV: CVData = {
   ],
   skills: ['Financial Modeling', 'Valuation (DCF, Comps, Precedent)', 'Investment Analysis', 'Portfolio Management', 'ESG & Sustainability Strategy', 'Business Planning', 'Feasibility Analysis', 'Project Management', 'Pitch Deck Development', 'Market Research', 'Data Analysis', 'Excel / Financial Software', 'Python (basic)', 'Public Speaking', 'Team Leadership'],
   languages: ['English (Fluent)', 'French (Fluent)', 'Haitian Creole (Native)', 'Spanish (Conversational)'],
-  certifications: ['CFA Level I Candidate', 'Project Management Professional Development', 'Corporate Sustainability Training'],
+  certifications: ['Passed CFA Level I Exam', 'Project Management Professional Development', 'Corporate Sustainability Training'],
   awards: ['CFA Research Challenge — Semifinalist / Finalist', 'National Ethics Case Competition — Semifinalist', 'Impact Award — CSU Institute for Entrepreneurship (Creasti)', 'Excellence in Social Innovation — CSU Strata (Creasti)'],
 };
 

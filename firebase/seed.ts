@@ -73,7 +73,7 @@ async function seed() {
   await db.collection('hero').doc('main').set({
     tagline: 'Finance · Impact · Strategy',
     title: 'Building at the Intersection of Capital, Technology, and Social Impact',
-    subtitle: 'Finance professional with dual graduate degrees from Colorado State University, CFA Level I Candidate, and serial entrepreneur dedicated to creating measurable impact in emerging markets.',
+    subtitle: 'Finance professional with dual graduate degrees from Colorado State University, Passed CFA Level I Exam, and serial entrepreneur dedicated to creating measurable impact in emerging markets.',
     cta_primary: 'View My Work',
     cta_secondary: 'Get in Touch',
     updated_at: new Date().toISOString(),
@@ -424,10 +424,10 @@ async function seed() {
 
   // CV Meta document
   await db.collection('cvSections').doc('meta').set({
-    summary: "Finance professional and entrepreneur with a Master of Finance and Impact MBA from Colorado State University (2026), a Master's in Project Management from Universidad Para la Cooperación Internacional (Costa Rica), and an MBA in Accounting and Corporate Taxation from ISTEAH (Haiti). Experienced in corporate finance, investment analysis, sustainability strategy, project management, public administration, and startup development. CFA Level I Candidate with a track record of building technology-enabled platforms for financial inclusion, civic education, and economic development. Deeply committed to creating measurable impact at the intersection of finance, technology, and social innovation.",
+    summary: "Finance professional and entrepreneur with a Master of Finance and Impact MBA from Colorado State University (2026), a Master's in Project Management from Universidad Para la Cooperación Internacional (Costa Rica), and an MBA in Accounting and Corporate Taxation from ISTEAH (Haiti). Experienced in corporate finance, investment analysis, sustainability strategy, project management, public administration, and startup development. Passed CFA Level I Exam with a track record of building technology-enabled platforms for financial inclusion, civic education, and economic development. Deeply committed to creating measurable impact at the intersection of finance, technology, and social innovation.",
     skills: ['Financial Modeling', 'Valuation (DCF, Comps, Precedent)', 'Investment Analysis', 'Portfolio Management', 'ESG & Sustainability Strategy', 'Business Planning', 'Feasibility Analysis', 'Project Management', 'Pitch Deck Development', 'Market Research', 'Data Analysis', 'Excel / Financial Software', 'Python (basic)', 'Public Speaking', 'Team Leadership'],
     languages: ['English (Fluent)', 'French (Fluent)', 'Haitian Creole (Native)', 'Spanish (Conversational)'],
-    certifications: ['CFA Level I Candidate', 'Project Management Professional Development', 'Corporate Sustainability Training'],
+    certifications: ['Passed CFA Level I Exam', 'Project Management Professional Development', 'Corporate Sustainability Training'],
     awards: ['CFA Research Challenge — Semifinalist / Finalist', 'National Ethics Case Competition — Semifinalist', 'Impact Award — CSU Institute for Entrepreneurship (Creasti)', 'Excellence in Social Innovation — CSU Strata (Creasti)'],
   });
   console.log('  ✅ CV Meta');
