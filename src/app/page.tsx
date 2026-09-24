@@ -195,7 +195,7 @@ export default async function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Completing', value: 'Master of Finance & Impact MBA at Colorado State University (May 2026)' },
+              { label: 'Recently Completed', value: 'Master of Finance & Impact MBA, Colorado State University (May 2026) · Passed CFA Level I Exam (August 2026)' },
               { label: 'Building', value: 'Creasti — a gamified savings and financial wellness app' },
               { label: 'Seeking', value: 'Opportunities in finance, investment research, corporate finance, and impact-driven strategy' },
               { label: 'Writing', value: 'Thought leadership on finance, entrepreneurship, and Haiti-focused innovation' },

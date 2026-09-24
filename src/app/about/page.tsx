@@ -41,8 +41,7 @@ export default async function AboutPage() {
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
             Today I am building technology-enabled ventures — including Creasti (a gamified savings app), FINANCEM (a digital wallet
-            for Haiti), PATRIYA (a civic education platform), and LINEON Group (a real estate marketplace) — while completing my
-            graduate studies and pursuing the CFA designation.
+            for Haiti), PATRIYA (a civic education platform), and LINEON Group (a real estate marketplace). I completed my graduate studies at Colorado State University in May 2026 and passed the CFA Level I Exam in August 2026.
           </p>
         </div>
       </section>

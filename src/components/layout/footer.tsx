@@ -14,6 +14,10 @@ const FOOTER_NAV_KEYS = [
   { key: 'insights', href: '/insights' },
   { key: 'services', href: '/services' },
   { key: 'contact', href: '/contact' },
+  { key: 'speaking', href: '/speaking' },
+  { key: 'media', href: '/media' },
+  { key: 'quotes', href: '/quotes' },
+  { key: 'haiti2077', href: '/haiti-2077' },
 ];
 
 const VENTURES = ['Creasti', 'FINANCEM', 'PATRIYA', 'LINEON Group', 'ReSource Haiti'];
