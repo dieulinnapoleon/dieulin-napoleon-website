@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { LanguageSwitcher } from './language-switcher';
 import { Linkedin, Github, Mail, Globe, Instagram, Facebook } from 'lucide-react';
 import { useTranslation } from '@/lib/translation';
 import { FALLBACK_SOCIAL } from '@/lib/fallback-data';
@@ -67,6 +68,10 @@ export function Footer() {
                   <SocialIcon platform={social.platform} />
                 </a>
               ))}
+            </div>
+            <div className="mt-6 mb-4">
+              <p className="text-xs text-white/40 mb-2">Language</p>
+              <LanguageSwitcher scrolled={false} variant="inline" />
             </div>
             <Link href="/admin/login" className="text-xs text-white/20 hover:text-white/40 transition-colors">Admin</Link>
           </div>

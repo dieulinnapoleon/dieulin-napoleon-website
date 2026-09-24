@@ -101,6 +101,11 @@ export function Navigation() {
           </div>
         </div>
 
+        {/* Mobile Language Button */}
+        <div className="lg:hidden ml-auto mr-1">
+          <LanguageSwitcher scrolled={scrolled} />
+        </div>
+
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -118,6 +123,10 @@ export function Navigation() {
       {mobileOpen && (
         <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl animate-fade-in">
           <div className="section-container py-4 space-y-1">
+            <div className="px-4 pb-4 mb-2 border-b border-gray-100">
+              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2">Language</p>
+              <LanguageSwitcher scrolled={true} variant="inline" />
+            </div>
             {NAV_KEYS.map((link) => (
               <Link
                 key={link.href}
@@ -132,9 +141,6 @@ export function Navigation() {
                 <span className="whitespace-nowrap">{t(`nav.${link.key}`)}</span>
               </Link>
             ))}
-            <div className="pt-3 mt-3 border-t border-gray-100 px-4">
-              <LanguageSwitcher scrolled={true} />
-            </div>
           </div>
         </div>
       )}

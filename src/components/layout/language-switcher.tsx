@@ -7,10 +7,11 @@ import { LOCALES, type Locale } from '@/types';
 import { useTranslation } from '@/lib/translation';
 
 interface Props {
+  variant?: 'dropdown' | 'inline';
   scrolled: boolean;
 }
 
-export function LanguageSwitcher({ scrolled }: Props) {
+export function LanguageSwitcher({ scrolled, variant = 'dropdown' }: Props) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const { locale, setLocale } = useTranslation();
@@ -29,6 +30,37 @@ export function LanguageSwitcher({ scrolled }: Props) {
   };
 
   const current = LOCALES.find(l => l.code === locale)!;
+  const NATIVE: Record<string, string> = { en: 'English', fr: 'Français', es: 'Español', ht: 'Kreyòl Ayisyen' };
+
+  if (variant === 'inline') {
+    return (
+      <div className="notranslate" translate="no" role="group" aria-label="Choose language">
+        <div className="grid grid-cols-4 gap-2">
+          {LOCALES.map((loc) => (
+            <button
+              key={loc.code}
+              type="button"
+              onClick={() => switchLocale(loc.code)}
+              aria-label={NATIVE[loc.code] || loc.code}
+              aria-pressed={loc.code === locale}
+              title={NATIVE[loc.code] || loc.code}
+              className={cn(
+                'flex flex-col items-center justify-center gap-0.5 min-h-[48px] rounded-xl border text-xs font-semibold transition-colors',
+                loc.code === locale
+                  ? 'bg-gold/10 border-gold/40 text-gold'
+                  : scrolled
+                    ? 'bg-gray-50 border-gray-200 text-gray-600 hover:border-gold/30'
+                    : 'bg-white/5 border-white/15 text-white/70 hover:border-gold/40'
+              )}
+            >
+              <span className="text-base leading-none">{loc.flag}</span>
+              <span>{loc.code.toUpperCase()}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} className="relative">
