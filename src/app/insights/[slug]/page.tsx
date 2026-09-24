@@ -235,7 +235,7 @@ export default async function ArticlePage({ params }: Props) {
             <div className="flex-1 min-w-[200px]">
               <h4 className="font-display text-base font-semibold text-navy mb-1">Dieulin Napoleon</h4>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Finance professional, entrepreneur, and project strategist. Master of Finance &amp; Impact MBA from Colorado State University.
+                Finance professional, entrepreneur, and project strategist. Master of Finance &amp; Master of Business Administration (Impact MBA) from Colorado State University.
               </p>
             </div>
           </div>

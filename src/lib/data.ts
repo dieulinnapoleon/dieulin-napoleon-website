@@ -219,12 +219,12 @@ export async function getTestimonials(): Promise<Testimonial[]> {
   try {
     const db = getAdminDb();
     const snap = await db.collection('testimonials').where('published', '==', true).orderBy('sort_order').get();
-    if (snap.empty) { logRead('testimonials', 0, 'fallback'); return FALLBACK_TESTIMONIALS; }
+    if (snap.empty) { logRead('testimonials', 0, 'fallback'); return []; }
     logRead('testimonials', snap.size, 'firestore');
     return snap.docs.map((doc) => docToObj<Testimonial>(doc));
   } catch {
     logRead('testimonials', FALLBACK_TESTIMONIALS.length, 'fallback');
-    return FALLBACK_TESTIMONIALS;
+    return [];
   }
 }
 

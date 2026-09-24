@@ -30,7 +30,7 @@ export default async function AboutPage() {
       <section className="py-section bg-white">
         <div className="section-container max-w-article mx-auto">
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            I am a finance professional and entrepreneur with four graduate degrees — including a Master of Finance and Impact MBA from Colorado State University,
+            I am a finance professional and entrepreneur with four graduate degrees — including a Master of Finance and Master of Business Administration (Impact MBA) from Colorado State University,
             United States. My career sits at the intersection of rigorous financial analysis, entrepreneurial
             action, sustainability strategy, and a deep commitment to creating impact in underserved markets — particularly Haiti.
           </p>

@@ -60,7 +60,7 @@ const personSchema = {
   url: 'https://dieulinnapoleon.com',
   image: 'https://dieulinnapoleon.com/images/Dieulin-website.jpg',
   jobTitle: 'Finance Professional & Entrepreneur',
-  description: 'Finance professional, entrepreneur, and project strategist with four graduate degrees including a Master of Finance and Impact MBA from Colorado State University.',
+  description: 'Finance professional, entrepreneur, and project strategist with four graduate degrees including a Master of Finance and Master of Business Administration (Impact MBA) from Colorado State University.',
   nationality: { '@type': 'Country', name: 'Haiti' },
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'Colorado State University', department: 'College of Business' },
@@ -72,7 +72,7 @@ const personSchema = {
   knowsLanguage: ['English', 'French', 'Haitian Creole', 'Spanish'],
   hasCredential: [
     { '@type': 'EducationalOccupationalCredential', name: 'Master of Finance', credentialCategory: 'degree' },
-    { '@type': 'EducationalOccupationalCredential', name: 'Impact MBA', credentialCategory: 'degree' },
+    { '@type': 'EducationalOccupationalCredential', name: 'Master of Business Administration (Impact MBA)', credentialCategory: 'degree' },
     { '@type': 'EducationalOccupationalCredential', name: 'Passed CFA Level I Exam', credentialCategory: 'certificate' },
   ],
   sameAs: [

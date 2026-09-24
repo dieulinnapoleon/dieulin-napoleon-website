@@ -1,3 +1,5 @@
+import { financeExperience } from '@/lib/finance-experience';
+import { researchItems } from '@/lib/research-data';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, GraduationCap, Briefcase, Leaf, User, Quote } from 'lucide-react';
@@ -72,14 +74,11 @@ export default async function HomePage() {
               </div>
 
               <p className="text-gold-300 text-[clamp(15px,2vw,18px)] font-medium tracking-wide mb-6">
-                Finance Professional · Entrepreneur · Project Strategist · Impact-Driven Builder
+                Finance professional building my path in investment research, valuation, and impact-driven strategy
               </p>
 
               <p className="text-[17px] text-white/70 leading-[1.85] max-w-xl mb-10">
-                With 4 graduate degrees including two from Colorado State University, United States
-                of America, I work at the intersection of finance, entrepreneurship, sustainability,
-                and technology to build ventures, analyze opportunities, and support projects that
-                create measurable economic and social impact.
+                I recently completed a Master of Finance and a Master of Business Administration (Impact MBA) at Colorado State University and passed the CFA Level I Exam. I&apos;m building hands-on finance experience through the CFA Institute Research Challenge, an enterprise valuation course, the Student-Managed Veteran Fund, and my current internship at NZS Capital. I bring prior experience in public administration, university teaching, and venture building in Haiti, and I&apos;m focused on continuous learning.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -130,7 +129,7 @@ export default async function HomePage() {
                 <div className="space-y-3.5">
                   {[
                     { icon: GraduationCap, label: 'Master of Finance', sub: 'Colorado State University, United States, 2026' },
-                    { icon: GraduationCap, label: 'Master of Business Administration — Impact MBA', sub: 'Colorado State University, United States, 2026' },
+                    { icon: GraduationCap, label: 'Master of Business Administration (Impact MBA)', sub: 'Colorado State University, United States, 2026' },
                     { icon: GraduationCap, label: 'Master in Project Management', sub: 'University for International Cooperation, Costa Rica, 2024' },
                     { icon: GraduationCap, label: 'Master of Business Administration', sub: "Institut des Sciences, des Technologies et des Études Avancées d'Haïti (ISTEAH), 2021" },
                     { icon: BarChart3, label: 'Passed CFA Level I Exam', sub: 'CFA Institute · August 2026' },
@@ -167,7 +166,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
               { icon: TrendingUp, label: 'Master of Finance', sub: 'Colorado State University' },
-              { icon: Lightbulb, label: 'Impact MBA', sub: 'Colorado State University' },
+              { icon: Lightbulb, label: 'MBA', sub: 'Impact MBA · Colorado State University' },
               { icon: BarChart3, label: 'CFA Level I', sub: 'Exam Passed · August 2026' },
               { icon: Globe2, label: 'MPM', sub: 'UCI Costa Rica' },
               { icon: Award, label: 'CSU Awards', sub: 'Impact & Innovation' },
@@ -195,7 +194,7 @@ export default async function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: 'Recently Completed', value: 'Master of Finance & Impact MBA, Colorado State University (May 2026) · Passed CFA Level I Exam (August 2026)' },
+              { label: 'Recently Completed', value: 'Master of Finance & Master of Business Administration (Impact MBA), Colorado State University (May 2026) · Passed CFA Level I Exam (August 2026)' },
               { label: 'Building', value: 'Creasti — a gamified savings and financial wellness app' },
               { label: 'Seeking', value: 'Opportunities in finance, investment research, corporate finance, and impact-driven strategy' },
               { label: 'Writing', value: 'Thought leadership on finance, entrepreneurship, and Haiti-focused innovation' },
@@ -205,6 +204,66 @@ export default async function HomePage() {
                 <p className="text-sm text-gray-600 leading-relaxed">{item.value}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Investment Research */}
+      <section className="py-section bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-2">Investment Research</p>
+            <h2 className="font-display text-section-title font-bold text-navy mb-4">Research &amp; Valuation</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Independent equity research and valuation work built from primary sources.</p>
+          </div>
+          <div className={researchItems.filter((r) => r.published).length === 1 ? 'max-w-2xl mx-auto' : 'grid md:grid-cols-2 lg:grid-cols-3 gap-6'}>
+            {researchItems.filter((r) => r.published).slice(0, 3).map((r) => (
+              <Link key={r.slug} href={'/research/' + r.slug} className="group block p-7 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gold bg-gold/10 px-2.5 py-1 rounded-md">{r.type}</span>
+                  {r.ticker && <span className="text-[11px] text-navy/60 bg-navy/5 px-2.5 py-1 rounded-md font-medium">{r.ticker}</span>}
+                </div>
+                <h3 className="font-display text-lg font-semibold text-navy group-hover:text-gold transition-colors mb-2">{r.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed mb-4">{r.summary}</p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold">Read the analysis <ArrowRight size={14} /></span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/research" className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold transition-colors">View All Research <ArrowRight size={14} /></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Finance in Practice */}
+      <section className="py-section bg-white">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-2">Finance in Practice</p>
+            <h2 className="font-display text-section-title font-bold text-navy mb-4">Building My Foundation in Finance</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">Early hands-on experiences in investment research, valuation, and portfolio analysis, where I&apos;m building practical skills one step at a time.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            {financeExperience.map((x) => (
+              <div key={x.title} className="p-6 rounded-2xl border border-gray-100 hover:border-gold/30 transition-colors">
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gold bg-gold/10 px-2.5 py-1 rounded-md">{x.type}</span>
+                  {x.current && <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Current</span>}
+                  {x.period && <span className="text-[11px] text-gray-400">{x.period}</span>}
+                </div>
+                <h3 className="font-display text-lg font-semibold text-navy">{x.title}</h3>
+                <p className="text-sm text-gold/80 font-medium mb-3">{x.organization}</p>
+                <p className="text-sm text-gray-500 leading-relaxed mb-4">{x.description}</p>
+                <div className="flex flex-wrap gap-1.5">
+                  {x.focus.map((f) => (
+                    <span key={f} className="text-[11px] bg-navy/5 text-navy/60 px-2 py-0.5 rounded">{f}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/cv" className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold transition-colors">View Full CV <ArrowRight size={14} /></Link>
           </div>
         </div>
       </section>
@@ -258,7 +317,7 @@ export default async function HomePage() {
         <div className="section-container">
           <p className="page-header-label text-center">Insights</p>
           <h2 className="font-display text-section-title font-bold text-navy text-center mb-4">
-            Thought Leadership
+            Writing & Reflections
           </h2>
           <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12">
             Writing on finance, entrepreneurship, project management, sustainability, and Haiti&apos;s economic future.
@@ -326,6 +385,7 @@ export default async function HomePage() {
 
 
       {/* ===== TESTIMONIALS ===== */}
+      {testimonials.length > 0 && (
       <section className="py-section bg-gray-50/50">
         <div className="section-container">
           <p className="page-header-label text-center">Testimonials</p>
@@ -346,6 +406,7 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ===== NEWSLETTER ===== */}
       <section className="py-16 bg-white">
