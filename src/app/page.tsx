@@ -168,7 +168,7 @@ export default async function HomePage() {
               { icon: Lightbulb, label: 'MBA', sub: 'Impact MBA · Colorado State University' },
               { icon: BarChart3, label: 'CFA Level I', sub: 'Exam Passed · August 2026' },
               { icon: Globe2, label: 'MPM', sub: 'UCI Costa Rica' },
-              { icon: Award, label: 'Impact Award', sub: 'CSU Entrepreneurship Demo Day' },
+              { icon: Award, label: 'Impact Award', sub: 'CSU Institute for Entrepreneurship' },
               { icon: BookOpen, label: 'University Lecturer', sub: '4 Institutions' },
             ].map((cred, i) => (
               <div key={i} className="text-center p-4 rounded-xl hover:bg-gray-50 transition-colors group">

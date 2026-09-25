@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     title: 'Dieulin Napoleon | Finance · Impact · Strategy',
     description:
       'Finance professional building his path in investment research and valuation. Colorado State University graduate (MFin, MBA). Passed CFA Level I Exam.',
-    images: [{ url: '/images/Dieulin-website.jpg', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dieulin Napoleon | Finance · Impact · Strategy',
     description: 'Investment research, valuation, and impact-driven strategy.',
-    images: ['/images/Dieulin-website.jpg'],
+    images: ['/og'],
   },
   robots: {
     index: true,

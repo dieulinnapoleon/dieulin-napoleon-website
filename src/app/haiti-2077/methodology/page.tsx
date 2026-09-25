@@ -7,7 +7,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: 'Methodology | Haiti 2077 — How the Vision Is Built',
   description: 'Haiti 2077 is built on civic participation, structured policy analysis, nonpartisan principles, and a 50-year development timeline. Learn how the framework is designed, how proposals are evaluated, and how citizens can contribute.',
-  openGraph: { title: 'Methodology | Haiti 2077', description: 'How the 50-year civic vision is designed, structured, and built through citizen participation.', images: [{ url: '/images/Dieulin-website.jpg' }] },
+  openGraph: { title: 'Methodology | Haiti 2077', description: 'How the 50-year civic vision is designed, structured, and built through citizen participation.', images: [{ url: '/og' }] },
 };
 
 export default function MethodologyPage() {

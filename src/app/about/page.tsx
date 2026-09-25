@@ -8,6 +8,13 @@ import { getCVData } from '@/lib/data';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "About | Dieulin Napoleon",
+    description: 'Learn about Dieulin Napoleon, a finance professional building his path in investment research and valuation, with roots in public service, teaching, and venture building in Haiti.',
+    url: 'https://dieulinnapoleon.com/about',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'About',
   description: 'Learn about Dieulin Napoleon, a finance professional building his path in investment research and valuation, with roots in public service, teaching, and venture building in Haiti.',
 };
@@ -22,7 +29,7 @@ export default async function AboutPage() {
         <div className="section-container">
           <p className="page-header-label">About</p>
           <h1 className="page-header-title">The Story Behind the Work</h1>
-          <p className="page-header-subtitle">Finance, entrepreneurship, and impact — a journey rooted in Haiti with global reach.</p>
+          <p className="page-header-subtitle">A journey rooted in Haiti, shaped by education, public service, and a growing career in finance.</p>
         </div>
       </section>
 
@@ -48,9 +55,9 @@ export default async function AboutPage() {
         <div className="section-container">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
             <AnimatedStat value={4} label="Graduate Degrees" icon={<GraduationCap size={22} className="text-gold" />} />
-            <AnimatedStat value={6} label="Ventures Built" icon={<Briefcase size={22} className="text-gold" />} />
-            <AnimatedStat value={4} label="Universities Taught" icon={<BookOpen size={22} className="text-gold" />} />
-            <AnimatedStat value={11} suffix="+" label="Years Experience" icon={<Calendar size={22} className="text-gold" />} />
+            <AnimatedStat value={6} label="Ventures & Projects Started" icon={<Briefcase size={22} className="text-gold" />} />
+            <AnimatedStat value={4} label="Universities Where I Taught" icon={<BookOpen size={22} className="text-gold" />} />
+            <AnimatedStat value={11} suffix="+" label="Years of Experience" icon={<Calendar size={22} className="text-gold" />} />
             <AnimatedStat value={4} label="Languages Spoken" icon={<Globe2 size={22} className="text-gold" />} />
           </div>
         </div>
@@ -64,12 +71,12 @@ export default async function AboutPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Target, title: 'Finance & Investment', desc: 'Rigorous financial analysis, valuation, and investment research grounded in academic training and real-world application.' },
-              { icon: Sparkles, title: 'Entrepreneurship', desc: 'Building technology-enabled ventures that solve real problems — from financial inclusion to civic education.' },
-              { icon: Compass, title: 'Project Management', desc: 'End-to-end project planning and execution for complex initiatives across sectors and geographies.' },
-              { icon: Globe2, title: 'Haiti & Emerging Markets', desc: 'Deep expertise in the Haitian market, diaspora engagement, and development economics.' },
-              { icon: Heart, title: 'Sustainability & ESG', desc: 'Corporate sustainability strategy, GHG inventories, and decarbonization planning.' },
-              { icon: GraduationCap, title: 'Education & Leadership', desc: 'A decade of university teaching and mentorship across four institutions in Haiti.' },
+              { icon: Target, title: 'Finance & Investment', desc: 'Understanding how capital is allocated, and learning to analyze companies with discipline and care.' },
+              { icon: Sparkles, title: 'Entrepreneurship', desc: 'Building ventures that address real problems, from financial inclusion to civic education.' },
+              { icon: Compass, title: 'Project Management', desc: 'Turning plans into results through clear structure, coordination, and follow-through.' },
+              { icon: Globe2, title: 'Haiti & Emerging Markets', desc: 'A lifelong connection to Haiti and a commitment to its long-term development.' },
+              { icon: Heart, title: 'Sustainability & ESG', desc: 'Helping organizations understand and reduce their environmental impact.' },
+              { icon: GraduationCap, title: 'Education & Leadership', desc: 'Years of university teaching and mentorship across four institutions in Haiti.' },
             ].map((area, i) => (
               <div key={i} className="p-6 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all">
                 <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center mb-4">
@@ -133,8 +140,7 @@ export default async function AboutPage() {
           <h2 className="font-display text-section-title font-bold text-navy mb-6">Rooted in Haiti</h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
             Haiti is where my story begins and where much of my work returns. From teaching at four universities
-            in Cap-Haïtien and Port-au-Prince to advising the National Port Authority to building technology
-            platforms for financial inclusion and civic engagement — my professional life has been shaped by the
+            in Cap-Haïtien and Port-au-Prince to advising the National Port Authority to developing technology ventures for financial inclusion and civic engagement — my professional life has been shaped by the
             challenges and possibilities of the country I come from.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">

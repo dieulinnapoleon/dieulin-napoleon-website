@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import { ContactForm } from './contact-form';
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "Contact | Dieulin Napoleon",
+    description: 'Get in touch with Dieulin Napoleon for career opportunities, consulting, startup partnerships, speaking engagements, and more.',
+    url: 'https://dieulinnapoleon.com/contact',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'Contact',
   description: 'Get in touch with Dieulin Napoleon for career opportunities, consulting, startup partnerships, speaking engagements, and more.',
 };

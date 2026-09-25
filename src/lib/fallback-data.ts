@@ -353,7 +353,7 @@ export const FALLBACK_CV: CVData = {
   experience: [
     { id: 'fx-1', title: 'Corporate Sustainability Fellow', organization: 'Pegasus Logistics Group', period: '2025', description: 'Conducted greenhouse gas inventory, developed decarbonization roadmap, analyzed recycling feasibility, and contributed to sustainability reporting.', sub_items: [], sort_order: 0 },
     { id: 'fx-2', title: 'Graduate Teaching Assistant', organization: 'Colorado State University', period: '2024–2025', description: 'Supported instruction in BUS220: Ethics in Contemporary Organizations. Facilitated discussions, graded assignments, and mentored students.', sub_items: [], sort_order: 1 },
-    { id: 'fx-3', title: 'Advisor / Chief of Staff', organization: 'National Port Authority of Haiti (APN)', period: '2018–2022', description: "Provided strategic counsel on operations, policy, and stakeholder management for Haiti's port authority.", sub_items: [], sort_order: 2 },
+    { id: 'fx-3', title: 'Advisor / Chief of Staff', organization: 'National Port Authority of Haiti (APN)', period: '2019–2024', description: "Provided strategic counsel on operations, policy, and stakeholder management for Haiti's port authority.", sub_items: [], sort_order: 2 },
     { id: 'fx-4', title: 'Co-Founder & CEO', organization: 'GACED Consulting', period: '2016–2022', description: 'Co-founded and led a consulting firm specializing in business plans, feasibility studies, and project management in Haiti.', sub_items: [], sort_order: 3 },
     { id: 'fx-5', title: 'Lecturer', organization: 'Multiple Universities, Haiti', period: '2015–2022', description: 'Taught undergraduate and graduate courses across four Haitian universities.', sub_items: [
       { university: "Institut des Sciences, des Technologies et des Études Avancées d'Haïti (ISTEAH)", courses: 'Financial Accounting, Management, Organizational Behavior' },
@@ -365,7 +365,7 @@ export const FALLBACK_CV: CVData = {
   skills: ['Financial Modeling', 'Valuation (DCF, Comps, Precedent)', 'Investment Analysis', 'Portfolio Management', 'ESG & Sustainability Strategy', 'Business Planning', 'Feasibility Analysis', 'Project Management', 'Pitch Deck Development', 'Market Research', 'Data Analysis', 'Excel / Financial Software', 'Python (basic)', 'Public Speaking', 'Team Leadership'],
   languages: ['English (Fluent)', 'French (Fluent)', 'Haitian Creole (Native)', 'Spanish (Conversational)'],
   certifications: ['Passed CFA Level I Exam', 'Project Management Professional Development', 'Corporate Sustainability Training'],
-  awards: ['CFA Research Challenge — Semifinalist / Finalist', 'National Ethics Case Competition — Semifinalist', 'Impact Award — CSU Institute for Entrepreneurship (Creasti)', 'Excellence in Social Innovation — CSU Strata (Creasti)'],
+  awards: ['CFA Institute Research Challenge — Colorado Finalist (2026)', 'National Ethics Case Competition — Semifinalist', 'Impact Award — CSU Institute for Entrepreneurship (Creasti)', 'Excellence in Social Innovation — CSU Strata (Creasti)'],
 };
 
 // ===========================================

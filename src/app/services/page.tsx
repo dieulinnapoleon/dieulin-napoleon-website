@@ -5,7 +5,14 @@ import { getServices } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  openGraph: {
+    title: "Areas of Focus | Dieulin Napoleon",
+    description: 'Professional services offered by Dieulin Napoleon — financial analysis, business planning, startup strategy, project management, ESG consulting, and Haiti market advisory.',
+    url: 'https://dieulinnapoleon.com/services',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
+  title: 'Areas of Focus',
   description: 'Professional services offered by Dieulin Napoleon — financial analysis, business planning, startup strategy, project management, ESG consulting, and Haiti market advisory.',
 };
 

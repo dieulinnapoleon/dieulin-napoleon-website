@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description: desc,
       type: 'article',
       url: 'https://dieulinnapoleon.com/quotes/' + quote.slug,
-      images: [{ url: '/images/Dieulin-website.jpg', width: 1200, height: 630 }],
+      images: [{ url: '/og', width: 1200, height: 630 }],
     },
-    twitter: { card: 'summary_large_image', title: desc.substring(0, 60), description: desc, images: ['/images/Dieulin-website.jpg'] },
+    twitter: { card: 'summary_large_image', title: desc.substring(0, 60), description: desc, images: ['/og'] },
   };
 }
 

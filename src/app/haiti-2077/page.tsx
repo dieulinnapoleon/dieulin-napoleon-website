@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: 'Haiti 2077 — A 50-Year Civic Vision for National Transformation',
   description: 'A nonpartisan civic reflection initiative inviting Haitians, diaspora members, professionals, students, entrepreneurs, educators, and policymakers to contribute structured ideas for Haiti long-term transformation.',
-  openGraph: { title: 'Haiti 2077', description: 'A 50-Year Civic Vision for National Transformation', images: [{ url: '/images/Dieulin-website.jpg' }] },
+  openGraph: { title: 'Haiti 2077', description: 'A 50-Year Civic Vision for National Transformation', images: [{ url: '/og' }] },
 };
 
 const ICONS: Record<string, any> = { Landmark: Target, Shield, GraduationCap, Heart, Wheat: Lightbulb, Truck, Building2, Zap, Droplets, Cpu, TreePine, Palmtree: Globe, Factory, Banknote, Globe, ArrowLeftRight: ArrowRight, Users, CloudRain, MapPin, Flag };

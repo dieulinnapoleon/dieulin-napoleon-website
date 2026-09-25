@@ -3,6 +3,13 @@ import { GraduationCap, Briefcase, Award, Languages, BadgeCheck, Wrench } from '
 import { getCVData } from '@/lib/data';
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "CV | Dieulin Napoleon",
+    description: 'Curriculum vitae of Dieulin Napoleon — education, professional experience, skills, and certifications.',
+    url: 'https://dieulinnapoleon.com/cv',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'CV',
   description: 'Curriculum vitae of Dieulin Napoleon — education, professional experience, skills, and certifications.',
 };

@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   return {
     title,
     description: desc,
-    openGraph: { title, description: desc, type: 'article', url: 'https://dieulinnapoleon.com/haiti-2077/proposals/' + params.id, images: [{ url: '/images/Dieulin-website.jpg', width: 1200, height: 630 }] },
-    twitter: { card: 'summary_large_image', title, description: desc, images: ['/images/Dieulin-website.jpg'] },
+    openGraph: { title, description: desc, type: 'article', url: 'https://dieulinnapoleon.com/haiti-2077/proposals/' + params.id, images: [{ url: '/og', width: 1200, height: 630 }] },
+    twitter: { card: 'summary_large_image', title, description: desc, images: ['/og'] },
   };
 }
 

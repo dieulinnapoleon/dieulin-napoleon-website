@@ -3,6 +3,13 @@ import { getProjects } from '@/lib/data';
 import { ProjectsClient } from './projects-client';
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "Projects | Dieulin Napoleon",
+    description: 'Ventures and initiatives spanning fintech, civic innovation, sustainability, and economic development by Dieulin Napoleon.',
+    url: 'https://dieulinnapoleon.com/projects',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'Projects',
   description: 'Ventures and initiatives spanning fintech, civic innovation, sustainability, and economic development by Dieulin Napoleon.',
 };

@@ -3,6 +3,13 @@ import { ExternalLink, Award, Mic, Newspaper, Globe } from 'lucide-react';
 import { getMediaItems } from '@/lib/data';
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "Media | Dieulin Napoleon",
+    description: 'Awards, press, speaking engagements, platforms, and media appearances by Dieulin Napoleon.',
+    url: 'https://dieulinnapoleon.com/media',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'Media',
   description: 'Awards, press, speaking engagements, platforms, and media appearances by Dieulin Napoleon.',
 };

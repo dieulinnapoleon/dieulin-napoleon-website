@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: dept.name + ' | Haiti 2077',
     description: dept.description,
-    openGraph: { title: dept.name + ' | Haiti 2077', description: dept.description, images: [{ url: '/images/Dieulin-website.jpg' }] },
+    openGraph: { title: dept.name + ' | Haiti 2077', description: dept.description, images: [{ url: '/og' }] },
   };
 }
 

@@ -7,6 +7,13 @@ import type { Metadata } from 'next';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "Speaking & Events | Dieulin Napoleon",
+    description: 'Speaking engagements, lectures, panels, and competitions by Dieulin Napoleon.',
+    url: 'https://dieulinnapoleon.com/speaking',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'Speaking & Events',
   description: 'Speaking engagements, lectures, panels, and competitions by Dieulin Napoleon.',
 };

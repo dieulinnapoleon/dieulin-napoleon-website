@@ -10,34 +10,43 @@ interface StatProps {
 }
 
 export function AnimatedStat({ value, suffix = "", label, icon }: StatProps) {
-  const [count, setCount] = useState(0);
+  // Start with the real value so search engines, previews, and slow connections never see "0"
+  const [count, setCount] = useState(value);
   const ref = useRef<HTMLDivElement>(null);
-  const started = useRef(false);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const alreadyVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (alreadyVisible) return;
+
+    setCount(0);
+    let timer: ReturnType<typeof setInterval> | undefined;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const duration = 1500;
-          const steps = 40;
-          const increment = value / steps;
-          let current = 0;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= value) {
-              setCount(value);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(current));
-            }
-          }, duration / steps);
-        }
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const steps = 40;
+        const increment = value / steps;
+        let current = 0;
+        timer = setInterval(() => {
+          current += increment;
+          if (current >= value) {
+            setCount(value);
+            if (timer) clearInterval(timer);
+          } else {
+            setCount(Math.floor(current));
+          }
+        }, 1500 / steps);
       },
       { threshold: 0.3 }
     );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (timer) clearInterval(timer);
+    };
   }, [value]);
 
   return (

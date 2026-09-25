@@ -7,6 +7,13 @@ import type { Metadata } from 'next';
 export const revalidate = 60;
 
 export const metadata: Metadata = {
+  openGraph: {
+    title: "Books & Publications | Dieulin Napoleon",
+    description: 'Upcoming books by Dieulin Napoleon on mindset, leadership, faith, and breaking barriers.',
+    url: 'https://dieulinnapoleon.com/books',
+    type: 'website',
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
+  },
   title: 'Books & Publications',
   description: 'Upcoming books by Dieulin Napoleon on mindset, leadership, faith, and breaking barriers.',
 };
