@@ -22,7 +22,7 @@ const FOOTER_NAV_KEYS = [
   { key: 'haiti2077', href: '/haiti-2077' },
 ];
 
-const VENTURES = ['Creasti', 'FINANCEM', 'PATRIYA', 'LINEON Group', 'ReSource Haiti'];
+const VENTURES = ['Creasti, Inc.', 'FINANCEM', 'PATRIYA', 'LINEON Group', 'ReSource Haiti'];
 
 export function Footer() {
   const { t } = useTranslation();
@@ -74,12 +74,10 @@ export function Footer() {
               <p className="text-xs text-white/40 mb-2">Language</p>
               <LanguageSwitcher scrolled={false} variant="inline" />
             </div>
-            <Link href="/admin/login" className="text-xs text-white/20 hover:text-white/40 transition-colors">Admin</Link>
           </div>
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">© {new Date().getFullYear()} Dieulin Napoleon. {t('footer.copyright')}</p>
-          <p className="text-xs text-white/20">{t('footer.tagline')}</p>
         </div>
       </div>
     </footer>

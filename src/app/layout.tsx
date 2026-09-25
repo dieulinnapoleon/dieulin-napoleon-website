@@ -80,7 +80,7 @@ const personSchema = {
     'https://napoleondieulin.blogspot.com/',
   ],
   worksFor: [
-    { '@type': 'Organization', name: 'Creasti' },
+    { '@type': 'Organization', name: 'Creasti, Inc.' },
     { '@type': 'Organization', name: 'GACED Consulting' },
   ],
 };

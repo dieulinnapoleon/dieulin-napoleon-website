@@ -133,7 +133,7 @@ export default async function HomePage() {
                     { icon: GraduationCap, label: 'Master of Business Administration', sub: "Institut des Sciences, des Technologies et des Études Avancées d'Haïti (ISTEAH), 2021" },
                     { icon: BarChart3, label: 'Passed CFA Level I Exam', sub: 'CFA Institute · August 2026' },
                     { icon: Leaf, label: 'Sustainability Fellow', sub: 'Pegasus Logistics Group, 2025' },
-                    { icon: Briefcase, label: 'Founder & Builder', sub: 'Creasti · FINANCEM · GACED · PATRIYA · LINEON' },
+                    { icon: Briefcase, label: 'Founder & Builder', sub: 'Creasti, Inc. · FINANCEM · GACED · PATRIYA · LINEON' },
                     { icon: BookOpen, label: 'University Lecturer', sub: '4 Institutions in Haiti' },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -168,7 +168,7 @@ export default async function HomePage() {
               { icon: Lightbulb, label: 'MBA', sub: 'Impact MBA · Colorado State University' },
               { icon: BarChart3, label: 'CFA Level I', sub: 'Exam Passed · August 2026' },
               { icon: Globe2, label: 'MPM', sub: 'UCI Costa Rica' },
-              { icon: Award, label: 'CSU Awards', sub: 'Impact & Innovation' },
+              { icon: Award, label: 'Impact Award', sub: 'CSU Entrepreneurship Demo Day' },
               { icon: BookOpen, label: 'University Lecturer', sub: '4 Institutions' },
             ].map((cred, i) => (
               <div key={i} className="text-center p-4 rounded-xl hover:bg-gray-50 transition-colors group">
@@ -194,7 +194,7 @@ export default async function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { label: 'Recently Completed', value: 'Master of Finance & Master of Business Administration (Impact MBA), Colorado State University (May 2026) · Passed CFA Level I Exam (August 2026)' },
-              { label: 'Building', value: 'Creasti — a gamified savings and financial wellness app' },
+              { label: 'Building', value: 'Creasti, Inc. (Delaware C-Corp) — a gamified savings and financial wellness app' },
               { label: 'Seeking', value: 'Opportunities in finance, investment research, corporate finance, and impact-driven strategy' },
               { label: 'Writing', value: 'Thought leadership on finance, entrepreneurship, and Haiti-focused innovation' },
             ].map((item, i) => (
@@ -259,6 +259,7 @@ export default async function HomePage() {
                 <div className="p-7">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="category-badge">{project.category}</span>
+                  {project.status && <span className="text-[10px] font-medium text-navy/60 bg-navy/5 px-2 py-0.5 rounded">{project.status}</span>}
                   </div>
                   <h3 className="font-display text-xl font-semibold text-navy mb-3 group-hover:text-gold transition-colors">
                     {project.title}
@@ -309,9 +310,6 @@ export default async function HomePage() {
                   </h3>
                   <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">
                     {post.excerpt}
-                  </p>
-                  <p className="text-xs text-gray-300 mt-4">
-                    {formatDate(post.created_at)}
                   </p>
                 </div>
               </Link>
