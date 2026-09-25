@@ -1,5 +1,4 @@
 import { financeExperience } from '@/lib/finance-experience';
-import { researchItems } from '@/lib/research-data';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, TrendingUp, Lightbulb, BarChart3, Globe2, Award, BookOpen, GraduationCap, Briefcase, Leaf, User, Quote } from 'lucide-react';
@@ -204,33 +203,6 @@ export default async function HomePage() {
                 <p className="text-sm text-gray-600 leading-relaxed">{item.value}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Research */}
-      <section className="py-section bg-white">
-        <div className="section-container">
-          <div className="text-center mb-12">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-2">Investment Research</p>
-            <h2 className="font-display text-section-title font-bold text-navy mb-4">Research &amp; Valuation</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">Independent equity research and valuation work built from primary sources.</p>
-          </div>
-          <div className={researchItems.filter((r) => r.published).length === 1 ? 'max-w-2xl mx-auto' : 'grid md:grid-cols-2 lg:grid-cols-3 gap-6'}>
-            {researchItems.filter((r) => r.published).slice(0, 3).map((r) => (
-              <Link key={r.slug} href={'/research/' + r.slug} className="group block p-7 rounded-2xl border border-gray-100 hover:border-gold/30 hover:shadow-sm transition-all">
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-gold bg-gold/10 px-2.5 py-1 rounded-md">{r.type}</span>
-                  {r.ticker && <span className="text-[11px] text-navy/60 bg-navy/5 px-2.5 py-1 rounded-md font-medium">{r.ticker}</span>}
-                </div>
-                <h3 className="font-display text-lg font-semibold text-navy group-hover:text-gold transition-colors mb-2">{r.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-4">{r.summary}</p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold">Read the analysis <ArrowRight size={14} /></span>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/research" className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-gold transition-colors">View All Research <ArrowRight size={14} /></Link>
           </div>
         </div>
       </section>

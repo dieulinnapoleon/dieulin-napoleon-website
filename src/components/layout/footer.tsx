@@ -12,7 +12,6 @@ const FOOTER_NAV_KEYS = [
   { key: 'about', href: '/about' },
   { key: 'cv', href: '/cv' },
   { key: 'projects', href: '/projects' },
-  { key: 'research', href: '/research' },
   { key: 'insights', href: '/insights' },
   { key: 'services', href: '/services' },
   { key: 'contact', href: '/contact' },
