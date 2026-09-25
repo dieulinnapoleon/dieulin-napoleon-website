@@ -348,7 +348,7 @@ export default async function HomePage() {
 
           <div className="text-center mt-10">
             <Link href="/services">
-              <Button>View Services <ArrowRight size={16} /></Button>
+              <Button>Explore Areas of Focus <ArrowRight size={16} /></Button>
             </Link>
           </div>
         </div>
