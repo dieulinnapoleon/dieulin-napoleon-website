@@ -208,7 +208,7 @@ export default async function HomePage() {
       </section>
 
       {/* Finance in Practice */}
-      <section className="py-section bg-white">
+      <section id="finance-in-practice" className="scroll-mt-24 py-section bg-white">
         <div className="section-container">
           <div className="text-center mb-12">
             <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold mb-2">Finance in Practice</p>

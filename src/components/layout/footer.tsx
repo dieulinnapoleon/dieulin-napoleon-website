@@ -16,6 +16,7 @@ const FOOTER_NAV_KEYS = [
   { key: 'services', href: '/services' },
   { key: 'contact', href: '/contact' },
   { key: 'speaking', href: '/speaking' },
+  { key: 'books', href: '/books' },
   { key: 'media', href: '/media' },
   { key: 'quotes', href: '/quotes' },
   { key: 'haiti2077', href: '/haiti-2077' },

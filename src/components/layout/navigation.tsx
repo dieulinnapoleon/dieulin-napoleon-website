@@ -12,15 +12,19 @@ import { useTranslation } from '@/lib/translation';
 const NAV_KEYS = [
   { key: 'home', href: '/' },
   { key: 'about', href: '/about' },
-  { key: 'cv', href: '/cv' },
-  { key: 'projects', href: '/projects' },
+  { key: 'finance', href: '/#finance-in-practice' },
   { key: 'insights', href: '/insights' },
   { key: 'services', href: '/services' },
-  { key: 'contact', href: '/contact' },
+  { key: 'haiti2077', href: '/haiti-2077' },
+];
+
+const MORE_KEYS = [
+  { key: 'cv', href: '/cv' },
+  { key: 'projects', href: '/projects' },
   { key: 'speaking', href: '/speaking' },
   { key: 'books', href: '/books' },
   { key: 'media', href: '/media' },
-  { key: 'haiti2077', href: '/haiti-2077' },
+  { key: 'quotes', href: '/quotes' },
 ];
 
 export function Navigation() {
@@ -94,6 +98,12 @@ export function Navigation() {
               <span className="whitespace-nowrap">{t(`nav.${link.key}`)}</span>
             </Link>
           ))}
+          <Link
+            href="/contact"
+            className="ml-2 px-4 py-2 rounded-lg bg-gold hover:bg-gold-300 text-white text-[13px] font-semibold whitespace-nowrap transition-colors"
+          >
+            {t('nav.contact')}
+          </Link>
 
           <div className="ml-3 pl-3 border-l border-gray-200/30 flex items-center gap-1">
             <DarkModeToggle scrolled={scrolled} />
@@ -141,6 +151,26 @@ export function Navigation() {
                 <span className="whitespace-nowrap">{t(`nav.${link.key}`)}</span>
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="block mt-2 px-4 py-3 rounded-xl bg-gold hover:bg-gold-300 text-white text-sm font-semibold text-center transition-colors"
+            >
+              {t('nav.contact')}
+            </Link>
+            <div className="pt-4 mt-3 border-t border-gray-100 px-4">
+              <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-gray-400 mb-2">More</p>
+              <div className="flex flex-wrap gap-2">
+                {MORE_KEYS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-xs px-3 py-2 rounded-lg bg-gray-50 text-gray-600 hover:text-navy hover:bg-gray-100 transition-colors"
+                  >
+                    {t(`nav.${link.key}`)}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}

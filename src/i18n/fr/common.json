@@ -5,14 +5,15 @@
     "cv": "CV",
     "projects": "Projets",
     "insights": "Articles",
-    "services": "Services",
+    "services": "Axes de travail",
     "contact": "Contact",
     "media": "Médias",
     "books": "Livres",
     "speaking": "Conférences",
     "haiti2077": "Haiti 2077",
     "quotes": "Citations",
-    "research": "Recherche"
+    "research": "Recherche",
+    "finance": "Expérience en finance"
   },
   "hero": {
     "tagline": "Finance · Impact · Stratégie",
