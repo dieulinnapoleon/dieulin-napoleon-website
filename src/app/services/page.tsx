@@ -29,10 +29,10 @@ export default async function ServicesPage() {
     <div>
       <section className="page-header">
         <div className="section-container">
-          <p className="page-header-label">Expertise</p>
-          <h1 className="page-header-title">Services</h1>
+          <p className="page-header-label">Areas of Focus</p>
+          <h1 className="page-header-title">Where I Can Contribute</h1>
           <p className="page-header-subtitle">
-            Professional consulting, advisory, and strategy services available for engagement.
+            Areas where my education and experience allow me to add value, and where I&apos;m continuing to grow.
           </p>
         </div>
       </section>
@@ -51,9 +51,9 @@ export default async function ServicesPage() {
                   <p className="text-sm text-gray-500 leading-relaxed mb-5">{service.description}</p>
 
                   <div className="space-y-3 pt-4 border-t border-gray-100">
-                    <ServiceDetail label="For Whom" value={service.for_whom} />
-                    <ServiceDetail label="Deliverables" value={service.deliverables} />
-                    <ServiceDetail label="Outcomes" value={service.outcomes} />
+                    <ServiceDetail label="Who It Helps" value={service.for_whom} />
+                    <ServiceDetail label="How I Can Contribute" value={service.deliverables} />
+                    <ServiceDetail label="Background" value={service.outcomes} />
                   </div>
                 </div>
               );

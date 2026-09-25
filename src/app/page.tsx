@@ -329,12 +329,12 @@ export default async function HomePage() {
       {/* ===== SERVICES PREVIEW ===== */}
       <section className="py-section bg-gray-50/50">
         <div className="section-container">
-          <p className="page-header-label text-center">Services</p>
+          <p className="page-header-label text-center">Areas of Focus</p>
           <h2 className="font-display text-section-title font-bold text-navy text-center mb-4">
-            How I Can Help
+            Where I Can Contribute
           </h2>
           <p className="text-gray-500 text-center max-w-2xl mx-auto mb-12">
-            Strategic support across finance, entrepreneurship, project management, and sustainability.
+            Areas where my education and experience allow me to add value, and where I&apos;m continuing to grow.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
