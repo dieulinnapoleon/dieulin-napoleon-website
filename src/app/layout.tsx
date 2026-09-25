@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | Dieulin Napoleon',
   },
   description:
-    'Finance professional, entrepreneur, and project strategist building at the intersection of capital markets, technology, and social impact.',
+    'Finance professional building his path in investment research and valuation. Colorado State University graduate (MFin, MBA). Passed CFA Level I Exam.',
   keywords: [
     'Dieulin Napoleon', 'Napoleon Dieulin', 'Dieulin', 'Napoleon',
     'Dieulin Napoleon finance', 'Dieulin Napoleon Haiti', 'Dieulin Napoleon CSU',
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     siteName: 'Dieulin Napoleon',
     title: 'Dieulin Napoleon | Finance · Impact · Strategy',
     description:
-      'Finance professional, entrepreneur, and project strategist building at the intersection of capital markets, technology, and social impact.',
+      'Finance professional building his path in investment research and valuation. Colorado State University graduate (MFin, MBA). Passed CFA Level I Exam.',
     images: [{ url: '/images/Dieulin-website.jpg', width: 1200, height: 630, alt: 'Dieulin Napoleon' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Dieulin Napoleon | Finance · Impact · Strategy',
-    description: 'Finance, entrepreneurship, and social impact.',
+    description: 'Investment research, valuation, and impact-driven strategy.',
     images: ['/images/Dieulin-website.jpg'],
   },
   robots: {

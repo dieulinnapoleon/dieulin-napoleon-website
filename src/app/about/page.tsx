@@ -9,7 +9,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Learn about Dieulin Napoleon — finance professional, entrepreneur, and project strategist building at the intersection of capital markets, technology, and social impact.',
+  description: 'Learn about Dieulin Napoleon, a finance professional building his path in investment research and valuation, with roots in public service, teaching, and venture building in Haiti.',
 };
 
 export default async function AboutPage() {
@@ -30,9 +30,7 @@ export default async function AboutPage() {
       <section className="py-section bg-white">
         <div className="section-container max-w-article mx-auto">
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
-            I am a finance professional and entrepreneur with four graduate degrees — including a Master of Finance and Master of Business Administration (Impact MBA) from Colorado State University,
-            United States. My career sits at the intersection of rigorous financial analysis, entrepreneurial
-            action, sustainability strategy, and a deep commitment to creating impact in underserved markets — particularly Haiti.
+            I am a finance professional building my path in investment research and valuation. I hold a Master of Finance and a Master of Business Administration (Impact MBA) from Colorado State University, along with two earlier graduate degrees, and I passed the CFA Level I Exam in August 2026.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-6">
             Over the past decade, I have worked as a university lecturer, government advisor, consulting firm leader, and graduate
@@ -40,8 +38,7 @@ export default async function AboutPage() {
             social and economic outcomes.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Today I am building technology-enabled ventures — including Creasti (a gamified savings app), FINANCEM (a digital wallet
-            for Haiti), PATRIYA (a civic education platform), and LINEON Group (a real estate marketplace). I completed my graduate studies at Colorado State University in May 2026 and passed the CFA Level I Exam in August 2026.
+            Today I am gaining hands-on experience in investment research as an intern at NZS Capital, building on my work with the Student-Managed Veteran Fund and the CFA Institute Research Challenge at Colorado State University. Alongside this, I continue developing ventures such as Creasti, Inc., a gamified savings app, and projects focused on financial inclusion and civic engagement in Haiti.
           </p>
         </div>
       </section>
